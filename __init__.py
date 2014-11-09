@@ -32,20 +32,20 @@ bl_info = {
 
 if "bpy" in locals():
     import imp
+    imp.reload(jumptocut)
     imp.reload(operators_extra_actions)
     imp.reload(audio_tools)
     imp.reload(proxy_tools)
     imp.reload(recursive_loader)
-    imp.reload(jumptocut)
     imp.reload(eco)
     imp.reload(random_editor)
     imp.reload(ui)
 else:
+    from . import jumptocut
     from . import operators_extra_actions
     from . import audio_tools
     from . import proxy_tools
     from . import recursive_loader
-    from . import jumptocut
     from . import eco
     from . import random_editor
     from . import ui

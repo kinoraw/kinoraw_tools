@@ -55,7 +55,6 @@ def setup_proxy(context, strip, size):
     return {"FINISHED"}
 
 
-
 def create_proxy(context, strip, size, res):
     # calculate proxy resolution
     div = 4/size
@@ -294,10 +293,6 @@ class CreateProxyToolPanel(bpy.types.Panel):
             layout.operator("sequencer.create_bi_proxy_operator", 
                 text="Clear proxy sizes").size=5
 
-            layout = self.layout
-            layout.operator("sequencer.rebuild_proxy", 
-                text="Rebuild Proxies and TC")
-
         else:
 
             layout = self.layout
@@ -324,3 +319,13 @@ class CreateProxyToolPanel(bpy.types.Panel):
             if prefs.proxy_scripts:
                 layout = self.layout
                 layout.prop(prefs, "proxy_scripts_path", text="path for scripts")
+
+        layout = self.layout
+        box = layout.box()
+        box.prop(context.space_data, "proxy_render_size")
+        box.operator("sequencer.rebuild_proxy", 
+                text="Rebuild Proxies and TC")
+
+
+
+    

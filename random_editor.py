@@ -21,12 +21,6 @@ from bpy.props import IntProperty, BoolProperty, StringProperty
 
 from . import functions
 
-
-
-
-
-
-
 # CLASSES
 
 class RandomScratchOperator(bpy.types.Operator):

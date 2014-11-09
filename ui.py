@@ -85,7 +85,7 @@ def sequencer_strip_menu_func(self, context):
 
 def sequencer_header_func(self, context):
     self.layout.menu("SEQUENCER_EXTRA_MT_input")
-    if context.space_data.view_type in ('PREVIEW', 'SEQUENCER_PREVIEW'):
+    """if context.space_data.view_type in ('PREVIEW', 'SEQUENCER_PREVIEW'):
         self.layout.operator('sequencerextra.jogshuttle',
         text='Jog/Shuttle', icon='NDOF_TURN')
     if context.space_data.view_type in ('SEQUENCER', 'SEQUENCER_PREVIEW'):
@@ -96,7 +96,7 @@ def sequencer_header_func(self, context):
         text='File Place', icon='TRIA_DOWN').insert = False
     if context.space_data.view_type in ('SEQUENCER', 'SEQUENCER_PREVIEW'):
         self.layout.operator('sequencerextra.placefromfilebrowser',
-        text='File Insert', icon='TRIA_RIGHT').insert = True
+        text='File Insert', icon='TRIA_RIGHT').insert = True"""
 
 
 def time_frame_menu_func(self, context):
