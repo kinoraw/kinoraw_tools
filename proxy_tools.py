@@ -264,11 +264,13 @@ class CreateProxyToolPanel(bpy.types.Panel):
 
         if prefs.use_internal_proxy:
             layout = self.layout
-            layout.prop(prefs, "use_bi_custom_directory")
+            row = layout.row(align=True)
+            row.prop(prefs, "use_bi_custom_directory")
 
             if prefs.use_bi_custom_directory:
-                layout = self.layout
-                layout.prop(prefs, "proxy_dir", text="Directory:")
+                row.prop(prefs, "proxy_dir", text="")
+                filename = strip.filepath.rpartition("/")[2].rpartition(".")[0]
+                layout.label("sample dir: //"+bpy.path.abspath(prefs.proxy_dir+filename))
 
             layout = self.layout
             col = layout.column()
