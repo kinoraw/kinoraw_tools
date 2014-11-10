@@ -49,6 +49,7 @@ else:
     from . import eco
     from . import random_editor
     from . import ui
+    from . import datamosh
 
 import bpy
 import os.path
@@ -62,6 +63,10 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
     bl_idname = "kinoraw_tools"
     bl_option = {'REGISTER'}
 
+    use_glitch_panel = BoolProperty(
+    name = 'glitch panel',
+    default = True)
+
     use_extra_actions_panel = BoolProperty(
     name = 'extra actions panel',
     default = True)
@@ -72,6 +77,16 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
 
     use_exif_panel = BoolProperty(
     name = 'exif info panel',
+    default = True)
+
+    # glitch
+
+    all_keyframes = BoolProperty(
+    name = 'remove all keyframes',
+    default = True)
+
+    load_glitch = BoolProperty(
+    name = 'load glitch after conversion > UNSTABLE!!!',
     default = True)
 
     # jump to cut
