@@ -101,13 +101,6 @@ def initSceneProperties(context):
         default=250)
     scn.out_marker = 250
 
-    bpy.types.Scene.default_slide_offset = IntProperty(
-        name='Offset',
-        description='Number of frames to slide',
-        min=-250, max=250,
-        default=0)
-    scn.default_slide_offset = 0
-
     bpy.types.Scene.default_fade_duration = IntProperty(
         name='Duration',
         description='Number of frames to fade',

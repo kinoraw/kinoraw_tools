@@ -269,15 +269,6 @@ def register():
     'LEFT_ARROW', 'PRESS', ctrl=True, shift=True)
     kmi.properties.back = True
 
-    
-    # jumptocut shortcuts
-    kmi = km.keymap_items.new('sequencerextra.jumptocut',
-    'Q', 'PRESS', ctrl=False, shift=False)
-    kmi.properties.next = False
-    kmi = km.keymap_items.new('sequencerextra.jumptocut',
-    'W', 'PRESS', ctrl=False, shift=False)
-    kmi.properties.next = True
-
      # in and out
     kmi = km.keymap_items.new("sequencerextra.sourcein",
     'I', 'PRESS', ctrl=True, shift=True)
@@ -313,11 +304,6 @@ def unregister():
     km = kc.keymaps['Frames']
     km.keymap_items.remove(km.keymap_items['screenextra.frame_skip'])
     km.keymap_items.remove(km.keymap_items['screenextra.frame_skip'])
-
-    
-    km.keymap_items.remove(km.keymap_items['sequencerextra.jumptocut'])
-    km.keymap_items.remove(km.keymap_items['sequencerextra.jumptocut'])
-
 
     km.keymap_items.remove(km.keymap_items['sequencerextra.sourcein'])
     km.keymap_items.remove(km.keymap_items['sequencerextra.sourceout'])

@@ -200,6 +200,12 @@ class Sequencer_Extra_ReadExifData(bpy.types.Operator):
         return {'FINISHED'}
 
 
+def sequencer_add_menu_func(self, context):
+    # menu to show recursive load operators
+    self.layout.operator('sequencerextra.recursiveload', 
+    text='recursive load from browser', icon='PLUGIN')
+    self.layout.separator()
+
 class ExifInfoPanel(bpy.types.Panel):
     """Creates a Panel in the Object properties window"""
     """ TODO: fix poll to hide when unuseful"""

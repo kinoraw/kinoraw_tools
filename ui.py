@@ -38,11 +38,6 @@ class SEQUENCER_EXTRA_MT_input(bpy.types.Menu):
         text='Create Movieclip strip', icon='PLUGIN')
 
 
-def sequencer_add_menu_func(self, context):
-    self.layout.operator('sequencerextra.recursiveload', 
-    text='recursive load from browser', icon='PLUGIN')
-    self.layout.separator()
-
 
 def sequencer_select_menu_func(self, context):
     self.layout.operator_menu_enum('sequencerextra.select_all_by_type',
@@ -62,16 +57,11 @@ def sequencer_select_menu_func(self, context):
 def sequencer_strip_menu_func(self, context):
     self.layout.operator('sequencerextra.extendtofill',
     text='Extend to Fill', icon='PLUGIN')
-    self.layout.operator('sequencerextra.distribute',
-    text='Distribute', icon='PLUGIN')
     self.layout.operator_menu_enum('sequencerextra.fadeinout',
     'mode', text='Fade', icon='PLUGIN')
     self.layout.operator_menu_enum('sequencerextra.copyproperties',
     'prop', icon='PLUGIN')
-    self.layout.operator('sequencerextra.slidegrab',
-    text='Slide Grab', icon='PLUGIN')
-    self.layout.operator_menu_enum('sequencerextra.slide',
-    'mode', icon='PLUGIN')
+    
     self.layout.operator('sequencerextra.insert',
     text='Insert (Single Channel)', icon='PLUGIN').singlechannel = True
     self.layout.operator('sequencerextra.insert',
@@ -129,6 +119,7 @@ def clip_clip_menu_func(self, context):
     text='Open from File Browser', icon='PLUGIN')
     self.layout.separator()
 
+
 class ExtraActions(bpy.types.Panel):
     bl_space_type = "SEQUENCE_EDITOR"
     bl_region_type = "UI"
@@ -142,7 +133,7 @@ class ExtraActions(bpy.types.Panel):
             preferences = context.user_preferences
             prefs = preferences.addons['kinoraw_tools'].preferences
             if scn and scn.sequence_editor:
-                if prefs.use_extra_actions_panel:
+                if prefs.use_extra_actions_panel and strip != None:
                     return True
         else:
             return False
@@ -179,10 +170,8 @@ class ExtraActions(bpy.types.Panel):
                 text='', icon='TRIA_DOWN').insert = False            
             row.operator('sequencerextra.placefromfilebrowser',
                 text='', icon='TRIA_RIGHT').insert = True
-            row.operator('sequencerextra.slidegrab',
+            row.operator('sequencer.slip',
                 text='', icon='MOD_SHRINKWRAP')
-            row.operator_menu_enum('sequencerextra.slide',
-            'mode',text='slide', icon='MOD_SHRINKWRAP')
             row.operator_menu_enum('sequencerextra.fadeinout',
             'mode', text='fade', icon='MOD_ARRAY')
             row.operator_menu_enum('sequencerextra.copyproperties',
@@ -219,12 +208,8 @@ class ExtraActions(bpy.types.Panel):
             row.operator('sequencerextra.placefromfilebrowser',
                 text='File Insert', icon='TRIA_RIGHT').insert = True
 
-            row=layout.row(align=True)
-
-            row.operator('sequencerextra.slidegrab',
-                text='Slide Grab', icon='MOD_SHRINKWRAP')
-            row.operator_menu_enum('sequencerextra.slide',
-            'mode', icon='MOD_SHRINKWRAP')
+            row.operator('sequencer.slip',
+                text='Slip', icon='MOD_SHRINKWRAP')
 
             layout = self.layout
 
@@ -234,36 +219,6 @@ class ExtraActions(bpy.types.Panel):
             row.operator_menu_enum('sequencerextra.copyproperties',
             'prop', icon='SCRIPT')
             
-
-            layout = self.layout
-
-            """layout.label("Input:")
-            layout.operator_context = 'INVOKE_REGION_WIN'
-            layout.operator('sequencerextra.striprename',
-            text='File Name to Strip Name', icon='PLUGIN')
-            layout.operator('sequencerextra.editexternally',
-            text='Open with External Editor', icon='PLUGIN')
-            layout.operator('sequencerextra.edit',
-            text='Open with Editor', icon='PLUGIN')
-            layout.operator('sequencerextra.createmovieclip',
-            text='Create Movieclip strip', icon='PLUGIN')"""
-
-
-
-            """layout.label("Not working:")
-            layout.operator('sequencerextra.distribute',
-            text='Distribute', icon='PLUGIN')
-            row=layout.row(align=True)
-            row.operator('sequencerextra.insert',
-            text='Insert (Single Channel)', icon='PLUGIN').singlechannel = True
-            row.operator('sequencerextra.insert',
-            text='Insert', icon='PLUGIN').singlechannel = False
-
-            row=layout.row(align=True)
-            row.operator('sequencerextra.ripplecut',
-            text='Ripple Cut', icon='PLUGIN')
-            row.operator('sequencerextra.rippledelete',
-            text='Ripple Delete', icon='PLUGIN')"""
 
         if prefs.mini_extra_actions == False:
             layout = self.layout

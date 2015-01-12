@@ -138,45 +138,7 @@ class OBJECT_OT_Triminout(bpy.types.Operator):
             except ReferenceError:
                 pass
         bpy.ops.sequencer.reload()
-        return {'FINISHED'}
-
-
-#JUMP
-
-class OBJECT_OT_Jumptocut(bpy.types.Operator):  #Operator jump previous edit point
-    bl_label = "jump to edit points"
-    bl_idname = "sequencerextra.jumptocut"
-    bl_description = "jump to edit points"
-
-    bl_options = {'REGISTER', 'UNDO'} 
-
-    next = BoolProperty(
-        name='next',
-        description='jump to next cut',
-        default=False)
-
-    @classmethod
-    def poll(self, context):
-        return context.scene.sequence_editor
-
-    def execute(self, context):
-        scene=bpy.context.scene
-        seq=scene.sequence_editor
-        editpoints = functions.geteditpoints(context)
-        
-        if self.next == True:
-            bpy.context.scene.frame_current = functions.searchnext(scene.frame_current, editpoints)
-            last = 0
-            for i in editpoints:
-                if i > last: last = i
-            if bpy.context.scene.frame_current == last:
-                bpy.context.scene.frame_current = last
-                #bpy.context.scene.frame_current = last-1
-                self.report({'INFO'},'Last Frame')
-        else:
-            bpy.context.scene.frame_current = functions.searchprev(scene.frame_current, editpoints)
-        return {'FINISHED'}       
-        
+        return {'FINISHED'}      
 
 # SOURCE IN OUT
 
@@ -675,8 +637,8 @@ class Jumptocut(bpy.types.Panel):
         split=row.split()
         colR1 = split.column()
         row1=colR1.row(align=True)
-        row1.operator("sequencerextra.jumptocut", icon="PLAY_REVERSE", text="cut").next=False
-        row1.operator("sequencerextra.jumptocut", icon='PLAY', text="cut").next=True
+        row1.operator("sequencer.strip_jump", icon="PLAY_REVERSE", text="cut").next=False
+        row1.operator("sequencer.strip_jump", icon='PLAY', text="cut").next=True
         colR2 = split.column()
         row2=colR2.row(align=True)
         row2.operator("screen.marker_jump", icon="TRIA_LEFT", text="marker").next=False
