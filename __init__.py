@@ -60,7 +60,7 @@ from bpy.props import IntProperty, StringProperty, BoolProperty, EnumProperty
 
 
 class KinorawToolsAddon(bpy.types.AddonPreferences):
-    bl_idname = "kinoraw_tools"
+    bl_idname = __package__
     bl_option = {'REGISTER'}
 
     use_glitch_panel = BoolProperty(
@@ -245,7 +245,10 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
 
 # Registration
 def register():
+    bpy.utils.register_class(KinorawToolsAddon)
+
     bpy.utils.register_module(__name__)
+ 
 
     # Append menu entries
     bpy.types.SEQUENCER_MT_add.prepend(ui.sequencer_add_menu_func)
@@ -288,6 +291,8 @@ def register():
 
 def unregister():
     bpy.utils.unregister_module(__name__)
+
+    bpy.utils.unregister_class(KinorawToolsAddon)
 
     #  Remove menu entries
     bpy.types.SEQUENCER_MT_add.remove(ui.sequencer_add_menu_func)

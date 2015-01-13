@@ -38,6 +38,12 @@ class SEQUENCER_EXTRA_MT_input(bpy.types.Menu):
         text='Create Movieclip strip', icon='PLUGIN')
 
 
+def sequencer_add_menu_func(self, context):
+    # menu to show recursive load operators
+    self.layout.operator('sequencerextra.recursiveload', 
+    text='recursive load from browser', icon='PLUGIN')
+    self.layout.separator()
+
 
 def sequencer_select_menu_func(self, context):
     self.layout.operator_menu_enum('sequencerextra.select_all_by_type',
@@ -131,7 +137,7 @@ class ExtraActions(bpy.types.Panel):
             strip = functions.act_strip(context)
             scn = context.scene
             preferences = context.user_preferences
-            prefs = preferences.addons['kinoraw_tools'].preferences
+            prefs = preferences.addons[__package__].preferences
             if scn and scn.sequence_editor:
                 if prefs.use_extra_actions_panel and strip != None:
                     return True
@@ -147,7 +153,7 @@ class ExtraActions(bpy.types.Panel):
         strip = scn.sequence_editor.active_strip
 
         preferences = context.user_preferences
-        prefs = preferences.addons['kinoraw_tools'].preferences
+        prefs = preferences.addons[__package__].preferences
 
         layout = self.layout
         if prefs.mini_extra_actions:

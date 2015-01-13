@@ -614,7 +614,7 @@ class Jumptocut(bpy.types.Panel):
             strip = functions.act_strip(context)
             scn = context.scene
             preferences = context.user_preferences
-            prefs = preferences.addons['kinoraw_tools'].preferences
+            prefs = preferences.addons[__package__].preferences
             if scn and scn.sequence_editor:
                 if prefs.use_jumptocut:
                     return True
@@ -629,7 +629,7 @@ class Jumptocut(bpy.types.Panel):
         scn = context.scene
 
         preferences = context.user_preferences
-        prefs = preferences.addons['kinoraw_tools'].preferences
+        prefs = preferences.addons[__package__].preferences
         
         layout = self.layout
 
@@ -715,7 +715,7 @@ def marker_handler(scn):
     context=bpy.context
     functions.initSceneProperties(context)
     #preferences = context.user_preferences
-    #prefs = preferences.addons['kinoraw_tools'].preferences 
+    #prefs = preferences.addons[__package__].preferences 
     if scn.auto_markers:
         #scn = context.scene
         

@@ -80,7 +80,7 @@ class ExtractWavOperator(bpy.types.Operator):
     def execute(self, context):
 
         preferences = context.user_preferences
-        audio_dir = preferences.addons['kinoraw_tools'].preferences.audio_dir
+        audio_dir = preferences.addons[__package__].preferences.audio_dir
 
         functions.create_folder(bpy.path.abspath(audio_dir))
 
@@ -163,7 +163,7 @@ class ExternalAudioSetSyncOperator(bpy.types.Operator):
     def execute(self, context):
 
         preferences = context.user_preferences
-        filename = preferences.addons['kinoraw_tools'].preferences.audio_external_filename
+        filename = preferences.addons[__package__].preferences.audio_external_filename
 
         for strip in context.selected_editable_sequences:
             if strip.type == "MOVIE":
@@ -219,7 +219,7 @@ class ExternalAudioReloadOperator(bpy.types.Operator):
     def execute(self, context):
 
         preferences = context.user_preferences
-        filename = preferences.addons['kinoraw_tools'].preferences.audio_external_filename
+        filename = preferences.addons[__package__].preferences.audio_external_filename
 
         data = readsyncfile(filename)
 
@@ -280,7 +280,7 @@ class CreateAudioToolPanel(bpy.types.Panel):
             strip = functions.act_strip(context)
             scn = context.scene
             preferences = context.user_preferences
-            prefs = preferences.addons['kinoraw_tools'].preferences
+            prefs = preferences.addons[__package__].preferences
             if scn and scn.sequence_editor and scn.sequence_editor.active_strip:
                 if prefs.use_audio_tools:
                     return strip.type in ('MOVIE')
@@ -294,7 +294,7 @@ class CreateAudioToolPanel(bpy.types.Panel):
     def draw(self, context):
 
         preferences = context.user_preferences
-        prefs = preferences.addons['kinoraw_tools'].preferences
+        prefs = preferences.addons[__package__].preferences
 
         layout = self.layout
         layout.prop(prefs, "audio_dir", text="path for audio files")

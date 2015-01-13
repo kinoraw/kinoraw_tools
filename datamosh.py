@@ -14,7 +14,7 @@ proxy_qualities = [  ( "1", "25%", "" ), ( "2", "50%", "" ),
 
 def createdatamosh(context, strip):
     preferences = context.user_preferences
-    prefs = preferences.addons['kinoraw_tools'].preferences
+    prefs = preferences.addons[__package__].preferences
 
     fileinput = bpy.path.abspath(strip.filepath)
     fileoutput = fileinput.rpartition(".")[0]+"_datamosh.avi"
@@ -29,7 +29,7 @@ def createdatamosh(context, strip):
 
 def createavi(context, strip):
     preferences = context.user_preferences
-    prefs = preferences.addons['kinoraw_tools'].preferences
+    prefs = preferences.addons[__package__].preferences
 
     fileinput = bpy.path.abspath(strip.filepath)
     fileoutput = fileinput.rpartition(".")[0]+"_.avi"
@@ -42,7 +42,7 @@ def createavi(context, strip):
 
 def createavimjpeg(context, strip):
     preferences = context.user_preferences
-    prefs = preferences.addons['kinoraw_tools'].preferences
+    prefs = preferences.addons[__package__].preferences
 
     fileinput = bpy.path.abspath(strip.filepath)
     fileoutput = fileinput.rpartition(".")[0]+"_mjpeg.avi"
@@ -156,7 +156,7 @@ class CreateGlitchToolPanel(bpy.types.Panel):
             strip = functions.act_strip(context)
             scn = context.scene
             preferences = context.user_preferences
-            prefs = preferences.addons['kinoraw_tools'].preferences
+            prefs = preferences.addons[__package__].preferences
             if scn and scn.sequence_editor and scn.sequence_editor.active_strip:
                 if prefs.use_proxy_tools:
                     return strip.type in ('MOVIE')
@@ -170,7 +170,7 @@ class CreateGlitchToolPanel(bpy.types.Panel):
     def draw(self, context):
 
         preferences = context.user_preferences
-        prefs = preferences.addons['kinoraw_tools'].preferences
+        prefs = preferences.addons[__package__].preferences
 
         layout = self.layout
 

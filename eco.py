@@ -45,7 +45,7 @@ class EcoPanel(bpy.types.Panel):
             strip = functions.act_strip(context)
             scn = context.scene
             preferences = context.user_preferences
-            prefs = preferences.addons['kinoraw_tools'].preferences
+            prefs = preferences.addons[__package__].preferences
             if scn and scn.sequence_editor and scn.sequence_editor.active_strip:
                 if prefs.use_eco_tools:
                     return strip.type in ('META')
@@ -62,7 +62,7 @@ class EcoPanel(bpy.types.Panel):
         seq_type = strip.type
 
         preferences = context.user_preferences
-        prefs = preferences.addons['kinoraw_tools'].preferences
+        prefs = preferences.addons[__package__].preferences
         
         if seq_type in ( 'MOVIE', 'IMAGE', 'META', 'MOVIECLIP', 'SCENE') :
             active_strip = functions.act_strip(context)
@@ -105,7 +105,7 @@ class OBJECT_OT_EcoOperator(bpy.types.Operator):
         active_strip=functions.act_strip(context)
         
         preferences = context.user_preferences
-        prefs = preferences.addons['kinoraw_tools'].preferences
+        prefs = preferences.addons[__package__].preferences
         
         scn = bpy.context.scene
         sel_strips = bpy.context.selected_sequences

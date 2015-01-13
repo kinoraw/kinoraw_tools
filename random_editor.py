@@ -40,7 +40,7 @@ class RandomScratchOperator(bpy.types.Operator):
     def invoke(self, context, event):
         
         preferences = context.user_preferences
-        random_frames = preferences.addons['kinoraw_tools'].preferences.random_frames
+        random_frames = preferences.addons[__package__].preferences.random_frames
 
         sce = context.scene
         seq=sce.sequence_editor
@@ -191,7 +191,7 @@ class RandomEditorPanel(bpy.types.Panel):
             strip = functions.act_strip(context)
             scn = context.scene
             preferences = context.user_preferences
-            prefs = preferences.addons['kinoraw_tools'].preferences
+            prefs = preferences.addons[__package__].preferences
             if scn and scn.sequence_editor and scn.sequence_editor.active_strip:
                 if prefs.use_random_editor:
                     return strip.type in ('META')
@@ -207,7 +207,7 @@ class RandomEditorPanel(bpy.types.Panel):
     def draw(self, context):
 
         preferences = context.user_preferences
-        prefs = preferences.addons['kinoraw_tools'].preferences
+        prefs = preferences.addons[__package__].preferences
 
         layout = self.layout
         layout.label("______ cut duration:)")

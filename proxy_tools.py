@@ -14,7 +14,7 @@ proxy_qualities = [  ( "1", "25%", "" ), ( "2", "50%", "" ),
 
 def setup_proxy(context, strip, size):
     preferences = context.user_preferences
-    prefs = preferences.addons['kinoraw_tools'].preferences
+    prefs = preferences.addons[__package__].preferences
 
     # set up proxy settings
     strip.use_proxy = True
@@ -61,9 +61,9 @@ def create_proxy(context, strip, size, res):
     newres = (int(int(res[0])/div), int(int(res[1])/div))
 
     preferences = context.user_preferences
-    proxy_dir = preferences.addons['kinoraw_tools'].preferences.proxy_dir
-    scripts = preferences.addons['kinoraw_tools'].preferences.proxy_scripts
-    ffmpeg_command = preferences.addons['kinoraw_tools'].preferences.ffmpeg_command
+    proxy_dir = preferences.addons[__package__].preferences.proxy_dir
+    scripts = preferences.addons[__package__].preferences.proxy_scripts
+    ffmpeg_command = preferences.addons[__package__].preferences.ffmpeg_command
 
     functions.create_folder(proxy_dir)
 
@@ -150,9 +150,9 @@ class CreateProxyOperator(bpy.types.Operator):
     def execute(self, context):
 
         preferences = context.user_preferences
-        proxy_dir = preferences.addons['kinoraw_tools'].preferences.proxy_dir
-        scripts = preferences.addons['kinoraw_tools'].preferences.proxy_scripts
-        proxy_scripts_path = preferences.addons['kinoraw_tools'].preferences.proxy_scripts_path
+        proxy_dir = preferences.addons[__package__].preferences.proxy_dir
+        scripts = preferences.addons[__package__].preferences.proxy_scripts
+        proxy_scripts_path = preferences.addons[__package__].preferences.proxy_scripts_path
         for strip in context.selected_editable_sequences:
 
             # get resolution from active strip
@@ -241,7 +241,7 @@ class CreateProxyToolPanel(bpy.types.Panel):
             strip = functions.act_strip(context)
             scn = context.scene
             preferences = context.user_preferences
-            prefs = preferences.addons['kinoraw_tools'].preferences
+            prefs = preferences.addons[__package__].preferences
             if scn and scn.sequence_editor and scn.sequence_editor.active_strip:
                 if prefs.use_proxy_tools:
                     return strip.type in ('MOVIE')
@@ -255,7 +255,7 @@ class CreateProxyToolPanel(bpy.types.Panel):
     def draw(self, context):
 
         preferences = context.user_preferences
-        prefs = preferences.addons['kinoraw_tools'].preferences
+        prefs = preferences.addons[__package__].preferences
 
         layout = self.layout
         layout.prop(prefs, "use_internal_proxy", text="use BI proxy builder")

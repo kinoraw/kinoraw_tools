@@ -200,11 +200,7 @@ class Sequencer_Extra_ReadExifData(bpy.types.Operator):
         return {'FINISHED'}
 
 
-def sequencer_add_menu_func(self, context):
-    # menu to show recursive load operators
-    self.layout.operator('sequencerextra.recursiveload', 
-    text='recursive load from browser', icon='PLUGIN')
-    self.layout.separator()
+
 
 class ExifInfoPanel(bpy.types.Panel):
     """Creates a Panel in the Object properties window"""
@@ -219,7 +215,7 @@ class ExifInfoPanel(bpy.types.Panel):
             strip = functions.act_strip(context)
             scn = context.scene
             preferences = context.user_preferences
-            prefs = preferences.addons['kinoraw_tools'].preferences
+            prefs = preferences.addons[__package__].preferences
             
             if scn and scn.sequence_editor and scn.sequence_editor.active_strip:
                 if prefs.use_exif_panel:
