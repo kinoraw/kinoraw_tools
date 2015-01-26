@@ -673,19 +673,6 @@ class Jumptocut(bpy.types.Panel):
 
         
 
-        row=layout.row()
-        row.label("Meta tools:")
-
-        row=layout.row(align=True)
-        split = row.split(percentage=0.99)
-        colR2 = split.column()
-        row1 = colR2.row(align=True)
-        row1.operator("sequencerextra.metacopy", icon="COPYDOWN", text="meta-copy")
-        row1.operator("sequencerextra.metapaste", icon='PASTEDOWN', text="paste-snap")
-        
-        split = row.split(percentage=0.99)
-        colR3 = split.column()
-        colR3.operator('sequencerextra.meta_separate_trim', text='unMeta & Trim', icon='ALIGN')
         
         row=layout.row(align=True)
         row.label("Adjust Start and End to:")
@@ -708,6 +695,19 @@ class Jumptocut(bpy.types.Panel):
         row.operator('sequencerextra.extrahandles', text='both', icon='PMARKER').side=1
         row.operator('sequencerextra.extrahandles', text='right', icon='TRIA_RIGHT').side=2
 
+        row=layout.row()
+        row.label("Meta tools:")
+
+        row=layout.row(align=True)
+        split = row.split(percentage=0.99)
+        colR2 = split.column()
+        row1 = colR2.row(align=True)
+        row1.operator("sequencerextra.metacopy", icon="COPYDOWN", text="meta-copy")
+        row1.operator("sequencerextra.metapaste", icon='PASTEDOWN', text="paste-snap")
+        
+        split = row.split(percentage=0.99)
+        colR3 = split.column()
+        colR3.operator('sequencerextra.meta_separate_trim', text='unMeta & Trim', icon='ALIGN')
         
 
 @persistent
