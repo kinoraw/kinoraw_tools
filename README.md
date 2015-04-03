@@ -4,29 +4,59 @@ a compilation of addons to improve video editing with blender's VSE
 
 (Tested with blender 2.74)
 
+![kinoraw addon](/imgs/kinoraw_addon.png?raw=true "kinoraw addon")
+
+Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, 
+
 ##jump to cut panel
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
-###main controls
+### Main Controls
 
-![Alt text](/imgs/jump_to_cut_panel_001.png?raw=true "Optional Title")
+![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
-###extra tools
+### Extra Tools
 
 Bli bli bli bla bli bla bli bli, **sequencer extra actions** Bli bli bli bla bli bla bli bli
 
-![Alt text](/imgs/jump_to_cut_tools2.png?raw=true "Optional Title")
+![kinoraw addon](/imgs/jump_to_cut_tools2.png?raw=true "kinoraw addon")
 
 Bli bli bli bla bli bla bli bli, ** in/out tools ** Bli bli bli bla bli bla bli bli
 
-![Alt text](/imgs/jump_to_cut_tools1.png?raw=true "Optional Title")
+![kinoraw addon](/imgs/jump_to_cut_tools1.png?raw=true "kinoraw addon")
 
 Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
 
-![Alt text](/imgs/jump_to_cut_tools3.png?raw=true "Optional Title")
+![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
+
+### Strip Data
+
+Bli bli bli bla bli bla bli bli, **accesible data from selected strip** Bli bli bli bla bli bla bli bli
+
+![kinoraw addon](/imgs/jump_to_cut_movie.png?raw=true "kinoraw addon")
+
+Bli bli bli bla bli bla bli bli, ** in/out tools ** Bli bli bli bla bli bla bli bli
+
+![kinoraw addon](/imgs/jump_to_cut_sound.png?raw=true "kinoraw addon")
+
+Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
+
+![kinoraw addon](/imgs/jump_to_cut_image.png?raw=true "kinoraw addon")
+
+Bli bli bli bla bli bla bli bli, **accesible data from selected strip** Bli bli bli bla bli bla bli bli
+
+![kinoraw addon](/imgs/jump_to_cut_wipe.png?raw=true "kinoraw addon")
+
+Bli bli bli bla bli bla bli bli, ** in/out tools ** Bli bli bli bla bli bla bli bli
+
+![kinoraw addon](/imgs/jump_to_cut_color.png?raw=true "kinoraw addon")
+
+Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
+
+![kinoraw addon](/imgs/jump_to_cut_speed.png?raw=true "kinoraw addon")
 
 
 
