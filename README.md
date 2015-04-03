@@ -5,7 +5,34 @@ a compilation of addons to improve video editing with blender's VSE
 
 (Tested with blender 2.74)
 
+jump to cut panel
+----------------
+
+Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
+
+main controls
+_____________
+
 ![Alt text](/imgs/jump_to_cut_panel_001.png?raw=true "Optional Title")
+
+Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
+
+extra tools
+_____________
+
+![Alt text](/imgs/jump_to_cut_tools1.png?raw=true "Optional Title")
+
+Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
+
+![Alt text](/imgs/jump_to_cut_tools2.png?raw=true "Optional Title")
+![Alt text](/imgs/jump_to_cut_tools3.png?raw=true "Optional Title")
+
+
+
+
+
+
+
 
 
 here is some old related documentation:
