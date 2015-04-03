@@ -65,26 +65,26 @@ class OBJECT_OT_Setinout(bpy.types.Operator):
                 #print(tl_start,tl_end)
 
         
-        if scn.auto_markers:
-            scn.in_marker = tl_start
-            scn.out_marker = tl_end
+        if scn.kr_auto_markers:
+            scn.kr_in_marker = tl_start
+            scn.kr_out_marker = tl_end
         else:
-            scn.in_marker = tl_start
-            scn.out_marker = tl_end
+            scn.kr_in_marker = tl_start
+            scn.kr_out_marker = tl_end
 
             if "IN" in markers:
                 mark=markers["IN"]
-                mark.frame=scn.in_marker
+                mark.frame=scn.kr_in_marker
             else:
                 mark=markers.new(name="IN")
-                mark.frame=scn.in_marker   
+                mark.frame=scn.kr_in_marker   
 
             if "OUT" in markers:
                 mark=markers["OUT"]
-                mark.frame=scn.out_marker
+                mark.frame=scn.kr_out_marker
             else:
                 mark=markers.new(name="OUT")
-                mark.frame=scn.in_marker 
+                mark.frame=scn.kr_in_marker 
 
         return {'FINISHED'}
 
@@ -164,25 +164,25 @@ class OBJECT_OT_Sourcein(bpy.types.Operator):  #Operator source in
         seq = scn.sequence_editor
         markers=scn.timeline_markers
         
-        if scn.auto_markers:
-            scn.in_marker = scn.frame_current
+        if scn.kr_auto_markers:
+            scn.kr_in_marker = scn.frame_current
 
         else:
-            scn.in_marker = scn.frame_current
+            scn.kr_in_marker = scn.frame_current
             if "IN" in markers:
                 mark=markers["IN"]
-                mark.frame=scn.in_marker
+                mark.frame=scn.kr_in_marker
             else:
                 mark=markers.new(name="IN")
-                mark.frame=scn.in_marker   
+                mark.frame=scn.kr_in_marker   
 
             #limit OUT marker position with IN marker
-            if scn.in_marker > scn.out_marker:
-                scn.out_marker = scn.in_marker
+            if scn.kr_in_marker > scn.kr_out_marker:
+                scn.kr_out_marker = scn.kr_in_marker
 
             if "OUT" in markers:
                 mark=markers["OUT"]
-                mark.frame=scn.out_marker
+                mark.frame=scn.kr_out_marker
                         
 
         for m in markers:
@@ -215,22 +215,22 @@ class OBJECT_OT_Sourceout(bpy.types.Operator):  #Operator source out
         seq = scn.sequence_editor
         markers=scn.timeline_markers
         
-        if scn.auto_markers:
-            scn.out_marker = scn.frame_current
+        if scn.kr_auto_markers:
+            scn.kr_out_marker = scn.frame_current
 
         else:
-            scn.out_marker = scn.frame_current
+            scn.kr_out_marker = scn.frame_current
 
             #limit OUT marker position with IN marker
-            if scn.out_marker < scn.in_marker:
-                scn.out_marker = scn.in_marker
+            if scn.kr_out_marker < scn.kr_in_marker:
+                scn.kr_out_marker = scn.kr_in_marker
 
             if "OUT" in markers:
                 mark=markers["OUT"]
-                mark.frame=scn.out_marker
+                mark.frame=scn.kr_out_marker
             else:
                 mark=markers.new(name="OUT")
-                mark.frame=scn.out_marker   
+                mark.frame=scn.kr_out_marker   
                         
         for m in markers:
             m.select = False
@@ -597,118 +597,11 @@ class OBJECT_OT_Extrahandles(bpy.types.Operator):  #Operator paste source in/out
 
 
 
-
-
 #-----------------------------------------------------------------------------------------------------
 
 
-
-class Jumptocut(bpy.types.Panel):
-    bl_space_type = "SEQUENCE_EDITOR"
-    bl_region_type = "UI"
-    bl_label = "Jump to Cut"
-
-    @classmethod
-    def poll(self, context):
-        if context.space_data.view_type in {'SEQUENCER', 'SEQUENCER_PREVIEW'}:
-            strip = functions.act_strip(context)
-            scn = context.scene
-            preferences = context.user_preferences
-            prefs = preferences.addons[__package__].preferences
-            if scn and scn.sequence_editor:
-                if prefs.use_jumptocut:
-                    return True
-        else:
-            return False
-
-    def draw_header(self, context):
-        layout = self.layout
-        layout.label(text="", icon="IPO_BOUNCE")
-
-    def draw(self, context):
-        scn = context.scene
-
-        preferences = context.user_preferences
-        prefs = preferences.addons[__package__].preferences
-        
-        layout = self.layout
-
-        row=layout.row(align=True)
-        split=row.split()
-        colR1 = split.column()
-        row1=colR1.row(align=True)
-        row1.operator("sequencer.strip_jump", icon="PLAY_REVERSE", text="cut").next=False
-        row1.operator("sequencer.strip_jump", icon='PLAY', text="cut").next=True
-        colR2 = split.column()
-        row2=colR2.row(align=True)
-        row2.operator("screen.marker_jump", icon="TRIA_LEFT", text="marker").next=False
-        row2.operator("screen.marker_jump", icon='TRIA_RIGHT', text="marker").next=True
-
-        row=layout.row(align=True)
-        row.prop(prefs, "use_io_tools", text="In/Out tools:")
-
-        if prefs.use_io_tools:
-            row=layout.row(align=True)
-            split=row.split(percentage=0.7)
-            colR1 = split.column()
-            row1=colR1.row(align=True)
-            row1.operator("sequencerextra.sourcein", icon="MARKER_HLT", text="set IN")
-            row1.operator("sequencerextra.sourceout", icon='MARKER_HLT', text="set OUT")
-            colR3 = split.column()
-            colR3.operator("sequencerextra.setinout", icon="ARROW_LEFTRIGHT", text="selected")
-            
-            row_markers=layout.row(align=True)
-            split=row_markers.split(percentage=0.7)
-            colR1 = split.column()
-            row1=colR1.row(align=True)
-            if scn.auto_markers == False:
-                row1.prop(scn, "auto_markers", text="auto markers")
-            else:
-                row1.prop(scn, "auto_markers", text="")
-                row1.prop(scn, "in_marker")
-                row1.prop(scn, "out_marker")
-                row1.active = scn.auto_markers
-            colR3 = split.column()
-            colR3.operator("sequencerextra.triminout", icon="FULLSCREEN_EXIT", text="trim",emboss=True)
-
         
 
-        
-        row=layout.row(align=True)
-        row.label("Adjust Start and End to:")
-        row=layout.row(align=True)
-        row.operator("sequencerextra.setstartend", icon="PREVIEW_RANGE", text="IN/OUT")
-        row.operator('timeextra.trimtimelinetoselection', text='Selection', icon='PREVIEW_RANGE')
-        row.operator('timeextra.trimtimeline', text='All', icon='PREVIEW_RANGE')
-
-        row=layout.row(align=True)
-        row.label("Snap to:")    
-        #row=layout.row(align=True)
-        row.operator('sequencerextra.extrasnap', text='left', icon='SNAP_ON').align=0
-        row.operator('sequencerextra.extrasnap', text='center', icon='SNAP_ON').align=1
-        row.operator('sequencerextra.extrasnap', text='right', icon='SNAP_ON').align=2
-
-        row=layout.row(align=True)
-        row.label("Select handlers:")
-        #row=layout.row(align=True)
-        row.operator('sequencerextra.extrahandles', text='left', icon='TRIA_LEFT').side=0
-        row.operator('sequencerextra.extrahandles', text='both', icon='PMARKER').side=1
-        row.operator('sequencerextra.extrahandles', text='right', icon='TRIA_RIGHT').side=2
-
-        row=layout.row()
-        row.label("Meta tools:")
-
-        row=layout.row(align=True)
-        split = row.split(percentage=0.99)
-        colR2 = split.column()
-        row1 = colR2.row(align=True)
-        row1.operator("sequencerextra.metacopy", icon="COPYDOWN", text="meta-copy")
-        row1.operator("sequencerextra.metapaste", icon='PASTEDOWN', text="paste-snap")
-        
-        split = row.split(percentage=0.99)
-        colR3 = split.column()
-        colR3.operator('sequencerextra.meta_separate_trim', text='unMeta & Trim', icon='ALIGN')
-        
 
 @persistent
 def marker_handler(scn):
@@ -716,28 +609,28 @@ def marker_handler(scn):
     functions.initSceneProperties(context)
     #preferences = context.user_preferences
     #prefs = preferences.addons[__package__].preferences 
-    if scn.auto_markers:
+    if scn.kr_auto_markers:
         #scn = context.scene
         
         markers =scn.timeline_markers
         
         if "IN" in markers:
             mark=markers["IN"]
-            mark.frame=scn.in_marker
+            mark.frame=scn.kr_in_marker
         else:
             mark=markers.new(name="IN")
-            mark.frame=scn.in_marker           
+            mark.frame=scn.kr_in_marker           
 
         if "OUT" in markers:
             mark=markers["OUT"]
-            mark.frame=scn.out_marker
+            mark.frame=scn.kr_out_marker
         else:
             mark= markers.new(name="OUT")
-            mark.frame=scn.out_marker
+            mark.frame=scn.kr_out_marker
 
         #limit OUT marker position with IN marker
-        if scn.in_marker > scn.out_marker:
-            scn.out_marker = scn.in_marker
+        if scn.kr_in_marker > scn.kr_out_marker:
+            scn.kr_out_marker = scn.kr_in_marker
 
         return {'FINISHED'}      
     else:

@@ -97,7 +97,6 @@ class RandomScratchOperator(bpy.types.Operator):
         return {'FINISHED'} 
 
 
-
 class LoadRandomEditOperator(bpy.types.Operator):
     """ Random Editor Operator """
     bl_idname = "sequencer.loadrandomeditoperator"
@@ -173,9 +172,6 @@ class LoadRandomEditOperator(bpy.types.Operator):
             self.report({'WARNING'}, "there is no IN and OUT")
         bpy.ops.sequencer.reload()             
         return {'FINISHED'}      
-
-
-
 
     
 class RandomEditorPanel(bpy.types.Panel):

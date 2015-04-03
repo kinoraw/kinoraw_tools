@@ -32,7 +32,6 @@ from . import functions
 from . import exiftool
 
 
-
 class Sequencer_Extra_RecursiveLoader(bpy.types.Operator):
     bl_idname = "sequencerextra.recursiveload"
     bl_label = "recursive load"
@@ -65,14 +64,14 @@ class Sequencer_Extra_RecursiveLoader(bpy.types.Operator):
     def invoke(self, context, event):
         scn = context.scene
         try:
-            self.recursive = scn.default_recursive
-            self.recursive_select_by_extension = scn.default_recursive_select_by_extension
-            self.ext = scn.default_ext 
+            self.recursive = scn.kr_recursive
+            self.recursive_select_by_extension = scn.kr_recursive_select_by_extension
+            self.ext = scn.kr_default_ext 
         except AttributeError:
             functions.initSceneProperties(context)
-            self.recursive = scn.default_recursive
-            self.recursive_select_by_extension = scn.default_recursive_select_by_extension
-            self.ext = scn.default_ext 
+            self.recursive = scn.kr_recursive
+            self.recursive_select_by_extension = scn.kr_recursive_select_by_extension
+            self.ext = scn.kr_default_ext 
                 
         return context.window_manager.invoke_props_dialog(self)  
         
@@ -85,7 +84,7 @@ class Sequencer_Extra_RecursiveLoader(bpy.types.Operator):
                     bpy.ops.sequencerextra.placefromfilebrowser()
                 except:
                     print("Error loading file (recursive loader error): ", i[1])
-                    functions.add_marker(context, i[1])
+                    functions.add_marker(context, i[1], scn.frame_current)
                     self.report({'ERROR_INVALID_INPUT'}, 'Error loading file ')
                     pass
 
@@ -102,14 +101,14 @@ class Sequencer_Extra_RecursiveLoader(bpy.types.Operator):
             self.loader(context, functions.sortlist(functions.onefolder(\
             context, self.recursive_select_by_extension, self.ext)))
         try:   
-            scn.default_recursive = self.recursive 
-            scn.default_recursive_select_by_extension = self.recursive_select_by_extension 
-            scn.default_ext = self.ext 
+            scn.kr_recursive = self.recursive 
+            scn.kr_recursive_select_by_extension = self.recursive_select_by_extension 
+            scn.kr_default_ext = self.ext 
         except AttributeError:
             functions.initSceneProperties(context)
-            self.recursive = scn.default_recursive
-            self.recursive_select_by_extension = scn.default_recursive_select_by_extension
-            self.ext = scn.default_ext
+            self.recursive = scn.kr_recursive
+            self.recursive_select_by_extension = scn.kr_recursive_select_by_extension
+            self.ext = scn.kr_default_ext
             
         return {'FINISHED'}
 
@@ -198,8 +197,6 @@ class Sequencer_Extra_ReadExifData(bpy.types.Operator):
         strip = context.scene.sequence_editor.active_strip
         sce['metadata'] = getexifdata(strip)
         return {'FINISHED'}
-
-
 
 
 class ExifInfoPanel(bpy.types.Panel):

@@ -308,7 +308,7 @@ class CreateAudioToolPanel(bpy.types.Panel):
 
         if prefs.audio_scripts:
             layout = self.layout
-            layout.prop(prefs, "audio_scripts_path", text="path for audio scripts")
+            layout.prop(prefs, "audio_scripts_path", text="path for scripts")
 
         layout = self.layout
         layout.prop(prefs, "audio_use_external_links", text="external audio sync")
@@ -316,10 +316,9 @@ class CreateAudioToolPanel(bpy.types.Panel):
 
         if prefs.audio_use_external_links:
             layout = self.layout
-            layout.prop(prefs, "audio_external_filename", text="file to store sync info")
+            layout.prop(prefs, "audio_external_filename", text="sync data")
 
             layout = self.layout
-            layout.label("sync options:")
             row = layout.row(align=True)
             row.operator("sequencer.external_audio_set_sync", text="set sync")
             row.operator("sequencer.external_audio_reload", text="reload audio")

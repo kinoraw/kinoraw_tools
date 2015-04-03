@@ -41,3 +41,9 @@ to get exif info panel you need to install exiftools:
     sudo apt-get install libimage-exiftool-perl
 
 it is suposed to work fine with windows and mac. Some feedback with steps to acomplish this will be apreciated.
+
+
+changelog:
+
+change default settings for automarkers. Now it is off by default.
+

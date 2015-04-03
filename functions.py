@@ -33,133 +33,108 @@ imb_ext_image = [
     # IMG QT
     ".gif", ".psd", ".pct", ".pict", ".pntg", ".qtif"]
 
+imb_ext_audio = [
+    ".wav", ".ogg", ".oga", ".mp3", ".mp2", ".ac3", ".aac",
+    ".flac", ".wma", ".eac3", ".aif", ".aiff", ".m4a"]
 
 imb_ext_movie = [
     ".avi", ".flc", ".mov", ".movie", ".mp4", ".m4v", ".m2v",
-    ".m2t", ".m2ts", ".mts", ".mv", ".avs", ".wmv", ".ogv",
+    ".m2t", ".m2ts", ".mts", ".mv", ".avs", ".wmv", ".ogv", ".ogg",
     ".dv", ".mpeg", ".mpg", ".mpg2", ".vob", ".mkv", ".flv",
     ".divx", ".xvid", ".mxf"]
     
 movieextdict = [("1", ".avi", ""),
-            ("2", ".flc", ""),
-            ("3", ".mov", ""),
-            ("4", ".movie", ""),
-            ("5", ".mp4", ""),
-            ("6", ".m4v", ""),
-            ("7", ".m2v", ""),
-            ("8", ".m2t", ""),
-            ("9", ".m2ts", ""),
-            ("10", ".mts", ""),
-            ("11", ".mv", ""),
-            ("12", ".avs", ""),
-            ("13", ".wmv", ""),
-            ("14", ".ogv", ""),
-            ("15", ".dv", ""),
-            ("16", ".mpeg", ""),
-            ("17", ".mpg", ""),
-            ("18", ".mpg2", ""),
-            ("19", ".vob", ""),
-            ("20", ".mkv", ""),
-            ("21", ".flv", ""),
-            ("22", ".divx", ""),
-            ("23", ".xvid", ""),
+            ("2", ".flc", ""), ("3", ".mov", ""),
+            ("4", ".movie", ""), ("5", ".mp4", ""),
+            ("6", ".m4v", ""), ("7", ".m2v", ""),
+            ("8", ".m2t", ""), ("9", ".m2ts", ""),
+            ("10", ".mts", ""), ("11", ".mv", ""),
+            ("12", ".avs", ""), ("13", ".wmv", ""),
+            ("14", ".ogv", ""), ("15", ".dv", ""),
+            ("16", ".mpeg", ""), ("17", ".mpg", ""),
+            ("18", ".mpg2", ""), ("19", ".vob", ""),
+            ("20", ".mkv", ""), ("21", ".flv", ""),
+            ("22", ".divx", ""), ("23", ".xvid", ""), 
             ("24", ".mxf", "")]
-
 
 # Functions
 
-# initSceneProperties is ONLY for varaibles that should 
-# be keeped with the blend file. Any other addon preferences
-# should go to the addon preferences operator in __init__
-# TODO: recode operator_exta_actions.py
+
+
 def initSceneProperties(context):
+    # initSceneProperties is ONLY for varaibles that should 
+    # be keeped with the blend file. Any other addon preferences
+    # should go to the addon preferences operator in __init__
     try:
-        if context.scene.scene_initialized == True:
+        if context.scene.kr_scn_init == True:
             return False
     except AttributeError:
         pass
 
     scn = context.scene
 
-    bpy.types.Scene.auto_markers = BoolProperty(
-        name='auto_markers',
+    # JUMP TO CUT
+    bpy.types.Scene.kr_auto_markers = BoolProperty(
+        name='kr_auto_markers',
         description='activate auto markers',
-        default=True)
-    scn.auto_markers = True
-
-    bpy.types.Scene.in_marker = IntProperty(
+        default=False)
+    scn.kr_auto_markers = False
+    
+    bpy.types.Scene.kr_in_marker = IntProperty(
         name='in',
         description='in frame position',
         min=-30000, max=30000,
         default=0)
-    scn.in_marker = 0
-
-    bpy.types.Scene.out_marker = IntProperty(
+    scn.kr_in_marker = 0
+    
+    bpy.types.Scene.kr_out_marker = IntProperty(
         name='out',
         description='out frame position',
-        min=scn.in_marker, max=30000,
+        min=scn.kr_in_marker, max=30000,
         default=250)
-    scn.out_marker = 250
-
-    bpy.types.Scene.default_fade_duration = IntProperty(
+    scn.kr_out_marker = 250
+    
+    # SEQUENCER EXTRA ACTIONS
+    bpy.types.Scene.kr_default_fade_duration = IntProperty(
         name='Duration',
         description='Number of frames to fade',
         min=1, max=250,
         default=scn.render.fps)
-    scn.default_fade_duration = scn.render.fps
-
-    bpy.types.Scene.default_fade_amount = FloatProperty(
+    scn.kr_default_fade_duration = scn.render.fps
+    
+    bpy.types.Scene.kr_default_fade_amount = FloatProperty(
         name='Amount',
         description='Maximum value of fade',
         min=0.0,
         max=100.0,
         default=1.0)
-    scn.default_fade_amount = 1.0
+    scn.kr_default_fade_amount = 1.0
 
-    bpy.types.Scene.default_distribute_offset = IntProperty(
-        name='Offset',
-        description='Number of frames between strip start frames',
-        min=1,
-        max=250,
-        default=2)
-    scn.default_distribute_offset = 2
-
-    bpy.types.Scene.default_distribute_reverse = BoolProperty(
-        name='Reverse Order',
-        description='Reverse the order of selected strips',
-        default=False)
-    scn.default_distribute_reverse = False
-
-    bpy.types.Scene.default_recursive = BoolProperty(
+    # RECURSIVE LOADER
+    bpy.types.Scene.kr_recursive = BoolProperty(
         name='Recursive',
         description='Load in recursive folders',
         default=False)
-    scn.default_recursive = False
+    scn.kr_recursive = False
 
-    bpy.types.Scene.default_recursive_select_by_extension = BoolProperty(
+    bpy.types.Scene.kr_recursive_select_by_extension = BoolProperty(
         name='Recursive ext',
         description='Load only clips with selected extension',
         default=False)
-    scn.default_recursive_select_by_extension = False
-
-    bpy.types.Scene.default_ext = EnumProperty(
+    scn.kr_recursive_select_by_extension = False
+    
+    bpy.types.Scene.kr_default_ext = EnumProperty(
         items=movieextdict,
         name="ext enum",
         default="3")
-    scn.default_ext = "3"
-
-    bpy.types.Scene.scene_initialized = BoolProperty(
+    scn.kr_default_ext = "3"
+    
+    bpy.types.Scene.kr_scn_init = BoolProperty(
         name='Init',
         default=False)
-    scn.scene_initialized = True
+    scn.kr_scn_init = True
 
     return True
-
-
-def deselect_all_strips(context):
-    "deselect all strips"
-    for i in context.scene.sequence_editor.sequences_all:
-        i.select = False
 
 def get_selected_strips(context):
     "return a list of selected strips"
@@ -169,23 +144,17 @@ def get_selected_strips(context):
             strips.append(i)
     return strips
 
-def activate_strip(context,strip):
-    "select and activate strip"
-    context.scene.sequence_editor.active_strip = strip
-
 def create_folder(path):
     if not os.path.isdir(bpy.path.abspath(path)):
         folder = bpy.path.abspath(path)
         command = "mkdir "+folder
         subprocess.call(command,shell=True)
 
-
-def add_marker(context, text):
-    scene = context.scene
-    markers = scene.timeline_markers
+def add_marker(context, text, frame):
+    scn = context.scene
+    markers = scn.timeline_markers
     mark = markers.new(name=text)
-    mark.frame = scene.frame_current
-
+    mark.frame = frame
 
 def act_strip(context):
     try:
@@ -193,26 +162,7 @@ def act_strip(context):
     except AttributeError:
         return None
 
-
 def detect_strip_type(filepath):
-    imb_ext_image = [
-    # IMG
-    ".png", ".tga", ".bmp", ".jpg", ".jpeg", ".sgi", ".rgb",
-    ".rgba", ".tif", ".tiff", ".tx", ".jp2", ".hdr", ".dds",
-    ".dpx", ".cin", ".exr",
-    # IMG QT
-    ".gif", ".psd", ".pct", ".pict", ".pntg", ".qtif"]
-
-    imb_ext_movie = [
-    ".avi", ".flc", ".mov", ".movie", ".mp4", ".m4v", ".m2v",
-    ".m2t", ".m2ts", ".mts", ".mv", ".avs", ".wmv", ".ogv", ".ogg",
-    ".dv", ".mpeg", ".mpg", ".mpg2", ".vob", ".mkv", ".flv",
-    ".divx", ".xvid", ".mxf"]
-
-    imb_ext_audio = [
-    ".wav", ".ogg", ".oga", ".mp3", ".mp2", ".ac3", ".aac",
-    ".flac", ".wma", ".eac3", ".aif", ".aiff", ".m4a"]
-
     extension = os.path.splitext(filepath)[1]
     extension = extension.lower()
     if extension in imb_ext_image:
@@ -226,6 +176,7 @@ def detect_strip_type(filepath):
 
     return type
 
+# recursive load functions 
 
 def getpathfrombrowser(context):
     '''
@@ -244,7 +195,6 @@ def getpathfrombrowser(context):
         return {'CANCELLED'}
     path = params.directory
     return path
-
 
 def getfilepathfrombrowser(context):
     '''
@@ -270,7 +220,6 @@ def getfilepathfrombrowser(context):
     filename = params.filename
     return path, filename
 
-
 def setpathinbrowser(context, path, file):
     '''
     set path and file in the filebrowser
@@ -291,15 +240,12 @@ def setpathinbrowser(context, path, file):
     params.filename = file
     return path, params
 
-
 def sortlist(filelist):
     '''
     given a list of tuplas (path, filename) returns a list sorted by filename
     '''
     filelist_sorted = sorted(filelist, key=operator.itemgetter(1))
     return filelist_sorted
-    
-# recursive load functions 
 
 def onefolder(context, recursive_select_by_extension, ext):
     '''
@@ -355,9 +301,8 @@ def recursive(context, recursive_select_by_extension, ext):
                         filelist.append((root, file))
     return filelist   
 
-
-
 # jump to cut functions
+
 def triminout(strip, sin, sout):
 
     """trim the strip to in and out, and returns 
@@ -385,79 +330,13 @@ def triminout(strip, sin, sout):
 
     return remove
 
-def searchprev(j, list):
-    list.sort(reverse=True)
-    for i in list:
-        if i < j:
-            result = i
-            break
-    else: result = j
-    return result
 
-def searchnext(j, list):
-    list.sort()
-    for i in list:
-        if i > j:
-            result = i
-            break
-    else: result = j
-    return result
-
-# not used 
-def geteditpoints_old(seq):
-    #this create a list of editpoints including strips from
-    # inside metastrips. It reads only 1 level into the metastrip
-    editpoints = []
-    striplist = []
-    metalist = []
-    if seq:
-        for i in seq.sequences:
-            if i.type == 'META':
-                metalist.append(i)
-                start = i.frame_start + i.frame_offset_start
-                end = start + i.frame_final_duration
-                editpoints.append(start)
-                editpoints.append(end)
-            else:
-                striplist.append(i)
-        for i in metalist:
-            for j in i.sequences:
-                striplist.append(j)
-        for i in striplist:
-            start = i.frame_start + i.frame_offset_start
-            end = start + i.frame_final_duration
-            editpoints.append(start)
-            editpoints.append(end)
-            #print(start," ",end)
-    return editpoints
-
-def geteditpoints(context):
-    #this create a list of editpoints from current meta_stack level
-    scn = context.scene
-    seq = scn.sequence_editor
-
-    editpoints=[]
-    striplist=[]
-
-    if len(seq.meta_stack) > 0:
-        striplist = seq.sequences_all[seq.meta_stack[len(seq.meta_stack)-1].name].sequences 
-    else:
-        striplist = seq.sequences
-
-    for strip in striplist:
-        i = seq.sequences_all[strip.name]
-        start = i.frame_start + i.frame_offset_start - i.frame_still_start
-        end = start + i.frame_final_duration 
-        editpoints.append(start)
-        editpoints.append(end)
-    return editpoints
-
-#------------ .........................  REVISAR
+#------------ random editor functions.
 
 def randompartition(lst,n,rand):
     division = len(lst) / float(n)
     lista = []
-    for i in range(n):	lista.append(division)
+    for i in range(n):  lista.append(division)
     var=0
     for i in range(n-1):
         lista[i]+= random.randint(-int(rand*division),int(rand*division))
@@ -474,9 +353,6 @@ def randompartition(lst,n,rand):
         count += int(lista[i]) 
     return newlist
 
-
-#------------ random editor functions.
-
 def randomframe(strip):
     #random frame between a and b
     a = strip.frame_start
@@ -485,9 +361,7 @@ def randomframe(strip):
     #print(a, a+b, rand)
     return rand
 
-
-#
-"""
+# ???
 def get_matching_markers(scene, name=None):
     '''return a list of markers with same name 
      from the scene, or all markers if name is None'''
@@ -499,7 +373,7 @@ def get_matching_markers(scene, name=None):
             selected_markers.append(mark.frame)
     return selected_markers
 
-
+# ???
 def generate_subsets_list(number_of_subsets):
     #generate marker subsets list
     subset_list = []
@@ -507,7 +381,7 @@ def generate_subsets_list(number_of_subsets):
     for subset in range(number_of_subsets):
         subset_list.append(subset_names[subset])
     return subset_list
-"""
+
 
 def get_marker_dict(scene, number_of_subsets):
     '''return a dict where: 
@@ -563,3 +437,72 @@ def random_edit_from_random_subset(cut_dict, sources_dict):
         marker = sources_dict[subset].pop()
         random_edit.append((cut, cut_dict[cut], subset, marker))
     return random_edit
+
+
+# codigo antiguo de jump to cut con fin didactico...
+#
+# def searchprev(j, list):
+#     list.sort(reverse=True)
+#     for i in list:
+#         if i < j:
+#             result = i
+#             break
+#     else: result = j
+#     return resultr
+
+# def searchnext(j, list):
+#     list.sort()
+#     for i in list:
+#         if i > j:
+#             result = i
+#             break
+#     else: result = j
+#     return result
+
+# def geteditpoints_old(seq):
+#     #this create a list of editpoints including strips from
+#     # inside metastrips. It reads only 1 level into the metastrip
+#     editpoints = []
+#     striplist = []
+#     metalist = []
+#     if seq:
+#         for i in seq.sequences:
+#             if i.type == 'META':
+#                 metalist.append(i)
+#                 start = i.frame_start + i.frame_offset_start
+#                 end = start + i.frame_final_duration
+#                 editpoints.append(start)
+#                 editpoints.append(end)
+#             else:
+#                 striplist.append(i)
+#         for i in metalist:
+#             for j in i.sequences:
+#                 striplist.append(j)
+#         for i in striplist:
+#             start = i.frame_start + i.frame_offset_start
+#             end = start + i.frame_final_duration
+#             editpoints.append(start)
+#             editpoints.append(end)
+#             #print(start," ",end)
+#     return editpoints
+
+# def geteditpoints(context):
+#     #this create a list of editpoints from current meta_stack level
+#     scn = context.scene
+#     seq = scn.sequence_editor
+
+#     editpoints=[]
+#     striplist=[]
+
+#     if len(seq.meta_stack) > 0:
+#         striplist = seq.sequences_all[seq.meta_stack[len(seq.meta_stack)-1].name].sequences 
+#     else:
+#         striplist = seq.sequences
+
+#     for strip in striplist:
+#         i = seq.sequences_all[strip.name]
+#         start = i.frame_start + i.frame_offset_start - i.frame_still_start
+#         end = start + i.frame_final_duration 
+#         editpoints.append(start)
+#         editpoints.append(end)
+#     return editpoints

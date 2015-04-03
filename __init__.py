@@ -19,8 +19,8 @@
 bl_info = {
     "name": "Kinoraw Tools",
     "author": "Carlos Padial, Ferhoyo, Turi Scandurra",
-    "version": (0, 2),
-    "blender": (2, 73, 0),
+    "version": (0, 3),
+    "blender": (2, 74, 0),
     "category": "Sequencer",
     "location": "Sequencer",
     "description": "Collection of extra operators to manipulate VSE strips",
@@ -63,81 +63,77 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
     bl_idname = __package__
     bl_option = {'REGISTER'}
 
-    use_glitch_panel = BoolProperty(
-    name = 'glitch panel',
-    default = True)
 
+    # extra_actions
     use_extra_actions_panel = BoolProperty(
-    name = 'extra actions panel',
-    default = True)
-
+        name = 'extra actions panel',
+        default = True)
     mini_extra_actions = BoolProperty(
-    name = 'enable mini UI',
-    default = True)
+        name = 'enable mini UI',
+        default = True)
+    extra_actions_panel_show_trim = BoolProperty(
+        name = 'extra actions panel show trim',
+        default = False)
+    extra_actions_panel_show_info = BoolProperty(
+        name = 'extra actions panel show info',
+        default = False)
+    extra_actions_panel_show_extra = BoolProperty(
+        name = 'extra actions panel show extra info',
+        default = False)
 
+    # exif
     use_exif_panel = BoolProperty(
-    name = 'exif info panel',
-    default = True)
+        name = 'exif info panel',
+        default = False)
 
     # glitch
-
+    use_glitch_panel = BoolProperty(
+        name = 'glitch panel',
+        default = False)
     all_keyframes = BoolProperty(
-    name = 'remove all keyframes',
-    default = True)
-
+        name = 'remove all keyframes',
+        default = True)
     load_glitch = BoolProperty(
-    name = 'load glitch after conversion > UNSTABLE!!!',
-    default = True)
+        name = 'load glitch after conversion > UNSTABLE!!!',
+        default = True)
 
     # jump to cut
-
     use_jumptocut = BoolProperty(
-    name = 'jumptocut panel',
-    default = True)
-
+        name = 'jumptocut panel',
+        default = True)
     use_io_tools = BoolProperty(
-    name = 'enable in and out tools in jumptocut panel',
-    default = True)
+        name = 'enable in and out tools in jumptocut panel',
+        default = False)
 
     # Proxy Tools
-
     use_proxy_tools = BoolProperty(
-    name = 'proxy tools panel',
-    default = True)
-
+        name = 'proxy tools panel',
+        default = False)
     proxy_dir = StringProperty(
-    name = 'Proxy Custom Directory',
-    default = "//proxies/")
-
+        name = 'Proxy Custom Directory',
+        default = "//proxies/")
     proxy_scripts_path = StringProperty(
-    name = 'directory to store proxy scripts',
-    default = "//proxy_scripts/")
-
+        name = 'directory to store proxy scripts',
+        default = "//proxy_scripts/")
     proxy_scripts = BoolProperty(
-    name = 'generate ffmpeg scritps',
-    default = False)
-
+        name = 'generate ffmpeg scritps',
+        default = False)
     ffmpeg_command = StringProperty(
-    name = 'command to generate proxy',
-    default = '''ffmpeg -i {} -vcodec mjpeg -q:v 10 -s {}x{} -an -y {}''')
-
+        name = 'command to generate proxy',
+        default = '''ffmpeg -i {} -vcodec mjpeg -q:v 10 -s {}x{} -an -y {}''')
     use_internal_proxy = BoolProperty(
-    name = 'use internal blender proxy system',
-    default = True)
-
+        name = 'use internal blender proxy system',
+        default = True)
     use_bi_custom_directory = BoolProperty(
-    name = 'Proxy Custom Directory',
-    default = True)
-
+        name = 'Proxy Custom Directory',
+        default = True)
     quality = IntProperty(
         name = 'Quality',
         default = 90,
         min = 0, max = 32767)
-
     tc_list = [  ( "NONE", "No TC in use","" ), ( "RECORD_RUN", "Record Run", "" ),
                     ( "FREE_RUN", "Free Run", "" ), ("FREE_RUN_REC_DATE", "Free Run (rec date)", "" ),
                     ( "RECORD_RUN_NO_GAPS", "Record Run No Gaps", "" )]
-
     timecode = EnumProperty(
         name = "Settings Type", 
         items = tc_list, 
@@ -145,72 +141,57 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
         description = "timecode" ) 
 
     # Audio Tools
-
     use_audio_tools = BoolProperty(
-    name='audio tools panel',
-    default=True)
-    
+        name='audio tools panel',
+        default=False)
     audio_dir = StringProperty(
-    name='path to store extracted audio',
-    default="//audio/")
-
+        name='path to store extracted audio',
+        default="//audio/")
     audio_scripts_path = StringProperty(
-    name='path to store audio scripts',
-    default="//audio_scripts/")
-
+        name='path to store audio scripts',
+        default="//audio_scripts/")
     audio_scripts = BoolProperty(
-    name='generate ffmpeg scritps',
-    default=False)
+        name='generate ffmpeg scritps',
+        default=False)
 
-    # external links
-
+    #  Audio Tools - external links
     audio_use_external_links = BoolProperty(
         name='use external audio linked to movie strips',
         default=False)
-
     audio_external_filename = StringProperty(
-    name='file to store info about linked audio',
-    default="//external_audio_sync_info.txt")
+        name='file to store info about linked audio',
+        default="//external_audio_sync_info.txt")
 
     # eco
-
     use_eco_tools = BoolProperty(
-    name='eco tools panel',
-    default=True)
-
+        name='eco tools panel',
+        default=True)
     eco_value = IntProperty(
         name = 'number of echoes',
         default = 5,
         min = 1, max = 25)
-
     eco_offset = IntProperty(
         name = 'Echo Offset',
         default = 1,
         min = -25000, max = 25000)
-
     eco_use_add_blend_mode = BoolProperty(
         name = 'use_add_blend_mode',
         default = False)
 
     # random editor
-
     use_random_editor = BoolProperty(
-    name='random editor panel',
-    default=True)
-
+        name='random editor panel',
+        default=True)
     random_frames = IntProperty(
             name='frames',
             default=1,
-            min = 1, max = 1000)
-            
+            min = 1, max = 1000)         
     random_selected_scene = StringProperty(
         name = 'selected_scene',
-        default = 'pessics3.limpio')
-        
+        default = 'pessics3.limpio')        
     random_use_marker_subsets = BoolProperty(
         name = 'use_marker_subsets',
-        default = True)
-        
+        default = True)        
     random_number_of_subsets = IntProperty(
         name = 'number_of_subsets',
         default = 3,
@@ -249,7 +230,6 @@ def register():
 
     bpy.utils.register_module(__name__)
  
-
     # Append menu entries
     bpy.types.SEQUENCER_MT_add.prepend(ui.sequencer_add_menu_func)
     bpy.types.SEQUENCER_MT_select.prepend(ui.sequencer_select_menu_func)
@@ -273,7 +253,6 @@ def register():
     kmi.properties.back = True
 
     # jump to cut
-
     kmi = km.keymap_items.new("sequencer.strip_jump",
     'Q', 'PRESS', ctrl=False, shift=False)
     kmi.properties.next=False
@@ -314,6 +293,7 @@ def unregister():
     bpy.types.CLIP_MT_clip.remove(ui.clip_clip_menu_func)
     bpy.types.TIME_MT_frame.remove(ui.time_frame_menu_func)
     bpy.types.TIME_HT_header.remove(ui.time_header_func)
+
 
     #  Remove keyboard shortcut configuration
     kc = bpy.context.window_manager.keyconfigs.addon
