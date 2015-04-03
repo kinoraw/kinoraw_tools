@@ -16,11 +16,16 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ###extra tools
 
-![Alt text](/imgs/jump_to_cut_tools1.png?raw=true "Optional Title")
-
-Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
+Bli bli bli bla bli bla bli bli, **sequencer extra actions** Bli bli bli bla bli bla bli bli
 
 ![Alt text](/imgs/jump_to_cut_tools2.png?raw=true "Optional Title")
+
+Bli bli bli bla bli bla bli bli, ** in/out tools ** Bli bli bli bla bli bla bli bli
+
+![Alt text](/imgs/jump_to_cut_tools1.png?raw=true "Optional Title")
+
+Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
+
 ![Alt text](/imgs/jump_to_cut_tools3.png?raw=true "Optional Title")
 
 
