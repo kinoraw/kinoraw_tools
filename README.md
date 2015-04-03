@@ -42,7 +42,7 @@ Bli bli bli **trim information** bla bli bla bli bli, **soft & hard** Bli bli bl
 
 ![kinoraw addon](/imgs/jump_to_cut_info_color.png?raw=true "kinoraw addon")
 
-bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli
+bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli blau
 
 ![kinoraw addon](/imgs/jump_to_cut_info_wipe.png?raw=true "kinoraw addon")
 
