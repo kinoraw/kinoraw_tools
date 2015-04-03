@@ -74,7 +74,7 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
         description = 'enable mini UI',
         default = True)
     kr_show_info = BoolProperty(
-        name = 'show basic info from selected strip',
+        name = 'show info',
         description = 'show basic info from selected strip',
         default = False)
     kr_show_trim = BoolProperty(
