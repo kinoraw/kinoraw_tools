@@ -204,29 +204,18 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
     def draw(self, context):
 
         layout = self.layout
-        layout.prop(self, "use_exif_panel")
-
-        layout = self.layout
-        layout.prop(self, "use_eco_tools")
-
-        layout = self.layout
-        layout.prop(self, "use_random_editor")
-
-        layout = self.layout
         layout.prop(self, "use_jumptocut")
-
-        # PROXY
         layout = self.layout
         layout.prop(self, "use_proxy_tools")
-
-        # AUDIO
         layout = self.layout
         layout.prop(self, "use_audio_tools")
-
-        # EXTRA ACTIONS
         layout = self.layout
-        layout.prop(self, "use_extra_actions_panel")
-
+        layout.prop(self, "use_exif_panel")
+        layout = self.layout
+        layout.prop(self, "use_eco_tools")
+        layout = self.layout
+        layout.prop(self, "use_random_editor")
+    
 
 # Registration
 def register():
