@@ -5,6 +5,8 @@ a compilation of addons to improve video editing with blender's VSE
 
 (Tested with blender 2.74)
 
+![Alt text](/imgs/jump_to_cut_panel_001.png?raw=true "Optional Title")
+
 
 here is some old related documentation:
 
