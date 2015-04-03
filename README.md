@@ -6,7 +6,7 @@ a compilation of addons to improve video editing with blender's VSE
 
 ![kinoraw addon](/imgs/kinoraw_addon.png?raw=true "kinoraw addon")
 
-Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, 
+Bli bli bli bla bli bla bli bli, Bli bli bli bla **http://kinoraw.net** bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla **[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** bli bla bli bli, Bli bli bli **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli **[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco)** bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, 
 
 ##jump to cut panel
 
@@ -38,9 +38,11 @@ Bli bli bli bla bli bla bli bli, **accesible data from selected strip** Bli bli 
 
 ![kinoraw addon](/imgs/jump_to_cut_info_movie.png?raw=true "kinoraw addon")
 
-Bli bli bli **trim information** bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli
+Bli bli bli **trim information** bla bli bla bli bli, **soft & hard** Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_info_color.png?raw=true "kinoraw addon")
+
+bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_info_wipe.png?raw=true "kinoraw addon")
 
