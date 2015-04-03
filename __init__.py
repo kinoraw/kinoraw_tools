@@ -80,6 +80,9 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
     kr_show_trim = BoolProperty(
         name = 'show trim',
         default = False)
+    kr_show_modifiers = BoolProperty(
+        name = 'show modifiers',
+        default = False)
     kr_extra_info = BoolProperty(
         name = 'show extra info',
         default = False)

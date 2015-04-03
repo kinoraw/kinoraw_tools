@@ -50,6 +50,10 @@ bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_info_blur.png?raw=true "kinoraw addon")
 
+### View Modifiers
+
+![kinoraw addon](/imgs/jump_to_cut_info_modifier.png?raw=true "kinoraw addon")
+
 ### Extra Data
 
 Bli bli bli bla bli bla bli bli, **secondary properties** Bli bli bli bla bli bla bli bli
