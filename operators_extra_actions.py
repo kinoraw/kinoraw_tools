@@ -88,6 +88,9 @@ class Sequencer_Extra_TrimTimeline(bpy.types.Operator):
             scn.frame_start = frame_start
         if frame_end != -300000:
             scn.frame_end = frame_end
+            
+        bpy.ops.sequencer.view_all()
+
         return {'FINISHED'}
 
 
@@ -128,6 +131,8 @@ class Sequencer_Extra_TrimTimelineToSelection(bpy.types.Operator):
             scn.frame_start = frame_start
         if frame_end != -300000:
             scn.frame_end = frame_end
+            
+        bpy.ops.sequencer.view_selected()
         return {'FINISHED'}
 
 # ------------------------------

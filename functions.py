@@ -84,15 +84,15 @@ def initSceneProperties(context):
         name='in',
         description='in frame position',
         min=-30000, max=30000,
-        default=0)
-    scn.kr_in_marker = 0
+        default=1)
+    scn.kr_in_marker = 1
     
     bpy.types.Scene.kr_out_marker = IntProperty(
         name='out',
         description='out frame position',
         min=scn.kr_in_marker, max=30000,
-        default=250)
-    scn.kr_out_marker = 250
+        default=75)
+    scn.kr_out_marker = 75
     
     # SEQUENCER EXTRA ACTIONS
     bpy.types.Scene.kr_default_fade_duration = IntProperty(

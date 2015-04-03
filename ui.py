@@ -419,13 +419,29 @@ class JumptoCut(bpy.types.Panel):
             row.label(text="Strip:",icon='VIEWZOOM')
             row.prop(strip, "name", text="")
 
+            
+            row = layout.row()
+            row.prop(strip, "channel")
+            row.prop(strip, "frame_final_duration")
+            row.separator()
+            row.prop(prefs, "kr_show_trim", text="show trim")
+            if prefs.kr_show_trim:
+                if not isinstance(strip, bpy.types.EffectSequence):
+                    row = layout.row(align=True)
+                    row.label(text="hard:")
+                    row.prop(strip, "animation_offset_start", text="Start")
+                    row.prop(strip, "animation_offset_end", text="End")
+                row = layout.row(align=True)
+                row.label(text="soft:")
+                row.prop(strip, "frame_offset_start", text="Start")
+                row.prop(strip, "frame_offset_end", text="End")
+            
             row = layout.split(percentage=0.3)
             row.prop(strip, "type", text="")
-            if strip.type == 'COLOR':
-                row.prop(strip, "color", text="") 
-            # show the filename source
+            
             if strip.type in {'MOVIE', 'SOUND'}:
                 row.prop(strip, "filepath", text="")
+            
             if strip.type == 'IMAGE':
                 row.prop(strip, "directory", text="")
                 # Current element for the filename
@@ -435,21 +451,94 @@ class JumptoCut(bpy.types.Panel):
                     row.prop(elem, "filename", text="File")  # strip.elements[0] could be a fallback
                     row.operator("sequencer.change_path", text="change files")
 
-            row = layout.row()
-            row.prop(strip, "channel")
-            row.prop(strip, "frame_final_duration")
-            row.separator()
-            row.prop(prefs, "kr_show_trim", text="show trim")
-            if prefs.kr_show_trim:
-                if not isinstance(strip, bpy.types.EffectSequence):
-                    col = box.row(align=True)
-                    col.label(text="hard:")
-                    col.prop(strip, "animation_offset_start", text="Start")
-                    col.prop(strip, "animation_offset_end", text="End")
-                col = layout.row(align=True)
-                col.label(text="soft:")
-                col.prop(strip, "frame_offset_start", text="Start")
-                col.prop(strip, "frame_offset_end", text="End")
+            ###########
+            
+            if strip.type == 'SPEED':
+                row.prop(strip, "multiply_speed")
+            elif strip.type in {'CROSS', 'GAMMA_CROSS', 'WIPE', 'ALPHA_OVER', 'ALPHA_UNDER', 'OVER_DROP'}:
+                row.prop(strip, "use_default_fade", "Default Fade")
+                if not strip.use_default_fade:
+                    row.prop(strip, "effect_fader", text="Effect fader")
+            elif strip.type == 'GAUSSIAN_BLUR':
+                row.prop(strip, "size_x")
+                row.prop(strip, "size_y")
+            
+                
+            if strip.type == 'COLOR':
+                row.prop(strip, "color", text = "")
+
+            elif strip.type == 'WIPE':
+                row = layout.row()
+                row.prop(strip, "transition_type", expand=True)
+                row = layout.row()
+                row.prop(strip, "direction", expand=True)
+                row.prop(strip, "blur_width", slider=True)
+                if strip.transition_type in {'SINGLE', 'DOUBLE'}:
+                    row.prop(strip, "angle")
+
+            elif strip.type == 'GLOW':
+                flow = layout.column_flow()
+                flow.prop(strip, "threshold", slider=True)
+                flow.prop(strip, "clamp", slider=True)
+                flow.prop(strip, "boost_factor")
+                flow.prop(strip, "blur_radius")
+
+                row = layout.row()
+                row.prop(strip, "quality", slider=True)
+                row.prop(strip, "use_only_boost")
+
+            elif strip.type == 'SPEED':
+                row = layout.row()
+                row.prop(strip, "use_default_fade", "Stretch to input strip length")
+                if not strip.use_default_fade:
+                    row.prop(strip, "use_as_speed")
+                    if strip.use_as_speed:
+                        layout.prop(strip, "speed_factor")
+                    else:
+                        layout.prop(strip, "speed_factor", text="Frame number")
+                        layout.prop(strip, "scale_to_length")
+
+            elif strip.type == 'TRANSFORM':
+                row = layout.row(align=True)
+                row.prop(strip, "interpolation")
+                row.prop(strip, "translation_unit")
+                row = layout.row(align=True)
+                row.prop(strip, "translate_start_x", text="Pos X")
+                row.prop(strip, "translate_start_y", text="Pos Y")
+
+                row = layout.row(align=True)
+                if strip.use_uniform_scale:
+                    row.prop(strip, "scale_start_x", text="Scale")
+                else:
+                    row.prop(strip, "scale_start_x", text="Scale X")
+                    row.prop(strip, "scale_start_y", text="Scale Y")
+                row = layout.row(align=True)
+                row.prop(strip, "use_uniform_scale")
+                row.prop(strip, "rotation_start", text="Rotation")
+
+            elif strip.type == 'MULTICAM':
+                layout.prop(strip, "multicam_source")
+
+                row = layout.row(align=True)
+                sub = row.row(align=True)
+                sub.scale_x = 2.0
+
+                sub.operator("screen.animation_play", text="", icon='PAUSE' if context.screen.is_animation_playing else 'PLAY')
+
+                row.label("Cut To")
+                for i in range(1, strip.channel):
+                    row.operator("sequencer.cut_multicam", text="%d" % i).camera = i
+
+            
+            try:
+                if strip.input_count > 0:
+                    col = layout.column()
+                    col.prop(strip, "input_1")
+                    if strip.input_count > 1:
+                        col.prop(strip, "input_2")   
+            except AttributeError:
+                pass
+            ###########
             
             
         
@@ -468,22 +557,6 @@ class JumptoCut(bpy.types.Panel):
                 row.prop(strip, "lock", toggle=True, icon_only=True)
 
                 row = box.row(align=True)
-                row.prop(strip, "use_translation", text="Image Offset", icon = "AXIS_TOP")
-                row.prop(strip, "use_crop", text="Image Crop", icon = "BORDER_RECT")
-                if strip.use_translation:
-                        row = box.row(align=True)
-                        row.prop(strip.transform, "offset_x", text="X")
-                        row.prop(strip.transform, "offset_y", text="Y")
-                if strip.use_crop:
-                    row = box.row(align=True)
-                    row.prop(strip.crop, "max_y")
-                    row.prop(strip.crop, "min_x")
-                    row.prop(strip.crop, "min_y")
-                    row.prop(strip.crop, "max_x")
-                    
-                
-                row = box.row(align=True)
-                
                 
                 col = row.column()
                 col.prop(strip, "strobe")
@@ -500,6 +573,20 @@ class JumptoCut(bpy.types.Panel):
                 col.prop(strip, "use_float", text="Convert Float")
                 col.prop(strip, "alpha_mode")
                 
+                row = box.row(align=True)
+                row.prop(strip, "use_translation", text="Image Offset", icon = "AXIS_TOP")
+                row.prop(strip, "use_crop", text="Image Crop", icon = "BORDER_RECT")
+                if strip.use_translation:
+                        row = box.row(align=True)
+                        row.prop(strip.transform, "offset_x", text="X")
+                        row.prop(strip.transform, "offset_y", text="Y")
+                if strip.use_crop:
+                    row = box.row(align=True)
+                    row.prop(strip.crop, "max_y")
+                    row.prop(strip.crop, "min_x")
+                    row.prop(strip.crop, "min_y")
+                    row.prop(strip.crop, "max_x")
+                                    
                 
             #sound type
             else:
