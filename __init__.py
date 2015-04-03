@@ -192,7 +192,7 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
             min = 1, max = 1000)         
     random_selected_scene = StringProperty(
         name = 'selected_scene',
-        default = 'pessics3.limpio')        
+        default = '')        
     random_use_marker_subsets = BoolProperty(
         name = 'use_marker_subsets',
         default = True)        

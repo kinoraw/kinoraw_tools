@@ -36,27 +36,27 @@ Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla b
 
 Bli bli bli bla bli bla bli bli, **accesible data from selected strip** Bli bli bli bla bli bla bli bli
 
-![kinoraw addon](/imgs/jump_to_cut_movie.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/jump_to_cut_info_movie.png?raw=true "kinoraw addon")
 
 Bli bli bli bla bli bla bli bli, ** in/out tools ** Bli bli bli bla bli bla bli bli
 
-![kinoraw addon](/imgs/jump_to_cut_sound.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/jump_to_cut_info_sound.png?raw=true "kinoraw addon")
 
 Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
 
-![kinoraw addon](/imgs/jump_to_cut_image.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/jump_to_cut_info_image.png?raw=true "kinoraw addon")
 
 Bli bli bli bla bli bla bli bli, **accesible data from selected strip** Bli bli bli bla bli bla bli bli
 
-![kinoraw addon](/imgs/jump_to_cut_wipe.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/jump_to_cut_info_wipe.png?raw=true "kinoraw addon")
 
 Bli bli bli bla bli bla bli bli, ** in/out tools ** Bli bli bli bla bli bla bli bli
 
-![kinoraw addon](/imgs/jump_to_cut_color.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/jump_to_cut_info_color.png?raw=true "kinoraw addon")
 
 Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
 
-![kinoraw addon](/imgs/jump_to_cut_speed.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/jump_to_cut_info_speed.png?raw=true "kinoraw addon")
 
 
 
