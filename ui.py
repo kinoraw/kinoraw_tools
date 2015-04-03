@@ -194,82 +194,29 @@ class JumptoCut(bpy.types.Panel):
         prefs = preferences.addons[__package__].preferences
         
         layout = self.layout
-        
         layout = layout.box()
-
-        row=layout.row(align=True)
-        split=row.split()
-        colR1 = split.column()
-        row1=colR1.row(align=True)
-        row1.operator("sequencer.strip_jump", icon="PLAY_REVERSE", text="cut").next=False
-        row1.operator("sequencer.strip_jump", icon='PLAY', text="cut").next=True
-        colR2 = split.column()
-        row2=colR2.row(align=True)
-        row2.operator("screen.marker_jump", icon="TRIA_LEFT", text="marker").next=False
-        row2.operator("screen.marker_jump", icon='TRIA_RIGHT', text="marker").next=True
-
-        row=layout.row(align=True)
-        row.operator("sequencerextra.setstartend", icon="PREVIEW_RANGE", text="IN/OUT")
-        row.operator('timeextra.trimtimelinetoselection', text='Selection', icon='PREVIEW_RANGE')
-        row.operator('timeextra.trimtimeline', text='All', icon='PREVIEW_RANGE')
-
-        row=layout.row(align=True)
-        row.label("Snap:")    
-        #row=layout.row(align=True)
-        row.operator('sequencerextra.extrasnap', text='left', icon='SNAP_ON').align=0
-        row.operator('sequencerextra.extrasnap', text='center', icon='SNAP_ON').align=1
-        row.operator('sequencerextra.extrasnap', text='right', icon='SNAP_ON').align=2
-
-        row=layout.row(align=True)
-        row.label("Handlers:")
-        #row=layout.row(align=True)
-        row.operator('sequencerextra.extrahandles', text='left', icon='TRIA_LEFT').side=0
-        row.operator('sequencerextra.extrahandles', text='both', icon='PMARKER').side=1
-        row.operator('sequencerextra.extrahandles', text='right', icon='TRIA_RIGHT').side=2
-
-        row=layout.row()
-        row=layout.row(align=True)
-        split = row.split(percentage=0.99)
-        colR2 = split.column()
-        row1 = colR2.row(align=True)
-        row1.operator("sequencerextra.metacopy", icon="COPYDOWN", text="meta-copy")
-        row1.operator("sequencerextra.metapaste", icon='PASTEDOWN', text="paste-snap")
-        
-        split = row.split(percentage=0.99)
-        colR3 = split.column()
-        colR3.operator('sequencerextra.meta_separate_trim', text='unMeta & Trim', icon='ALIGN')
+        # jump to cut main controls
         
         row=layout.row(align=True)
-        row.prop(prefs, "use_io_tools", text="In/Out tools:")
         
-        if prefs.use_io_tools:
-            row=layout.row(align=True)
-            split=row.split(percentage=0.7)
-            colR1 = split.column()
-            row1=colR1.row(align=True)
-            row1.operator("sequencerextra.sourcein", icon="MARKER_HLT", text="set IN")
-            row1.operator("sequencerextra.sourceout", icon='MARKER_HLT', text="set OUT")
-            colR3 = split.column()
-            colR3.operator("sequencerextra.setinout", icon="ARROW_LEFTRIGHT", text="selected")
-            
-            row_markers=layout.row(align=True)
-            split=row_markers.split(percentage=0.7)
-            colR1 = split.column()
-            row1=colR1.row(align=True)
-            if scn.kr_auto_markers == False:
-                row1.prop(scn, "kr_auto_markers", text="auto markers")
-            else:
-                row1.prop(scn, "kr_auto_markers", text="")
-                row1.prop(scn, "kr_in_marker")
-                row1.prop(scn, "kr_out_marker")
-                row1.active = scn.kr_auto_markers
-            colR3 = split.column()
-            colR3.operator("sequencerextra.triminout", icon="FULLSCREEN_EXIT", text="trim",emboss=True)
-
-        # draw del extra actions
-        layout = self.layout
-
-        layout = layout.box()
+        row.label(icon='TIME', text="Secs")  
+        row.operator('screenextra.frame_skip',
+        text="", icon='TRIA_LEFT').back = True
+        row.operator('screenextra.frame_skip',
+        text="", icon='TRIA_RIGHT').back = False
+        
+        row.separator()
+        
+        row.label(icon='IPO_BOUNCE', text="Cuts")  
+        row.operator("sequencer.strip_jump", icon="PLAY_REVERSE", text="").next=False
+        row.operator("sequencer.strip_jump", icon='PLAY', text="").next=True
+        
+        row.separator()
+        
+        row.label(icon='MARKER_HLT', text="Marker")
+        row.operator("screen.marker_jump", icon="TRIA_LEFT", text="").next=False
+        row.operator("screen.marker_jump", icon='TRIA_RIGHT', text="").next=True
+        
         
         rd = scn.render
         screen = context.screen
@@ -300,73 +247,179 @@ class JumptoCut(bpy.types.Panel):
         self.draw_framerate(row, rd)
         
         row=layout.row(align=True)
-        row.operator('screenextra.frame_skip',
-        text="", icon='TRIA_LEFT').back = True
-        row.operator('screenextra.frame_skip',
-        text="", icon='TRIA_RIGHT').back = False
-        row.label("secs")
-        row.operator("sequencer.strip_jump", icon="PLAY_REVERSE", text="").next=False
-        row.operator("sequencer.strip_jump", icon='PLAY', text="").next=True
-        row.label("cuts")
-        row.operator("screen.marker_jump", icon="TRIA_LEFT", text="").next=False
-        row.operator("screen.marker_jump", icon='TRIA_RIGHT', text="").next=True
-        row.label("markers")
-        
-        row=layout.row(align=True)
         row.operator("sequencer.refresh_all")
         row.operator('sequencer.rendersize', text='set render size', icon='PLUGIN')
-        row.prop(prefs, "mini_extra_actions", text="mini ui")
-        row.prop(prefs, "extra_actions_panel_show_info", text="strip info")
-        
-        if prefs.mini_extra_actions:
-            row=layout.row(align=True)
-            row.operator('sequencerextra.jogshuttle',
-                text='', icon='NDOF_TURN')
-            row.operator('sequencerextra.navigateup',
-                text='', icon='FILE_PARENT')
-            row.operator('sequencerextra.extendtofill',
-            text='', icon='STYLUS_PRESSURE')
-            row.operator('sequencerextra.placefromfilebrowser',
-                text='', icon='TRIA_DOWN').insert = False            
-            row.operator('sequencerextra.placefromfilebrowser',
-                text='', icon='TRIA_RIGHT').insert = True
-            row.operator('sequencer.slip',
-                text='', icon='MOD_SHRINKWRAP')
-            row.operator_menu_enum('sequencerextra.fadeinout',
-            'mode', text='fade', icon='MOD_ARRAY')
-            row.operator_menu_enum('sequencerextra.copyproperties',
-            'prop', text='copy',icon='SCRIPT')
 
-        else:
-            row=layout.row(align=True)
-            row.operator('sequencerextra.jogshuttle',
-                text='Jog/Shuttle', icon='NDOF_TURN')            
-            row.operator('sequencerextra.navigateup',
-                text='Navigate Up', icon='FILE_PARENT')
-            row.operator('sequencerextra.extendtofill',
-            text='Extend to Fill', icon='STYLUS_PRESSURE')
-            row=layout.row(align=True)
-            row.operator('sequencerextra.placefromfilebrowser',
-                text='File Place', icon='TRIA_DOWN').insert = False
-            row.operator('sequencerextra.placefromfilebrowser',
-                text='File Insert', icon='TRIA_RIGHT').insert = True
-            row.operator('sequencer.slip',
-                text='Slip', icon='MOD_SHRINKWRAP')
-            row=layout.row(align=True)
-            row.operator_menu_enum('sequencerextra.fadeinout',
-            'mode', text='Fade', icon='MOD_ARRAY')
-            row.operator_menu_enum('sequencerextra.copyproperties',
-            'prop', icon='SCRIPT')
-            
+        row=layout.row(align=True)
+        row.operator("sequencerextra.setstartend", icon="PREVIEW_RANGE", text="IN/OUT")
+        row.operator('timeextra.trimtimelinetoselection', text='Selection', icon='PREVIEW_RANGE')
+        row.operator('timeextra.trimtimeline', text='All', icon='PREVIEW_RANGE')
+
+        layout = self.layout        
+        # layout = layout.box()
+        # panel setup ------------------------------------------------------
         
-        if prefs.extra_actions_panel_show_info:
+        row=layout.row(align=True)
+        row.separator()
+        row.label(icon='SEQ_SEQUENCER', text="")  
+        row.prop(prefs, "kr_show_tools", text="Tools")
+        if prefs.kr_show_tools:
+            row.prop(prefs, "kr_mini_ui", text="mini ui")
+            row.separator()        
+        row.label(icon='VIEWZOOM', text="")
+        row.prop(prefs, "kr_show_info", text="")
+        row.separator()
+        row.label(icon='BORDERMOVE', text="")    
+        row.prop(prefs, "kr_extra_info", text="")
+        
+        
+        if prefs.kr_show_tools:
             layout = self.layout
-            box = layout.box()
-            row = box.split(percentage=0.2)
-            row.label(text="Strip:")
+            layout = layout.box()
+            # snap, handler selector and meta tools
+            
+            if prefs.kr_mini_ui:
+                row=layout.row(align=True)
+                row.operator('sequencerextra.extrasnap', text='', icon='SNAP_ON').align=0
+                row.operator('sequencerextra.extrasnap', text='', icon='SNAP_SURFACE').align=1
+                row.operator('sequencerextra.extrasnap', text='', icon='SNAP_ON').align=2
+
+                row.separator()
+                row.operator('sequencerextra.extrahandles', text='', icon='TRIA_LEFT').side=0
+                row.operator('sequencerextra.extrahandles', text='', icon='PMARKER').side=1
+                row.operator('sequencerextra.extrahandles', text='', icon='TRIA_RIGHT').side=2
+
+                row.separator()
+                row.operator("sequencerextra.metacopy", icon="COPYDOWN", text="")
+                row.operator("sequencerextra.metapaste", icon='PASTEDOWN', text="")
+                row.separator()
+                row.operator('sequencerextra.meta_separate_trim', text='', icon='ALIGN')
+                row.separator()
+                row.prop(prefs, "use_io_tools", text="I/O tools")
+                
+                # IN /OUT TOOLS
+                
+                
+                if prefs.use_io_tools:
+                    row=layout.row(align=True)
+                    if scn.kr_auto_markers == True:
+                        row.prop(scn, "kr_auto_markers", text="")
+                    
+                        row.separator()
+                        row.operator("sequencerextra.sourcein", icon="MARKER_HLT", text="")
+                        row.prop(scn, "kr_in_marker")
+                        row.operator("sequencerextra.sourceout", icon='MARKER_HLT', text="")
+                        row.prop(scn, "kr_out_marker")
+                    else:
+                        row.prop(scn, "kr_auto_markers", text="AUTO i/o") 
+                        row.operator("sequencerextra.sourcein", icon="MARKER_HLT", text="IN")
+                        row.operator("sequencerextra.sourceout", icon='MARKER_HLT', text="OUT")
+                    row.separator()
+                    row.operator("sequencerextra.setinout", icon="ARROW_LEFTRIGHT", text="")
+                    row.operator("sequencerextra.triminout", icon="FULLSCREEN_EXIT", text="",emboss=True)
+                    
+                # miniUI extra actions
+                row=layout.row(align=True)
+                row.operator('sequencerextra.jogshuttle',
+                    text='', icon='NDOF_TURN')
+                row.operator('sequencerextra.navigateup',
+                    text='', icon='FILE_PARENT')
+                row.operator('sequencerextra.extendtofill',
+                text='', icon='STYLUS_PRESSURE')
+                row.operator('sequencerextra.placefromfilebrowser',
+                    text='', icon='TRIA_DOWN').insert = False            
+                row.operator('sequencerextra.placefromfilebrowser',
+                    text='', icon='TRIA_RIGHT').insert = True
+                row.operator('sequencer.slip',
+                    text='', icon='MOD_SHRINKWRAP')
+                row.operator_menu_enum('sequencerextra.fadeinout',
+                'mode', text='fade', icon='MOD_ARRAY')
+                row.operator_menu_enum('sequencerextra.copyproperties',
+                'prop', text='copy',icon='SCRIPT')
+            
+            else:  # NOT prefs.kr_mini_ui:
+                    
+                row=layout.row(align=True)
+                row.label("Snap:")    
+                #row=layout.row(align=True)
+                row.operator('sequencerextra.extrasnap', text='left', icon='SNAP_ON').align=0
+                row.operator('sequencerextra.extrasnap', text='center', icon='SNAP_SURFACE').align=1
+                row.operator('sequencerextra.extrasnap', text='right', icon='SNAP_ON').align=2
+
+                row=layout.row(align=True)
+                row.label("Handlers:")
+                #row=layout.row(align=True)
+                row.operator('sequencerextra.extrahandles', text='left', icon='TRIA_LEFT').side=0
+                row.operator('sequencerextra.extrahandles', text='both', icon='PMARKER').side=1
+                row.operator('sequencerextra.extrahandles', text='right', icon='TRIA_RIGHT').side=2
+
+                row=layout.row()
+                row=layout.row(align=True)
+                split = row.split(percentage=0.99)
+                colR2 = split.column()
+                row1 = colR2.row(align=True)
+                row1.operator("sequencerextra.metacopy", icon="COPYDOWN", text="meta-copy")
+                row1.operator("sequencerextra.metapaste", icon='PASTEDOWN', text="paste-snap")
+                split = row.split(percentage=0.99)
+                colR3 = split.column()
+                colR3.operator('sequencerextra.meta_separate_trim', text='unMeta & Trim', icon='ALIGN')
+        
+        
+        
+                # IN /OUT TOOLS
+                row=layout.box()
+                split=row.split(percentage=0.7)
+                colR1 = split.column()
+                row1=colR1.row(align=True)
+                row1.operator("sequencerextra.sourcein", icon="MARKER_HLT", text="set IN")
+                row1.operator("sequencerextra.sourceout", icon='MARKER_HLT', text="set OUT")
+                colR3 = split.column()
+                colR3.operator("sequencerextra.setinout", icon="ARROW_LEFTRIGHT", text="selected")
+                
+                split=row.split(percentage=0.7)
+                colR1 = split.column()
+                row1=colR1.row(align=True)
+                if scn.kr_auto_markers == False:
+                    row1.prop(scn, "kr_auto_markers", text="auto markers")
+                else:
+                    row1.prop(scn, "kr_auto_markers", text="")
+                    row1.prop(scn, "kr_in_marker")
+                    row1.prop(scn, "kr_out_marker")
+                    row1.active = scn.kr_auto_markers
+                colR3 = split.column()
+                colR3.operator("sequencerextra.triminout", icon="FULLSCREEN_EXIT", text="trim",emboss=True)
+
+        
+                # UI extra actions
+                row=layout.row(align=True)
+                row.operator('sequencerextra.jogshuttle',
+                    text='Jog/Shuttle', icon='NDOF_TURN')            
+                row.operator('sequencerextra.navigateup',
+                    text='Navigate Up', icon='FILE_PARENT')
+                row.operator('sequencerextra.extendtofill',
+                text='Extend to Fill', icon='STYLUS_PRESSURE')
+                row=layout.row(align=True)
+                row.operator('sequencerextra.placefromfilebrowser',
+                    text='File Place', icon='TRIA_DOWN').insert = False
+                row.operator('sequencerextra.placefromfilebrowser',
+                    text='File Insert', icon='TRIA_RIGHT').insert = True
+                row.operator('sequencer.slip',
+                    text='Slip', icon='MOD_SHRINKWRAP')
+                row=layout.row(align=True)
+                row.operator_menu_enum('sequencerextra.fadeinout',
+                'mode', text='Fade', icon='MOD_ARRAY')
+                row.operator_menu_enum('sequencerextra.copyproperties',
+                'prop', icon='SCRIPT')
+                
+        # INFO box
+        if prefs.kr_show_info:
+            layout = self.layout
+            layout = layout.box()
+            row = layout.split(percentage=0.2)
+            row.label(text="Strip:",icon='VIEWZOOM')
             row.prop(strip, "name", text="")
 
-            row = box.split(percentage=0.3)
+            row = layout.split(percentage=0.3)
             row.prop(strip, "type", text="")
             if strip.type == 'COLOR':
                 row.prop(strip, "color", text="") 
@@ -375,96 +428,103 @@ class JumptoCut(bpy.types.Panel):
                 row.prop(strip, "filepath", text="")
             if strip.type == 'IMAGE':
                 row.prop(strip, "directory", text="")
-                row = box.row(align=True)
                 # Current element for the filename
                 elem = strip.strip_elem_from_frame(context.scene.frame_current)
                 if elem:
-                    split = row.split(percentage=0.3)
-                    split.label(text="File:")
-                    split = split.row(align=True)
-                    split.prop(elem, "filename", text="")  # strip.elements[0] could be a fallback
-                row.operator("sequencer.change_path", text="change files")
+                    row = layout.row()
+                    row.prop(elem, "filename", text="File")  # strip.elements[0] could be a fallback
+                    row.operator("sequencer.change_path", text="change files")
 
-            row = box.split(percentage=0.5)
+            row = layout.row()
             row.prop(strip, "channel")
             row.prop(strip, "frame_final_duration")
-            
-            row = box.row(align=True)
-            row.prop(prefs, "extra_actions_panel_show_trim", text="show trim")
-            if prefs.extra_actions_panel_show_trim:
+            row.separator()
+            row.prop(prefs, "kr_show_trim", text="show trim")
+            if prefs.kr_show_trim:
                 if not isinstance(strip, bpy.types.EffectSequence):
                     col = box.row(align=True)
                     col.label(text="hard:")
                     col.prop(strip, "animation_offset_start", text="Start")
                     col.prop(strip, "animation_offset_end", text="End")
-                col = box.row(align=True)
+                col = layout.row(align=True)
                 col.label(text="soft:")
                 col.prop(strip, "frame_offset_start", text="Start")
                 col.prop(strip, "frame_offset_end", text="End")
+            
+            
+        
+        # extra info box:
+        if prefs.kr_extra_info:
+            layout = self.layout
+            box = layout.box()
+            if strip.type not in {'SOUND'}:
+                row = box.row(align=True)
+                sub = row.row(align=True)
+                sub.active = (not strip.mute)
+                sub.label(icon='BORDERMOVE')
+                sub.separator()
+                sub.prop(strip, "blend_alpha", text="Opacity", slider=True)
+                row.prop(strip, "mute", toggle=True, icon_only=True)
+                row.prop(strip, "lock", toggle=True, icon_only=True)
+
+                row = box.row(align=True)
+                row.prop(strip, "use_translation", text="Image Offset", icon = "AXIS_TOP")
+                row.prop(strip, "use_crop", text="Image Crop", icon = "BORDER_RECT")
+                if strip.use_translation:
+                        row = box.row(align=True)
+                        row.prop(strip.transform, "offset_x", text="X")
+                        row.prop(strip.transform, "offset_y", text="Y")
+                if strip.use_crop:
+                    row = box.row(align=True)
+                    row.prop(strip.crop, "max_y")
+                    row.prop(strip.crop, "min_x")
+                    row.prop(strip.crop, "min_y")
+                    row.prop(strip.crop, "max_x")
+                    
                 
-            row.prop(prefs, "extra_actions_panel_show_extra", text="show extra data")
-        
-        
-            if prefs.extra_actions_panel_show_extra:
-                box = layout.box()
-                if strip.type not in {'SOUND'}:
-                    row = box.row(align=True)
-                    sub = row.row(align=True)
-                    sub.active = (not strip.mute)
-                    sub.prop(strip, "blend_alpha", text="Opacity", slider=True)
-                    row.prop(strip, "mute", toggle=True, icon_only=True)
-                    row.prop(strip, "lock", toggle=True, icon_only=True)
+                row = box.row(align=True)
+                
+                
+                col = row.column()
+                col.prop(strip, "strobe")
+                col.prop(strip, "use_flip_x", text="flip X")
+                col.prop(strip, "use_flip_y", text="flip Y")
+                col.prop(strip, "use_reverse_frames", text="Backwards")
+                col.prop(strip, "use_deinterlace")
+                
+                col = row.column()
+                col.prop(strip, "blend_type", icon='COLOR', text = "")
 
-                    col = box.row(align=True)
-                    col.prop(strip, "use_translation", text="Image Offset")
-                    if strip.use_translation:
-                            col = box.row(align=True)
-                            col.prop(strip.transform, "offset_x", text="X")
-                            col.prop(strip.transform, "offset_y", text="Y")
-                            col = box.row(align=True)
-                    col.prop(strip, "use_crop", text="Image Crop")
-                    if strip.use_crop:
-                        col = box.row(align=True)
-                        col.prop(strip.crop, "max_y")
-                        col.prop(strip.crop, "min_x")
-                        col = box.row(align=True)
-                        col.prop(strip.crop, "min_y")
-                        col.prop(strip.crop, "max_x")
-                        
-                    row = box.row(align=True)
-                    split = box.split(percentage=0.3)
-                    split.label(text="Blend:")
-                    split.prop(strip, "blend_type", text="")
-                    split.prop(strip, "use_float", text="Float")
-                    
-                    col = box.row(align=True)
-                    col.prop(strip, "color_saturation", text="Saturation")
-                    col.prop(strip, "color_multiply", text="Multiply")
-                    
-                #sound type
-                else:
-                    row = box.row(align=True)
-                    row.prop(strip, "volume")
-                    row.prop(strip, "mute", toggle=True, icon_only=True)
-                    row.prop(strip, "lock", toggle=True, icon_only=True)
-                    
-                    sound = strip.sound
-                    if sound is not None:
-                        row = box.row()
-                        if sound.packed_file:
-                            row.operator("sound.unpack", icon='PACKAGE', text="Unpack")
-                        else:
-                            row.operator("sound.pack", icon='UGLYPACKAGE', text="Pack")
-
-                        row.prop(sound, "use_memory_cache")
-
-                    row.prop(strip, "show_waveform")
-                    
+                col.prop(strip, "color_saturation", text="Saturation")
+                col.prop(strip, "color_multiply", text="Multiply")
+                col.prop(strip, "use_float", text="Convert Float")
+                col.prop(strip, "alpha_mode")
+                
+                
+            #sound type
+            else:
+                row = box.row(align=True)
+                row.prop(strip, "volume")
+                row.prop(strip, "mute", toggle=True, icon_only=True)
+                row.prop(strip, "lock", toggle=True, icon_only=True)
+                
+                sound = strip.sound
+                if sound is not None:
                     row = box.row()
-                    row.prop(strip, "pitch")
-                    row.prop(strip, "pan")
+                    if sound.packed_file:
+                        row.operator("sound.unpack", icon='PACKAGE', text="Unpack")
+                    else:
+                        row.operator("sound.pack", icon='UGLYPACKAGE', text="Pack")
 
-        
+                    row.prop(sound, "use_memory_cache")
+
+                row.prop(strip, "show_waveform")
+                
+                row = box.row()
+                row.prop(strip, "pitch")
+                row.prop(strip, "pan")
+
+    
 
         
 

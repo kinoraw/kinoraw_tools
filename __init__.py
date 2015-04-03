@@ -25,8 +25,8 @@ bl_info = {
     "location": "Sequencer",
     "description": "Collection of extra operators to manipulate VSE strips",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.6/Py/"
-        "Scripts/Sequencer/Extra_Sequencer_Actions",
-    "tracker_url": "https://developer.blender.org/T32532",
+        "Scripts/Sequencer/",
+    "tracker_url": "",
     "support": "COMMUNITY"}
 
 
@@ -65,21 +65,25 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
 
 
     # extra_actions
-    use_extra_actions_panel = BoolProperty(
-        name = 'extra actions panel',
+    kr_show_tools = BoolProperty(
+        name = "show tools" ,
+        description = 'show extra tools in the panel',
+        default = False)
+    kr_mini_ui = BoolProperty(
+        name = "mini ui" ,
+        description = 'enable mini UI',
         default = True)
-    mini_extra_actions = BoolProperty(
-        name = 'enable mini UI',
-        default = True)
-    extra_actions_panel_show_trim = BoolProperty(
-        name = 'extra actions panel show trim',
+    kr_show_info = BoolProperty(
+        name = 'show basic info from selected strip',
+        description = 'show basic info from selected strip',
         default = False)
-    extra_actions_panel_show_info = BoolProperty(
-        name = 'extra actions panel show info',
+    kr_show_trim = BoolProperty(
+        name = 'show trim',
         default = False)
-    extra_actions_panel_show_extra = BoolProperty(
-        name = 'extra actions panel show extra info',
+    kr_extra_info = BoolProperty(
+        name = 'show extra info',
         default = False)
+    
 
     # exif
     use_exif_panel = BoolProperty(
