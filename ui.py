@@ -113,8 +113,37 @@ def clip_clip_menu_func(self, context):
     self.layout.operator('clipextra.openfromfilebrowser',
     text='Open from File Browser', icon='PLUGIN')
     self.layout.separator()
+    
+   
+    
+###############################
 
 
+def draw_color_balance(layout, color_balance):
+    layout = layout.split(percentage=0.33)
+    col = layout.column()
+    col.label(text="Lift:")
+    col.template_color_picker(color_balance, "lift", value_slider=True, cubic=True)
+    row = col.row()
+    row.prop(color_balance, "lift", text="")
+    row.prop(color_balance, "invert_lift", text="Invert")
+
+    col = layout.column()
+    col.label(text="Gamma:")
+    col.template_color_picker(color_balance, "gamma", value_slider=True, lock_luminosity=True, cubic=True)
+    row = col.row()
+    row.prop(color_balance, "gamma", text="")
+    row.prop(color_balance, "invert_gamma", text="Invert")
+
+    col = layout.column()
+    col.label(text="Gain:")
+    col.template_color_picker(color_balance, "gain", value_slider=True, lock_luminosity=True, cubic=True)
+    row = col.row()
+    row.prop(color_balance, "gain", text="")
+    row.prop(color_balance, "invert_gain", text="Invert")
+
+
+############################
 
         
 

@@ -91,7 +91,11 @@ Bli bli bla bla
 ![kinoraw addon](/imgs/io_tools.png?raw=true "kinoraw addon")
  
 
-Bli bli bla bla Bli bli bla bla
+If automarkers is selected, each scene stores his owns IN and OUT markers and you can move it only with this tools...
+
+You can access this in and out markers with this:
+
+bpy.data.scenes['Scene']
 
 
 ![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
@@ -156,6 +160,10 @@ bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli blau
 ### View Modifiers
 
 ![kinoraw addon](/imgs/jump_to_cut_info_modifier.png?raw=true "kinoraw addon")
+
+bla bli bla bli bli, **same menus, less space** Bli bli bli bla bli bla bli bli blau
+
+![kinoraw addon](/imgs/jump_to_cut_info_modifier2.png?raw=true "kinoraw addon")
 
 ### Extra Data
 
