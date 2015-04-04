@@ -17,9 +17,9 @@ a compilation of tools to improve video editing with blender's VSE
 
 You can clone the addon directly in the blender addons folder, i.e: in my ubuntu computer i had to do:
 
-cd ~/.config/blender/2.74/scripts/addons
+    cd ~/.config/blender/2.74/scripts/addons
 
-git clone https://github.com/kinoraw/kinoraw_tools
+    git clone https://github.com/kinoraw/kinoraw_tools
 
 then you can start blender and activate the addon in the user preferences window.
 
@@ -80,7 +80,7 @@ Since version 2.73 there is an option to jump to edit points, so Jump to Cut's o
 
 ![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
 
-Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
+*Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli*
 
 ### Main Controls
 
@@ -140,15 +140,15 @@ It also centers the view into the selection
 
 ## Extra Tools
 
-Bli bli bli **2012** bla bli bla bli bli, **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** Bli bli bli by **[Turi Scandurra](http://www.turiscandurra.com/)** bli bla bli bli
+*Bli bli bli* **2012** *bla bli bla bli bli,* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *Bli bli bli by* **[Turi Scandurra](http://www.turiscandurra.com/)** *bli bla bli bli*
 
 ![kinoraw addon](/imgs/jump_to_cut_tools2.png?raw=true "kinoraw addon")
 
-Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
+*Bli bli bli* **compact UI** *bla bli bla bli bli,* **full size buttons** *Bli bli bli bla bli bla bli bli*
 
 ![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
 
-Bli bli bli bla bli bla bli bli, **in/out tools** Bli bli bli bla bli bla bli bli
+*Bli bli bli bla bli bla bli bli,* **in/out tools** *Bli bli bli bla bli bla* **invasive features** *bli bli Bli bli bli bla bli bla bli, bli bli bli bla bli* **deactivated by default** *bla bli. Bli bli bli bla bli bla bli*
 
 ![kinoraw addon](/imgs/jump_to_cut_tools1.png?raw=true "kinoraw addon")
 
