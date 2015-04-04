@@ -32,6 +32,35 @@ Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla b
 
 ![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
 
+####Ripple Delete
+Delete the active strip and shift back all other strips the number of frames between the beginning of deleted strip and the next edit in the sequence.
+####Ripple Cut
+Same as above, but copying active strip to memory buffer before deleting it. Copied strip can be pasted in place as usual, for example using the keystroke combination ctrl-V.
+####Insert
+Shift forward all strips after current frame and insert active strip.
+Insert (Single Channel)
+
+Same as above, but shifting occurs only on the same channel as active strip.
+Slide
+
+Alter in and out points of a strip but not its duration. Only available when a the type of active strip is Movie, Scene or Meta. Click 'Input...' to choose the amount of sliding desired. The start and end frame of active strip will be moved, but its length and position will remain unchanged. This action is also known as slipping. Click 'Current Frame to Start' or 'Current Frame to End' to perform the slide according to current frame.
+Slide Grab
+
+Same as above, interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
+Copy Properties
+
+Copy properties of active strip to selected strips. Start selecting multiple strips, then make active the strip whose properties need to be copied to the selected strips. Click the desired operator to perform the action. Some operators affect single properties, while some others affect a group of properties.
+Fade
+
+Fade opacity of active strip, or its volume if its type is Sound, creating keyframes for the corresponding property. Possible fade directions are In, Out, In and Out. Duration defines the number of frames between the start and the end of the fade. Amount defines the maximum value that the fade will set. For opacity fades, the maximum value is 1.0. The minimum value reached by the fade is always 0. Keyframes created with this operator can be manipulated through the F-Curve Editor.
+Distribute
+
+Evenly distribute selected strips along the timeline according to a specified offset. This operator is useful to reassign strip length to every element of an image sequence. The operator also allows to reverse the order of the distributed strips. To perform a simple reversion of an image sequence, first separate its images and select them, then run Distribute with Offset set to 1 and Reverse Order enabled.
+Extend to Fill
+
+Extend active strip forward to fill adjacent space. If there no other strip is following active one on the same channel, the clip is extended to the end of the sequence.
+Open with Editor
+
 ### Strip Data
 
 Bli bli bli bla bli bla bli bli, **accesible data from selected strip** Bli bli bli bla bli bla bli bli
@@ -83,6 +112,14 @@ http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequ
 ### VSE Header Menu > add
 
 ![kinoraw addon](/imgs/menu_add.png?raw=true "kinoraw addon")
+
+####Recursive Loader
+
+In a File Browser area, select a file and in the VSE panel press "Import from Browser" button. All movie clips will be imported (sorted alphabeticaly by filename) in the VSE
+
+    Check "Recursive" option to search recursively in this folder
+    Check "Same extension" to force import only files with the selected extension.
+    Check "Proxies" to setup proxies if existing. (first load a single file with Proxy Place to setup extension and suffix) 
 
 ### VSE Header Menu > input
 
@@ -148,7 +185,71 @@ Only visible with a Metastrip selected
 
 
 
+ Trim to Timeline Content
 
+Automatically set start and end frames of current scene according to the content of the Sequence Editor.
+Trim to Selection
+
+Set start and end frames of current scene to match selected strips in the Sequence Editor.
+Select All by Type
+
+Select all the strips of the specified type in the Sequence Editor.
+Current-Frame-Aware Select
+
+Select strips on all channels according to current frame. Available modes are:
+
+    Before (select all strips before current frame),
+    After (select all strips after current frame),
+    On (select all strips underneath playhead). 
+
+
+
+Open active strip with Movie Clip Editor or Image Editor, according to strip type. If a clip is already loaded, existing data is used.
+Open with External Editor
+
+Open active image strip with the default external image editor. To use this operator a valid path to the external editor must be specified in User Preferences > File.
+Create a Movieclip strip
+
+When a movie or image strip is selected, this operator creates a movieclip or find the correspondent movieclip that already exists for this footage, and add a VSE strip with same cuts the original strip has.It can convert movie strips and image sequences, both with hard cuts or soft cuts.
+File Name to Strip Name
+
+Set strip name to input file name. This operator is useful after separating images of a sequence.
+File Place
+
+Place active file from File Browser to Sequencer Editor on current frame.
+File Insert
+
+Same as above, but also shift forward forward all strips after current frame.
+Proxy Place
+
+Same as File Place, adding a proxy file.
+Proxy Insert
+
+Same as File Insert, adding a proxy file.
+Navigate Up
+
+Move current view to parent timeline. Only enabled when current view is relative to a Meta strip. This operator does not perform any modification to timeline elements.
+Open from File Browser
+
+Load a Movie or Image Sequence from File Browser to Movie Clip Editor. If a clip is already loaded, existing data is used.
+Open Active Strip
+
+Load a Movie or Image Sequence from Sequence Editor to Movie Clip Editor. If a clip is already loaded, existing data is used.
+Jog/Shuttle
+
+Jog through current sequence, looping between start and end frames. This action is known as jogging, shuttling or scrubbing. Click the operator to enter interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
+Skip One Second
+
+Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
+
+    ctrl + shift + left arrow to skip back one second,
+    ctrl + shift + right arrow to skip forward one second. 
+
+
+
+EXIF info panel
+
+Select a strip and press 'Read EXIF data'. Works only with image and movie strips 
 
 
 
