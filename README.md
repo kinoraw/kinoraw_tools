@@ -39,7 +39,7 @@ then you can start blender and activate the addon in the user preferences window
 
 Every panel can be switched visible/invisible in the addon preferences panel.
 
-<img align="right" src="/imgs/full_panel.png">
+<img align="left" src="/imgs/full_panel.png">
 
 
 **Table of Contents**
