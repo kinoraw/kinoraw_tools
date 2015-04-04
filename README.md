@@ -67,6 +67,17 @@ Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla
 
 
 
+![kinoraw addon](/imgs/menu_strip.png?raw=true "kinoraw addon")
+
+![kinoraw addon](/imgs/menu_select.png?raw=true "kinoraw addon")
+
+![kinoraw addon](/imgs/menu_input.png?raw=true "kinoraw addon")
+
+![kinoraw addon](/imgs/menu_add.png?raw=true "kinoraw addon")
+
+![kinoraw addon](/imgs/menu_movieclip.png?raw=true "kinoraw addon")
+
+
 
 
 
