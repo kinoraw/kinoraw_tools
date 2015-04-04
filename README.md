@@ -281,23 +281,24 @@ to get exif info panel you need to install exiftools:
 
 Only visible with a Metastrip selected
 
-for eco tools check:
+Select a movie or meta strip, set number of echoes and offset (in frames), and press Eco button.
 
-http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco
+The opacity of all strips is updated to 1/number of echoes to mantain luminance. The blending is set to add for all clips except first one.
 
-## Random Editor panel
+All clips are grouped inside a meta. Press home after running the script to see the meta.
+
+
+## Random Editor panel (EXPERIMENTAL)
 
 Only visible with a Metastrip selected
 
 ![kinoraw addon](/imgs/random_editor.png?raw=true "kinoraw addon")
 
-## Glitch panel
+## Glitch panel (EXPERIMENTAL)
 
 ![kinoraw addon](/imgs/glitch.png?raw=true "kinoraw addon")
 
-EXPERIMENTAL!! 
 
-Only visible with a Metastrip selected
 
 
 
