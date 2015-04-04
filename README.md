@@ -16,9 +16,9 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bl
 
 ![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
 
-### Main Controls
-
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
+
+### Main Controls
 
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
 
