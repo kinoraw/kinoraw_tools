@@ -351,6 +351,11 @@ Not working yet!
 
 ![kinoraw addon](/imgs/glitch.png?raw=true "kinoraw addon")
 
+for the moment it has only glitch algorithm, you need to install aviglitch
+more info here:
+
+ http://ucnv.github.io/aviglitch/
+
 
 
 
