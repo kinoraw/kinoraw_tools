@@ -222,6 +222,9 @@ You can access this in and out markers with this:
 
 ## Extra Sequencer Actions
 
+![kinoraw addon](/imgs/extra.png?raw=true "kinoraw addon")
+
+
 ![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
 
 ##### Jog/Shuttle
