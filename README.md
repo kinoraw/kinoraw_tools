@@ -1,4 +1,4 @@
-#kinoraw_tools
+# Kinoraw Tools
 
 a compilation of addons to improve video editing with blender's VSE
 
@@ -8,7 +8,7 @@ a compilation of addons to improve video editing with blender's VSE
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla **http://kinoraw.net** bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla **[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** bli bla bli bli, Bli bli bli **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli **[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco)** bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, 
 
-##jump to cut panel
+## Jump to Cut panel
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
