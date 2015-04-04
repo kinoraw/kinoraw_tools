@@ -115,6 +115,8 @@ Paste the clipboard content starting at the timeline cursor.
 
 #### Un-meta + Trim
 
+The selected meta is ungrouped and all related strips outside in and out range are trimmed.
+
 
 ## IN and OUT Tools
 
