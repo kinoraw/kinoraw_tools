@@ -155,6 +155,8 @@ Alter in and out points of a strip but not its duration. Only available when a t
 
 Interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
 
+**This button is shortcut for the new internal operator (added recently in Gooseberry project)**
+
 ![kinoraw addon](/imgs/extra3.png?raw=true "kinoraw addon")
 
 #### Fade
