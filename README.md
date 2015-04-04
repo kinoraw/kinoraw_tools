@@ -189,7 +189,7 @@ The selected meta is ungrouped and all related strips outside in and out range a
 
 ## IN and OUT Tools
 
-![kinoraw addon](/imgs/io_tools3.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/io_tools4.png?raw=true "kinoraw addon")
 
 ![kinoraw addon](/imgs/io_tools2.png?raw=true "kinoraw addon")
 
@@ -208,6 +208,8 @@ Trim (soft cut) the selected clip on both sides to adhere to the In and Out mark
 ##### Auto Markers
 
 Bli bli bla bla
+
+![kinoraw addon](/imgs/io_tools3.png?raw=true "kinoraw addon")
 
 ![kinoraw addon](/imgs/io_tools.png?raw=true "kinoraw addon")
  
