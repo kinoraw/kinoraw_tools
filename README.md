@@ -40,7 +40,34 @@ a compilation of tools to improve video editing with blender's VSE
     * Random Editor Operator
   * Glitch panel (EXPERIMENTAL)
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
+- [Kinoraw Tools](#)
+	- [Jump to Cut 6](#)
+		- [Main Controls](#)
+		- [VSE fundamentals](#)
+		- [Trim Timeline Tools](#)
+	- [Extra Tools](#)
+		- [Snap & Handles](#)
+		- [Meta Tools](#)
+	- [IN and OUT Tools](#)
+	- [Sequencer Extra Actions](#)
+	- [Strip Data](#)
+	- [View Modifiers](#)
+	- [Extra Data](#)
+	- [Menus](#)
+		- [VSE Header Menu > strip](#)
+		- [VSE Header Menu > select](#)
+		- [VSE Header Menu > add](#)
+		- [VSE Header Menu > input](#)
+		- [MovieClip Editor Header Menu > Clip](#)
+		- [Timeline Header Menu > frame](#)
+	- [Proxy Tools](#)
+	- [Audio Tools](#)
+	- [Exif info panel](#)
+	- [Eco Tools    (WARNING!: CPU INTENSIVE:)](#)
+	- [Random Editor panel (EXPERIMENTAL)](#)
+	- [Glitch panel (EXPERIMENTAL)](#)
 
 ## Jump to Cut 6
 
@@ -431,38 +458,5 @@ for the moment it has only glitch algorithm, you need to install aviglitch
 more info here:
 
  http://ucnv.github.io/aviglitch/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### Open from File Browser
-
-Load a Movie or Image Sequence from File Browser to Movie Clip Editor. If a clip is already loaded, existing data is used.
-
-#### Open Active Strip
-
-Load a Movie or Image Sequence from Sequence Editor to Movie Clip Editor. If a clip is already loaded, existing data is used.
-
-#### Skip One Second
-
-Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
-
-    ctrl + shift + left arrow to skip back one second,
-    ctrl + shift + right arrow to skip forward one second. 
 
 
