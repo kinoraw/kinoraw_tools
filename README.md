@@ -51,14 +51,14 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
 
-#### Seconds 
+##### Seconds 
 
 Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
 
 * shortcut keys **ctrl + shift + left arrow** to skip back one second,
 * shortcut keys **ctrl + shift + right arrow** to skip forward one second. 
 
-#### Cuts
+##### Cuts
 
 The timeline cursor jumps from edit point to edit point. Edit point is any point of entry or departure of a clip, or the cutting start and end. 
 
@@ -69,7 +69,7 @@ The timeline cursor jumps from edit point to edit point. Edit point is any point
 **This buttons are shortcuts for the new internal operator (added recently in Gooseberry project)**
 
 
-#### Markers
+##### Markers
 
 As you can guess, jump from marker to marker.
 
@@ -87,17 +87,17 @@ This are self explanatory, some useful internal operators...
 
 ![kinoraw addon](/imgs/trimmers.png?raw=true "kinoraw addon")
 
-#### In / Out
+##### In / Out
 
 Automatically set start and end frames of current scene according to In and Out markers.
 
-#### Selection
+##### Selection
 
 Set start and end frames of current scene to match selected strips in the Sequence Editor.
 
 It also centers the view into the selection
 
-#### All
+##### All
 
 Automatically set start and end frames of current scene according to the content of the Sequence Editor.
 
@@ -121,11 +121,11 @@ Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla b
 
 ![kinoraw addon](/imgs/snap.png?raw=true "kinoraw addon")
 
-#### Snap 
+##### Snap 
 
 This are self explanatory, otherwise you can test and see what happens...
 
-#### Handle selector
+##### Handle selector
 
 This are self explanatory, otherwise you can test and see what happens...
 
@@ -133,16 +133,16 @@ This are self explanatory, otherwise you can test and see what happens...
 
 ![kinoraw addon](/imgs/meta_tools.png?raw=true "kinoraw addon")
 
-#### Meta + Copy
+##### Meta + Copy
 
 This operator makes a metastrip with all selected items, and trim them to in and out.
 If there is no IN and OUT markers, the meta is not trimmed.
 
-#### Paste + Snap
+##### Paste + Snap
 
 Paste the clipboard content starting at the timeline cursor.
 
-#### Un-meta + Trim
+##### Un-meta + Trim
 
 The selected meta is ungrouped and all related strips outside in and out range are trimmed.
 
@@ -151,19 +151,19 @@ The selected meta is ungrouped and all related strips outside in and out range a
 
 ![kinoraw addon](/imgs/io_tools2.png?raw=true "kinoraw addon")
 
-#### set IN / set OUT:
+##### set IN / set OUT:
 
 Create a marker IN and a marker OUT where the timeline cursor are. Two specific markers that can then be used for editing.
 
-#### Selected:
+##### Selected:
 
 Create a marker IN at the selected strip start frame and a marker OUT at the selected strip end frame.
 
-#### Trim:
+##### Trim:
 
 Trim (soft cut) the selected clip on both sides to adhere to the In and Out markers, as long as the clip is within that range. If not, or in absence of In and Out, does nothing. I.E. It is a quick option to cut many clips at the same duration.
 
-#### Auto Markers
+##### Auto Markers
 
 Bli bli bla bla
 
@@ -182,29 +182,29 @@ You can access this in and out markers with this:
 
 ![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
 
-#### Jog/Shuttle
+##### Jog/Shuttle
 
 Jog through current sequence, looping between start and end frames. This action is known as jogging, shuttling or scrubbing. Click the operator to enter interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
 
-#### Navigate Up
+##### Navigate Up
 
 Move current view to parent timeline. Only enabled when current view is relative to a Meta strip. This operator does not perform any modification to timeline elements.
 
-#### Extend to Fill
+##### Extend to Fill
 
 Extend active strip forward to fill adjacent space. If there no other strip is following active one on the same channel, the clip is extended to the end of the sequence.
 
 ![kinoraw addon](/imgs/extra2.png?raw=true "kinoraw addon")
 
-#### File Place
+##### File Place
 
 Place active file from File Browser to Sequencer Editor on current frame.
 
-#### File Insert
+##### File Insert
 
 Same as above, but also move forward all strips after current frame.
 
-#### Slip
+##### Slip
 
 Alter in and out points of a strip but not its duration. Only available when a the type of active strip is Movie, Scene or Meta. Click 'Input...' to choose the amount of sliding desired. The start and end frame of active strip will be moved, but its length and position will remain unchanged.
 
@@ -214,11 +214,11 @@ Interactive mode. Move mouse cursor along X axis to jog. To exit, click left or 
 
 ![kinoraw addon](/imgs/extra3.png?raw=true "kinoraw addon")
 
-#### Fade
+##### Fade
 
 Fade opacity of active strip, or its volume if its type is Sound, creating keyframes for the corresponding property. Possible fade directions are In, Out, In and Out. Duration defines the number of frames between the start and the end of the fade. Amount defines the maximum value that the fade will set. For opacity fades, the maximum value is 1.0. The minimum value reached by the fade is always 0. Keyframes created with this operator can be manipulated through the F-Curve Editor.
 
-#### Copy Properties
+##### Copy Properties
 
 Copy properties of active strip to selected strips. Start selecting multiple strips, then make active the strip whose properties need to be copied to the selected strips. Click the desired operator to perform the action. Some operators affect single properties, while some others affect a group of properties.
 
@@ -266,18 +266,18 @@ Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla
 
 ![kinoraw addon](/imgs/menu_strip.png?raw=true "kinoraw addon")
 
-#### Ripple Delete
+##### Ripple Delete
 
 Delete the active strip and shift back all other strips the number of frames between the beginning of deleted strip and the next edit in the sequence.
 
-#### Ripple cut
+##### Ripple cut
 
 Same as above, but copying active strip to memory buffer before deleting it. Copied strip can be pasted in place as usual, for example using the keystroke combination ctrl-V.
 
 * **TO FIX:** ripple cut and ripple delete: some strips change their channel position
 it seems to happend when one involved strips is the one in higher position...
 
-#### insert 
+##### insert 
 
 Shift forward all strips after current frame and insert active strip.
 
@@ -285,7 +285,7 @@ Shift forward all strips after current frame and insert active strip.
 channel position.
 
 
-#### Insert (Single Channel)
+##### Insert (Single Channel)
 
 Same as above, but shifting occurs only on the same channel as active strip.
 
@@ -294,11 +294,11 @@ Same as above, but shifting occurs only on the same channel as active strip.
 
 ![kinoraw addon](/imgs/menu_select.png?raw=true "kinoraw addon")
 
-#### Select All by Type
+##### Select All by Type
 
 Select all the strips of the specified type in the Sequence Editor.
 
-#### Current-Frame-Aware Select
+##### Current-Frame-Aware Select
 
 Select strips on all channels according to current frame. Available modes are:
 
@@ -306,7 +306,7 @@ Select strips on all channels according to current frame. Available modes are:
 * After (select all strips after current frame),
 * On (select all strips underneath playhead). 
 
-#### Select same channel
+##### Select same channel
 
 Select strips on the same channel as selected
 
@@ -315,7 +315,7 @@ Select strips on the same channel as selected
 
 ![kinoraw addon](/imgs/menu_add.png?raw=true "kinoraw addon")
 
-#### Recursive Loader
+##### Recursive Loader
 
 In a File Browser area, select a file and in the VSE panel press "Import from Browser" button. All movie clips will be imported (sorted alphabeticaly by filename) in the VSE
 
@@ -327,19 +327,19 @@ In a File Browser area, select a file and in the VSE panel press "Import from Br
 
 ![kinoraw addon](/imgs/menu_input.png?raw=true "kinoraw addon")
 
-#### Open with Editor
+##### Open with Editor
 
 Open active strip with Movie Clip Editor or Image Editor, according to strip type. If a clip is already loaded, existing data is used.
 
-#### Open with External Editor
+##### Open with External Editor
 
 Open active image strip with the default external image editor. To use this operator a valid path to the external editor must be specified in User Preferences > File.
 
-#### Create a Movieclip strip
+##### Create a Movieclip strip
 
 When a movie or image strip is selected, this operator creates a movieclip or find the correspondent movieclip that already exists for this footage, and add a VSE strip with same cuts the original strip has.It can convert movie strips and image sequences, both with hard cuts or soft cuts.
 
-#### File Name to Strip Name
+##### File Name to Strip Name
 
 Set strip name to input file name. This operator is useful after separating images of a sequence.
 
