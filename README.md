@@ -22,7 +22,7 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/maincontrols.png?raw=true "kinoraw addon")
 
-This are self explanatory, it's simply a rearrange of some useful operators...
+This are self explanatory, some useful internal operators...
 
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
 
