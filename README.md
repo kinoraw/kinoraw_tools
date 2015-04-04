@@ -11,7 +11,7 @@ a compilation of tools to improve video editing with blender's VSE
 	-- Carlos Padial, 2015 ;)
 
 
-<img align="center" width="500px" src="/imgs/full_screen.png">
+<img align="center" width="500px" src="/imgs/full_screen.jpg">
 
 
 ## How to Install
