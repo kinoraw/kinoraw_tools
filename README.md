@@ -23,6 +23,13 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
 
+#### Skip One Second
+
+Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
+
+* shortcut keys **ctrl + shift + left arrow** to skip back one second,
+* shortcut keys **ctrl + shift + right arrow** to skip forward one second. 
+
 #### Cut previous / Cut next
 
 The timeline cursor jumps from edit point to edit point. Edit point is any point of entry or departure of a clip, or the cutting start and end. 
@@ -242,6 +249,9 @@ Select strips on all channels according to current frame. Available modes are:
 * On (select all strips underneath playhead). 
 
 #### Select same channel
+
+Select strips on the same channel as selected
+
 
 ### VSE Header Menu > add
 
