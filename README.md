@@ -14,11 +14,13 @@ a compilation of tools to improve video editing with blender's VSE
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
+![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
+
 ### Main Controls
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
-![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/main_controls.png?raw=true "kinoraw addon")
 
 
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
@@ -75,6 +77,7 @@ Bli bli bli bla bli bla bli bli, **in/out tools** Bli bli bli bla bli bla bli bl
 Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
+
 
 
 ![kinoraw addon](/imgs/snap.png?raw=true "kinoraw addon")
