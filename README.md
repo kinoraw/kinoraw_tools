@@ -20,8 +20,9 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bl
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
-![kinoraw addon](/imgs/main_controls.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/maincontrols.png?raw=true "kinoraw addon")
 
+This are self explanatory, it's simply a rearrange of some useful operators...
 
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
 
