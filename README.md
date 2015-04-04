@@ -218,8 +218,8 @@ Select strips on all channels according to current frame. Available modes are:
 In a File Browser area, select a file and in the VSE panel press "Import from Browser" button. All movie clips will be imported (sorted alphabeticaly by filename) in the VSE
 
 * Check "Recursive" option to search recursively in this folder
-* Check "Same extension" to force import only files with the selected extension.
-* Check "Proxies" to setup proxies if existing. (first load a single file with Proxy Place to setup extension and suffix) 
+* Check "Select by extension" to force import only files with the selected extension.
+ 
 
 ### VSE Header Menu > input
 
