@@ -141,7 +141,7 @@ It also centers the view into the selection
 
 ## Extra Tools
 
-*Bli bli bli* **2012** *bla bli bla bli bli,* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *Bli bli bli by* **[Turi Scandurra](http://www.turiscandurra.com/)** *bli bla bli bli*
+Many of the following operators are from the addon **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** made in 2012 by **[Turi Scandurra](http://www.turiscandurra.com/)**
 
 <img align="" src="/imgs/jump_to_cut_tools2.png">
 

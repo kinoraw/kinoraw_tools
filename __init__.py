@@ -18,12 +18,12 @@
 
 bl_info = {
     "name": "Kinoraw Tools",
-    "author": "Carlos Padial, Ferhoyo, Turi Scandurra",
+    "author": "Carlos Padial", "Turi Scandurra",
     "version": (0, 3),
     "blender": (2, 74, 0),
     "category": "Sequencer",
     "location": "Sequencer",
-    "description": "Collection of extra operators to manipulate VSE strips",
+    "description": "a compilation of tools to improve video editing with blender's VSE",
     "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.6/Py/"
         "Scripts/Sequencer/",
     "tracker_url": "",
