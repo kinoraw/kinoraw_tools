@@ -32,27 +32,34 @@ Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla b
 
 ![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
 
+#### Jog/Shuttle
+
+Jog through current sequence, looping between start and end frames. This action is known as jogging, shuttling or scrubbing. Click the operator to enter interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
+
+#### Navigate Up
+
+Move current view to parent timeline. Only enabled when current view is relative to a Meta strip. This operator does not perform any modification to timeline elements.
+
 #### Extend to Fill
 
 Extend active strip forward to fill adjacent space. If there no other strip is following active one on the same channel, the clip is extended to the end of the sequence.
 Open with Editor
 
+#### a
 
-#### Slide
+#### b
 
-Alter in and out points of a strip but not its duration. Only available when a the type of active strip is Movie, Scene or Meta. Click 'Input...' to choose the amount of sliding desired. The start and end frame of active strip will be moved, but its length and position will remain unchanged. This action is also known as slipping. Click 'Current Frame to Start' or 'Current Frame to End' to perform the slide according to current frame.
-Slide Grab
+#### Slide Grab
 
 Same as above, interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
 
-Copy Properties
-
-Copy properties of active strip to selected strips. Start selecting multiple strips, then make active the strip whose properties need to be copied to the selected strips. Click the desired operator to perform the action. Some operators affect single properties, while some others affect a group of properties.
-
-Fade
+#### Fade
 
 Fade opacity of active strip, or its volume if its type is Sound, creating keyframes for the corresponding property. Possible fade directions are In, Out, In and Out. Duration defines the number of frames between the start and the end of the fade. Amount defines the maximum value that the fade will set. For opacity fades, the maximum value is 1.0. The minimum value reached by the fade is always 0. Keyframes created with this operator can be manipulated through the F-Curve Editor.
 
+#### Copy Properties
+
+Copy properties of active strip to selected strips. Start selecting multiple strips, then make active the strip whose properties need to be copied to the selected strips. Click the desired operator to perform the action. Some operators affect single properties, while some others affect a group of properties.
 
 
 ### Strip Data
@@ -232,18 +239,17 @@ Same as File Place, adding a proxy file.
 Proxy Insert
 
 Same as File Insert, adding a proxy file.
-Navigate Up
 
-Move current view to parent timeline. Only enabled when current view is relative to a Meta strip. This operator does not perform any modification to timeline elements.
+
+
 Open from File Browser
 
 Load a Movie or Image Sequence from File Browser to Movie Clip Editor. If a clip is already loaded, existing data is used.
+
 Open Active Strip
 
 Load a Movie or Image Sequence from Sequence Editor to Movie Clip Editor. If a clip is already loaded, existing data is used.
-Jog/Shuttle
 
-Jog through current sequence, looping between start and end frames. This action is known as jogging, shuttling or scrubbing. Click the operator to enter interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
 Skip One Second
 
 Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
