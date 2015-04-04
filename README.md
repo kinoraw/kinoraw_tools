@@ -86,13 +86,15 @@ Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla b
 
 ![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
 
-
+### Snap & Handles
 
 ![kinoraw addon](/imgs/snap.png?raw=true "kinoraw addon")
 
 #### Snap 
 
 #### Handle selector
+
+### Meta Tools
 
 ![kinoraw addon](/imgs/meta_tools.png?raw=true "kinoraw addon")
 
