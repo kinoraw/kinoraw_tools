@@ -25,7 +25,7 @@ then you can start blender and activate the addon in the user preferences window
 
 ### install the zip package
 
-<img align="left" src="/imgs/git.png">
+<img align="" src="/imgs/git.png">
 
 * Download the zip file from this page
 
@@ -35,7 +35,7 @@ then you can start blender and activate the addon in the user preferences window
 
 * after that, you should activate the addon by presing the checkbox next to the addon 
 
-<img align="left" src="/imgs/kinoraw_addon.png">
+<img align="" src="/imgs/kinoraw_addon.png">
 
 Every panel can be switched visible/invisible in the addon preferences panel.
 
@@ -78,13 +78,13 @@ Every panel can be switched visible/invisible in the addon preferences panel.
 
 Since version 2.73 there is an option to jump to edit points, so Jump to Cut's original feature has been integrated into Blender code !!  =)
 
-<img align="left" src="/imgs/jump_to_cut_panel_001.png">
+<img align="" src="/imgs/jump_to_cut_panel_001.png">
 
 *Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli*
 
 ### Main Controls
 
-<img align="left" src="/imgs/jumpers.png">
+<img align="" src="/imgs/jumpers.png">
 
 ##### Seconds 
 
@@ -112,7 +112,7 @@ As you can guess, jump from marker to marker.
 
 ### VSE fundamentals
 
-<img align="left" src="/imgs/maincontrols.png">
+<img align="" src="/imgs/maincontrols.png">
 
 This are self explanatory, some useful internal operators...
 
@@ -120,7 +120,7 @@ This are self explanatory, some useful internal operators...
 
 * TODO: use also preview timeline!!
 
-<img align="left" src="/imgs/trimmers.png">
+<img align="" src="/imgs/trimmers.png">
 
 ##### In / Out
 
@@ -142,22 +142,22 @@ It also centers the view into the selection
 
 *Bli bli bli* **2012** *bla bli bla bli bli,* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *Bli bli bli by* **[Turi Scandurra](http://www.turiscandurra.com/)** *bli bla bli bli*
 
-<img align="left" src="/imgs/jump_to_cut_tools2.png">
+<img align="" src="/imgs/jump_to_cut_tools2.png">
 
 *Bli bli bli* **mini UI** *bla bli bla bli bli,* **full size buttons** *Bli bli bli bla bli bla bli bli*
 
-<img align="left" src="/imgs/jump_to_cut_tools3.png">
+<img align="" src="/imgs/jump_to_cut_tools3.png">
 
 *Bli bli bli bla bli bla bli bli,* **in/out tools** *Bli bli bli bla bli bla* **invasive features** *bli bli Bli bli bli bla bli bla bli, bli bli bli bla bli* **deactivated by default** *bla bli. Bli bli bli bla bli bla bli*
 
-<img align="left" src="/imgs/jump_to_cut_tools1.png">
+<img align="" src="/imgs/jump_to_cut_tools1.png">
 
 
 ### Snap and Handles
 
-<img align="left" src="/imgs/snap2.png">
+<img align="" src="/imgs/snap2.png">
 
-<img align="left" src="/imgs/snap.png">
+<img align="" src="/imgs/snap.png">
 
 ##### Snap 
 
@@ -169,9 +169,9 @@ This are self explanatory, otherwise you can test and see what happens...
 
 ### Meta Tools
 
-<img align="left" src="/imgs/meta_tools2.png">
+<img align="" src="/imgs/meta_tools2.png">
 
-<img align="left" src="/imgs/meta_tools.png">
+<img align="" src="/imgs/meta_tools.png">
 
 ##### Meta + Copy
 
@@ -189,9 +189,9 @@ The selected meta is ungrouped and all related strips outside in and out range a
 
 ## IN and OUT Tools
 
-<img align="left" src="/imgs/io_tools4.png">
+<img align="" src="/imgs/io_tools4.png">
 
-<img align="left" src="/imgs/io_tools2.png">
+<img align="" src="/imgs/io_tools2.png">
 
 ##### set IN / set OUT:
 
@@ -209,9 +209,9 @@ Trim (soft cut) the selected clip on both sides to adhere to the In and Out mark
 
 Bli bli bla bla
 
-<img align="left" src="/imgs/io_tools3.png">
+<img align="" src="/imgs/io_tools3.png">
 
-<img align="left" src="/imgs/io_tools.png">
+<img align="" src="/imgs/io_tools.png">
  
 
 If automarkers is selected, each scene stores his owns IN and OUT markers and you can move it only with this tools...
@@ -224,10 +224,10 @@ You can access this in and out markers with this:
 
 ## Extra Sequencer Actions
 
-<img align="left" src="/imgs/extra.png">
+<img align="" src="/imgs/extra.png">
 
 
-<img align="left" src="/imgs/extra1.png">
+<img align="" src="/imgs/extra1.png">
 
 ##### Jog/Shuttle
 
@@ -241,7 +241,7 @@ Move current view to parent timeline. Only enabled when current view is relative
 
 Extend active strip forward to fill adjacent space. If there no other strip is following active one on the same channel, the clip is extended to the end of the sequence.
 
-<img align="left" src="/imgs/extra2.png">
+<img align="" src="/imgs/extra2.png">
 
 ##### File Place
 
@@ -259,7 +259,7 @@ Interactive mode. Move mouse cursor along X axis to jog. To exit, click left or 
 
 **This button is shortcut for the new internal operator (added recently in Gooseberry project)**
 
-<img align="left" src="/imgs/extra3.png">
+<img align="" src="/imgs/extra3.png">
 
 ##### Fade
 
@@ -274,44 +274,44 @@ Copy properties of active strip to selected strips. Start selecting multiple str
 
 Bli bli bli bla bli bla bli bli, **accesible data from selected strip** Bli bli bli bla bli bla bli bli
 
-<img align="left" src="/imgs/jump_to_cut_info_movie.png">
+<img align="" src="/imgs/jump_to_cut_info_movie.png">
 
 Bli bli bli **trim information** bla bli bla bli bli, **soft & hard** Bli bli bli bla bli bla bli bli
 
-<img align="left" src="/imgs/jump_to_cut_info_color.png">
+<img align="" src="/imgs/jump_to_cut_info_color.png">
 
 bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli blau
 
-<img align="left" src="/imgs/jump_to_cut_info_wipe.png">
+<img align="" src="/imgs/jump_to_cut_info_wipe.png">
 
-<img align="left" src="/imgs/jump_to_cut_info_speed.png">
+<img align="" src="/imgs/jump_to_cut_info_speed.png">
 
-<img align="left" src="/imgs/jump_to_cut_info_blur.png">
+<img align="" src="/imgs/jump_to_cut_info_blur.png">
 
 ## View Modifiers
 
-<img align="left" src="/imgs/jump_to_cut_info_modifier.png">
+<img align="" src="/imgs/jump_to_cut_info_modifier.png">
 
 bla bli bla bli bli, **same menus, less space** Bli bli bli bla bli bla bli bli blau
 
-<img align="left" src="/imgs/jump_to_cut_info_modifier2.png">
+<img align="" src="/imgs/jump_to_cut_info_modifier2.png">
 
 ## Extra Data
 
 Bli bli bli bla bli bla bli bli, **secondary properties** Bli bli bli bla bli bla bli bli
 
-<img align="left" src="/imgs/jump_to_cut_info_sound.png">
+<img align="" src="/imgs/jump_to_cut_info_sound.png">
 
 Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla bli bli
 
-<img align="left" src="/imgs/jump_to_cut_info_image.png">
+<img align="" src="/imgs/jump_to_cut_info_image.png">
 
 
 ## Menus
 
 ### VSE Header Menu > strip
 
-<img align="left" src="/imgs/menu_strip.png">
+<img align="" src="/imgs/menu_strip.png">
 
 ##### Ripple Delete
 
@@ -339,7 +339,7 @@ Same as above, but shifting occurs only on the same channel as active strip.
 
 ### VSE Header Menu > select
 
-<img align="left" src="/imgs/menu_select.png">
+<img align="" src="/imgs/menu_select.png">
 
 ##### Select All by Type
 
@@ -360,7 +360,7 @@ Select strips on the same channel as selected
 
 ### VSE Header Menu > add
 
-<img align="left" src="/imgs/menu_add.png">
+<img align="" src="/imgs/menu_add.png">
 
 ##### Recursive Loader
 
@@ -372,7 +372,7 @@ In a File Browser area, select a file and in the VSE panel press "Import from Br
 
 ### VSE Header Menu > input
 
-<img align="left" src="/imgs/menu_input.png">
+<img align="" src="/imgs/menu_input.png">
 
 ##### Open with Editor
 
@@ -392,7 +392,7 @@ Set strip name to input file name. This operator is useful after separating imag
 
 ### MovieClip Editor Header Menu > Clip
 
-<img align="left" src="/imgs/menu_movieclip.png">
+<img align="" src="/imgs/menu_movieclip.png">
 
 ##### Open from File Browser
 
@@ -404,7 +404,7 @@ Bli bla bli bli blau
 
 ### Timeline Header Menu > frame
 
-<img align="left" src="/imgs/menu_frame.png">
+<img align="" src="/imgs/menu_frame.png">
 
 ##### Skip One Second
 
@@ -428,12 +428,12 @@ It also centers the view into the selection
 
 ## Proxy Tools
 
-<img align="left" src="/imgs/proxy_tools.png">
+<img align="" src="/imgs/proxy_tools.png">
 
 
 ## Audio Tools
 
-<img align="left" src="/imgs/audio_tools.png">
+<img align="" src="/imgs/audio_tools.png">
 
 ### Extract WAV
 
@@ -452,7 +452,7 @@ Press **reload audio** with a movie strip selected to reload the audio files
 
 ## Exif info panel
 
-<img align="left" src="/imgs/exif.png">
+<img align="" src="/imgs/exif.png">
 
 Select a strip and press 'Read EXIF data'. Works only with image and movie strips 
 
@@ -463,7 +463,7 @@ to get exif info panel you need to install exiftools:
 
 ## Eco Tools    (WARNING!: CPU INTENSIVE:)
 
-<img align="left" src="/imgs/eco.png">
+<img align="" src="/imgs/eco.png">
 
 TODO: keep metastrip in the same channel
 
@@ -482,7 +482,7 @@ All clips are finally grouped inside a meta. Press home after running the script
 
 Only visible with a Metastrip selected
 
-<img align="left" src="/imgs/random_editor.png">
+<img align="" src="/imgs/random_editor.png">
 
 ###Random Scratch Operator
 
@@ -494,7 +494,7 @@ Not working yet!
 
 ## Glitch panel (EXPERIMENTAL)
 
-<img align="left" src="/imgs/glitch.png">
+<img align="" src="/imgs/glitch.png">
 
 for the moment it has only glitch algorithm, you need to install aviglitch
 more info here:
