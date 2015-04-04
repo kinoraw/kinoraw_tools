@@ -28,7 +28,7 @@ a compilation of tools to improve video editing with blender's VSE
 		- [VSE Header Menu > select](#vse-header-menu--select)
 		- [VSE Header Menu > add](#vse-header-menu--add)
 		- [VSE Header Menu > input](#vse-header-menu--input)
-		- [MovieClip Editor Header Menu > Clip](#movieclip-editor header-menu--clip)
+		- [MovieClip Editor Header Menu > Clip](#movieclip-editor-header-menu--clip)
 		- [Timeline Header Menu > frame](#timeline-header-menu--frame)
 	- [Proxy Tools](#proxy-tools)
 	- [Audio Tools](#audio-tools)
