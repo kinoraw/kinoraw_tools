@@ -18,6 +18,10 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
 
+![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
+
+
+
 ![kinoraw addon](/imgs/trimmers.png?raw=true "kinoraw addon")
 
 #### In / Out (Trim to In and Out)
@@ -55,27 +59,26 @@ Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla b
 
 ![kinoraw addon](/imgs/meta_tools.png?raw=true "kinoraw addon")
 
-#### Trim + Meta + Copy:
+#### Meta + Copy
 
-This operator makes a metastrip with all selected items, and trim them to in and out, There is not an insert edit, but also streamlines the tasks a bit ...
-
+This operator makes a metastrip with all selected items, and trim them to in and out.
 If there is no IN and OUT markers, the meta is not trimmed.
 
-#### Paste + Snap:
+#### Paste + Snap
 
-Paste the clipboard content aligned at the timeline cursor.
+Paste the clipboard content starting at the timeline cursor.
 
-![kinoraw addon](/imgs/io_tools.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/io_tools2.png?raw=true "kinoraw addon")
 
-#### IN / OUT:
+#### set IN / set OUT:
 
 Create a marker IN and a marker OUT where the timeline cursor are. Two specific markers that can then be used for editing.
 
-#### Mark in & out to active strip:
+#### Selected:
 
 Create a marker IN at the selected strip start frame and a marker OUT at the selected strip end frame.
 
-#### Trim to in & out:
+#### Trim:
 
 Trim (soft cut) the selected clip on both sides to adhere to the In and Out markers, as long as the clip is within that range. If not, or in absence of In and Out, does nothing. I.E. It is a quick option to cut many clips at the same duration.
 
@@ -83,6 +86,11 @@ Trim (soft cut) the selected clip on both sides to adhere to the In and Out mark
 
 Set scene start and end frames with the same values of IN and OUT markers.
 
+![kinoraw addon](/imgs/io_tools.png?raw=true "kinoraw addon")
+
+#### Auto Markers
+
+Bli bli bla bla
  
 
 ![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
