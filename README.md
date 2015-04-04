@@ -28,19 +28,19 @@ then you can start blender and activate the addon in the user preferences window
 
 ### install the zip package
 
-<img align="center" width="300px" src="/imgs/git.png">
-
 * Download the zip file from this page
+
+<img align="center" width="300px" src="/imgs/git.png">
 
 * Open Blender
 
-* open the user preferences window (ctrl+alt+u) and load the zip file with the button 'install from file' you can find at the bottom of the window.
+* Open the user preferences window (ctrl+alt+u) and load the zip file with the button 'install from file' you can find at the bottom of the window.
 
-* after that, you should activate the addon by presing the checkbox next to the addon 
+* After that, you should activate the addon by presing the checkbox next to the addon 
 
 <img align="center" width="500px" src="/imgs/kinoraw_addon.png">
 
-Every panel can be switched visible/invisible in the addon preferences panel.
+    Every panel can be switched visible/invisible in the addon preferences panel.
 
 <img align="right" width="280px" src="/imgs/full_panel.png">
 
