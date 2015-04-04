@@ -9,20 +9,20 @@ a compilation of tools to improve video editing with blender's VSE
 *Bli bli bli bla bli* **useful tools grouped in the same panel** *bla bli bli, Bli bli bli bla* **http://kinoraw.net** *bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla* **[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** *bli bla bli bli, Bli bli bli* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli* **[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco)** *bli bli bla bli bla bli* **fast video editing** bli, Bli bli **with Blender** bli bla **of course.** *Bli bla bli bli blau:*
 
 * Kinoraw Tools
-** Jump to Cut 6
-*** Main Controls
-*** VSE fundamentals
-*** Trim Timeline Tools
-** Extra Tools
-*** Snap & Handles
-*** Meta Tools
-** IN and OUT Tools
-** Sequencer Extra Actions
-** Strip Data
-** View Modifiers
-** Extra Data
-** Menus
-*** VSE Header Menu > strip
+  * Jump to Cut 6
+    * Main Controls
+    * VSE fundamentals
+    * Trim Timeline Tools
+  * Extra Tools
+    * Snap & Handles
+    * Meta Tools
+  * IN and OUT Tools
+  * Sequencer Extra Actions
+  * Strip Data
+  * View Modifiers
+  * Extra Data
+  * Menus
+    * VSE Header Menu > strip
 *** VSE Header Menu > select
 
 *** VSE Header Menu > add
