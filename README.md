@@ -6,7 +6,109 @@ a compilation of tools to improve video editing with blender's VSE
 
 ![kinoraw addon](/imgs/kinoraw_addon.png?raw=true "kinoraw addon")
 
-*Bli bli bli bla bli* **useful tools grouped in the same panel** *bla bli bli, Bli bli bli bla* **http://kinoraw.net** *bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla* **[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** *bli bla bli bli, Bli bli bli* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli* **[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco)** *bli bli bla bli bla bli* **fast video editing** bli, Bli bli **with Blender** bli bla **of course**. Bli bla bli bli blau:* 
+*Bli bli bli bla bli* **useful tools grouped in the same panel** *bla bli bli, Bli bli bli bla* **http://kinoraw.net** *bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla* **[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** *bli bla bli bli, Bli bli bli* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli* **[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco)** *bli bli bla bli bla bli* **fast video editing** bli, Bli bli **with Blender** bli bla **of course**. Bli bla bli bli blau:*
+
+* Kinoraw Tools
+** Jump to Cut 6
+*** Main Controls
+*** VSE fundamentals
+*** Trim Timeline Tools
+** Extra Tools
+*** Snap & Handles
+*** Meta Tools
+** IN and OUT Tools
+** Sequencer Extra Actions
+** Strip Data
+** View Modifiers
+** Extra Data
+** Menus
+*** VSE Header Menu > strip
+*** VSE Header Menu > select
+
+*** VSE Header Menu > add
+*** VSE Header Menu > input
+*** MovieClip Editor Header Menu > Clip
+*** Timeline Header Menu > frame
+** Proxy Tools
+** Audio Tools
+*** Extract WAV
+*** Sync Tool
+** Exif info panel
+** Eco Tools    (WARNING!: CPU INTENSIVE:)
+** Random Editor panel (EXPERIMENTAL)
+***Random Scratch Operator
+*** Random Editor Operator
+** Glitch panel (EXPERIMENTAL)
+
+
+* Kinoraw Tools
+** Jump to Cut 6
+*** Main Controls
+**** Seconds 
+**** Cuts
+**** Markers
+*** VSE fundamentals
+*** Trim Timeline Tools
+**** In / Out
+**** Selection
+**** All
+** Extra Tools
+*** Snap & Handles
+**** Snap 
+**** Handle selector
+*** Meta Tools
+**** Meta + Copy
+**** Paste + Snap
+**** Un-meta + Trim
+** IN and OUT Tools
+**** set IN / set OUT:
+**** Selected:
+**** Trim:
+**** Auto Markers
+** Sequencer Extra Actions
+**** Jog/Shuttle
+**** Navigate Up
+**** Extend to Fill
+**** File Place
+**** File Insert
+**** Slip
+**** Fade
+**** Copy Properties
+** Strip Data
+** View Modifiers
+** Extra Data
+** Menus
+*** VSE Header Menu > strip
+**** Ripple Delete
+**** Ripple cut
+**** insert 
+**** Insert (Single Channel)
+*** VSE Header Menu > select
+**** Select All by Type
+**** Current-Frame-Aware Select
+**** Select same channel
+*** VSE Header Menu > add
+**** Recursive Loader
+*** VSE Header Menu > input
+**** Open with Editor
+**** Open with External Editor
+**** Create a Movieclip strip
+**** File Name to Strip Name
+*** MovieClip Editor Header Menu > Clip
+*** Timeline Header Menu > frame
+** Proxy Tools
+** Audio Tools
+*** Extract WAV
+*** Sync Tool
+** Exif info panel
+** Eco Tools    (WARNING!: CPU INTENSIVE:)
+** Random Editor panel (EXPERIMENTAL)
+***Random Scratch Operator
+*** Random Editor Operator
+** Glitch panel (EXPERIMENTAL)
+**** Open from File Browser
+**** Open Active Strip
+**** Skip One Second 
 
 ## Jump to Cut 6
 
@@ -314,13 +416,9 @@ When a movie or image strip is selected, this operator creates a movieclip or fi
 
 Set strip name to input file name. This operator is useful after separating images of a sequence.
 
-## MovieClip Editor Header Menu
-
 ### MovieClip Editor Header Menu > Clip
 
 ![kinoraw addon](/imgs/menu_movieclip.png?raw=true "kinoraw addon")
-
-## Timeline Header Menu
 
 ### Timeline Header Menu > frame
 
@@ -434,8 +532,5 @@ Skip through the Timeline by one-second increments. The number of frames to skip
 
     ctrl + shift + left arrow to skip back one second,
     ctrl + shift + right arrow to skip forward one second. 
-
-
-
 
 
