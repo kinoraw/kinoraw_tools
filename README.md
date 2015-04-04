@@ -49,7 +49,7 @@ Every panel can be switched visible/invisible in the addon preferences panel.
 		- [Snap and Handles](#snap-and-handles)
 		- [Meta Tools](#meta-tools)
 	- [IN and OUT Tools](#in-and-out-tools)
-	- [Sequencer Extra Actions](#sequencer-extra-actions)
+	- [Extra Sequencer Actions](#extra-sequencer-actions)
 	- [Strip Data](#strip-data)
 	- [View Modifiers](#view-modifiers)
 	- [Extra Data](#extra-data)
@@ -209,7 +209,7 @@ You can access this in and out markers with this:
 
     bpy.data.scenes['Scene'].kr_out_marker
 
-## Sequencer Extra Actions
+## Extra Sequencer Actions
 
 ![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
 
