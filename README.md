@@ -124,7 +124,7 @@ This are self explanatory, some useful internal operators...
 
 ##### In / Out
 
-Automatically set start and end frames of current scene according to In and Out markers.
+Set start and end frames of current scene according to In and Out markers.
 
 ##### Selection
 
@@ -134,7 +134,7 @@ It also centers the view into the selection
 
 ##### All
 
-Automatically set start and end frames of current scene according to the content of the Sequence Editor.
+Set start and end frames of current scene according to the content of the Sequence Editor.
 
 It also centers the view into the selection
 
@@ -144,7 +144,7 @@ It also centers the view into the selection
 
 ![kinoraw addon](/imgs/jump_to_cut_tools2.png?raw=true "kinoraw addon")
 
-*Bli bli bli* **compact UI** *bla bli bla bli bli,* **full size buttons** *Bli bli bli bla bli bla bli bli*
+*Bli bli bli* **mini UI** *bla bli bla bli bli,* **full size buttons** *Bli bli bli bla bli bla bli bli*
 
 ![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
 
@@ -154,6 +154,8 @@ It also centers the view into the selection
 
 
 ### Snap and Handles
+
+![kinoraw addon](/imgs/snap2.png?raw=true "kinoraw addon")
 
 ![kinoraw addon](/imgs/snap.png?raw=true "kinoraw addon")
 
@@ -166,6 +168,8 @@ This are self explanatory, otherwise you can test and see what happens...
 This are self explanatory, otherwise you can test and see what happens...
 
 ### Meta Tools
+
+![kinoraw addon](/imgs/meta_tools2.png?raw=true "kinoraw addon")
 
 ![kinoraw addon](/imgs/meta_tools.png?raw=true "kinoraw addon")
 
@@ -184,6 +188,8 @@ The selected meta is ungrouped and all related strips outside in and out range a
 
 
 ## IN and OUT Tools
+
+![kinoraw addon](/imgs/io_tools3.png?raw=true "kinoraw addon")
 
 ![kinoraw addon](/imgs/io_tools2.png?raw=true "kinoraw addon")
 
@@ -410,7 +416,7 @@ It also centers the view into the selection
 
 ##### Trim to Timeline Content
 
-Automatically set start and end frames of current scene according to the content of the Sequence Editor.
+Set start and end frames of current scene according to the content of the Sequence Editor.
 
 It also centers the view into the selection
 
