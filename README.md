@@ -6,9 +6,9 @@ a compilation of tools to improve video editing with blender's VSE
 
 
 
-*Bli bli bli bla bli bla bli bli, Bli bli bli bla* **http://kinoraw.net** *bli bla bli bli, Bli bli bli* **FLOSS video editing** *bla bli bla bli bli, Bli bli bli* **[BLENDER!](http://www.blender.org)** *bla bli bla bli bli, Bli bli bli bla* **[Jump to Cut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** *bli bla bli bli, Bli bli bli* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli* FCP XDXDXDXD *bla bli bla bli bli, Bli bli* **useful tools grouped in the same panel** *bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli* **fast video editing** *bli, Bli bli* **with Blender** *bli bla* **linux, of course.** *Bli bla bli bli blau*
+*Bli bli bli bla bli bla bli bli, Bli bli bli bla* **http://kinoraw.net** *bli bla bli bli, Bli bli bli* **FLOSS video editing** *bla bli bla bli bli, Bli bli bli* **[BLENDER!](http://www.blender.org)** *bla bli bla bli bli, Bli bli bli bla* **[Jump to Cut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** *bli bla bli bli, Bli bli bli* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli* FCP XDXDXDXD *bla bli bla bli bli, Bli bli* **useful tools grouped in the same panel** *bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli. Bli bla bla bli* **fast video editing** *bli, bli bli* **with Blender** *bli bla* **linux, of course.** *Bli bla bli bli blau*
 
-	-- Carlos Padial, 2015 
+	-- Carlos Padial, 2015 ;)
 
 
 ## How to Install
