@@ -46,6 +46,8 @@ As you can guess, jump from marker to marker.
 
 * shortcut keys **alt + Q** and **alt + W**  
 
+#### VSE fundamentals
+
 ![kinoraw addon](/imgs/maincontrols.png?raw=true "kinoraw addon")
 
 This are self explanatory, some useful internal operators...
