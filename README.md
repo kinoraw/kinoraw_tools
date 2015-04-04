@@ -83,8 +83,6 @@ Since version 2.73 there is an option to jump to edit points, so Jump to Cut's o
 
 <img align="" src="/imgs/jump_to_cut_panel_001.png">
 
-*Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli*
-
 ### Main Controls
 
 <img align="" src="/imgs/jumpers.png">
