@@ -116,9 +116,11 @@ Place active file from File Browser to Sequencer Editor on current frame.
 
 Same as above, but also move forward all strips after current frame.
 
-#### Slide Grab
+#### Slip
 
-Same as above, interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
+Alter in and out points of a strip but not its duration. Only available when a the type of active strip is Movie, Scene or Meta. Click 'Input...' to choose the amount of sliding desired. The start and end frame of active strip will be moved, but its length and position will remain unchanged.
+
+Interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
 
 ![kinoraw addon](/imgs/extra3.png?raw=true "kinoraw addon")
 
