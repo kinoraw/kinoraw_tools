@@ -352,6 +352,25 @@ Set strip name to input file name. This operator is useful after separating imag
 
 ![kinoraw addon](/imgs/menu_frame.png?raw=true "kinoraw addon")
 
+##### Trim to Selection
+
+Set start and end frames of current scene to match selected strips in the Sequence Editor.
+
+It also centers the view into the selection
+
+##### Trim to Timeline Content
+
+Automatically set start and end frames of current scene according to the content of the Sequence Editor.
+
+It also centers the view into the selection
+
+##### Skip One Second
+
+Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
+
+* shortcut keys **ctrl + shift + left arrow** to skip back one second,
+* shortcut keys **ctrl + shift + right arrow** to skip forward one second. 
+
 
 ## Proxy Tools
 
