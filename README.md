@@ -297,14 +297,14 @@ Set strip name to input file name. This operator is useful after separating imag
 
 ![kinoraw addon](/imgs/audio_tools.png?raw=true "kinoraw addon")
 
-### EXTRACT WAV
+### Extract WAV
 
 create a wav file out of a selected movie strip in the indicated path.
 If the audio file already exists in the path, it is loaded and trimmed according to the selected movie strip.
 
 You can also generate ffmpeg scripts to launch a batch conversion out of blender.
 
-### sync tool
+### Sync Tool
 
 This is useful to sync diferent audio strips to a single movie strip. It does not mantain the sync if you move only the movie strip, but anytime you can delete audio strips and reload again synced.
 
