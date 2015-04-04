@@ -121,8 +121,9 @@ If automarkers is selected, each scene stores his owns IN and OUT markers and yo
 
 You can access this in and out markers with this:
 
-bpy.data.scenes['Scene']
+    bpy.data.scenes['Scene'].kr_in_marker
 
+    bpy.data.scenes['Scene'].kr_out_marker
 
 ![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
 
