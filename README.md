@@ -46,12 +46,13 @@ As you can guess, jump from marker to marker.
 
 * shortcut keys **alt + Q** and **alt + W**  
 
-#### VSE fundamentals
+### VSE fundamentals
 
 ![kinoraw addon](/imgs/maincontrols.png?raw=true "kinoraw addon")
 
 This are self explanatory, some useful internal operators...
 
+### Trim Timeline Tools
 
 ![kinoraw addon](/imgs/trimmers.png?raw=true "kinoraw addon")
 
@@ -63,9 +64,13 @@ Automatically set start and end frames of current scene according to In and Out 
 
 Set start and end frames of current scene to match selected strips in the Sequence Editor.
 
+It also centers the view into the selection
+
 #### All (Trim to Timeline Content)
 
 Automatically set start and end frames of current scene according to the content of the Sequence Editor.
+
+It also centers the view into the selection
 
 ### Extra Tools
 
