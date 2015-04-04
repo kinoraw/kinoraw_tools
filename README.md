@@ -82,10 +82,6 @@ Create a marker IN at the selected strip start frame and a marker OUT at the sel
 
 Trim (soft cut) the selected clip on both sides to adhere to the In and Out markers, as long as the clip is within that range. If not, or in absence of In and Out, does nothing. I.E. It is a quick option to cut many clips at the same duration.
 
-#### Set Start & End:
-
-Set scene start and end frames with the same values of IN and OUT markers.
-
 ![kinoraw addon](/imgs/io_tools.png?raw=true "kinoraw addon")
 
 #### Auto Markers
