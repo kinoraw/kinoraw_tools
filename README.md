@@ -275,17 +275,21 @@ to get exif info panel you need to install exiftools:
     sudo apt-get install libimage-exiftool-perl
 
 
-## Eco Tools
+## Eco Tools    (WARNING!: CPU INTENSIVE:)
 
 ![kinoraw addon](/imgs/eco.png?raw=true "kinoraw addon")
+
+TODO: keep metastrip in the same channel
 
 Only visible with a Metastrip selected
 
 Select a movie or meta strip, set number of echoes and offset (in frames), and press Eco button.
 
-The opacity of all strips is updated to 1/number of echoes to mantain luminance. The blending is set to add for all clips except first one.
+The opacity of all strips is updated to 1/number of echoes to mantain luminance. The blending is set to alpha over for all clips except first one.
 
-All clips are grouped inside a meta. Press home after running the script to see the meta.
+If add mode is selected, the blending is set to add.
+
+All clips are finally grouped inside a meta. Press home after running the script to see the meta.
 
 
 ## Random Editor panel (EXPERIMENTAL)
