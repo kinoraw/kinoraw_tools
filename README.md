@@ -18,6 +18,8 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
 
+![kinoraw addon](/imgs/trimmers.png?raw=true "kinoraw addon")
+
 #### In / Out (Trim to In and Out)
 
 Automatically set start and end frames of current scene according to In and Out markers.
