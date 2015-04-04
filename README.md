@@ -25,7 +25,7 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
 
-#### Seconds
+#### Seconds 
 
 Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
 
