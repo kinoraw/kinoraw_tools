@@ -14,9 +14,17 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bl
 
 ### Main Controls
 
+Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
+
 ![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
 
-Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
+#### Trim to Timeline Content
+
+Automatically set start and end frames of current scene according to the content of the Sequence Editor.
+
+#### Trim to Selection
+
+Set start and end frames of current scene to match selected strips in the Sequence Editor.
 
 ### Extra Tools
 
@@ -43,11 +51,14 @@ Move current view to parent timeline. Only enabled when current view is relative
 #### Extend to Fill
 
 Extend active strip forward to fill adjacent space. If there no other strip is following active one on the same channel, the clip is extended to the end of the sequence.
-Open with Editor
 
-#### a
+#### File Place
 
-#### b
+Place active file from File Browser to Sequencer Editor on current frame.
+
+#### File Insert
+
+Same as above, but also shift forward forward all strips after current frame.
 
 #### Slide Grab
 
@@ -122,6 +133,18 @@ Same as above, but shifting occurs only on the same channel as active strip.
 
 ![kinoraw addon](/imgs/menu_select.png?raw=true "kinoraw addon")
 
+#### Select All by Type
+
+Select all the strips of the specified type in the Sequence Editor.
+
+#### Current-Frame-Aware Select
+
+Select strips on all channels according to current frame. Available modes are:
+
+    Before (select all strips before current frame),
+    After (select all strips after current frame),
+    On (select all strips underneath playhead). 
+
 ### VSE Header Menu > add
 
 ![kinoraw addon](/imgs/menu_add.png?raw=true "kinoraw addon")
@@ -137,6 +160,22 @@ In a File Browser area, select a file and in the VSE panel press "Import from Br
 ### VSE Header Menu > input
 
 ![kinoraw addon](/imgs/menu_input.png?raw=true "kinoraw addon")
+
+#### Open with Editor
+
+Open active strip with Movie Clip Editor or Image Editor, according to strip type. If a clip is already loaded, existing data is used.
+
+#### Open with External Editor
+
+Open active image strip with the default external image editor. To use this operator a valid path to the external editor must be specified in User Preferences > File.
+
+#### Create a Movieclip strip
+
+When a movie or image strip is selected, this operator creates a movieclip or find the correspondent movieclip that already exists for this footage, and add a VSE strip with same cuts the original strip has.It can convert movie strips and image sequences, both with hard cuts or soft cuts.
+
+#### File Name to Strip Name
+
+Set strip name to input file name. This operator is useful after separating images of a sequence.
 
 ## MovieClip Editor Header Menu
 
@@ -164,6 +203,8 @@ In a File Browser area, select a file and in the VSE panel press "Import from Br
 ## Exif info panel
 
 ![kinoraw addon](/imgs/exif.png?raw=true "kinoraw addon")
+
+Select a strip and press 'Read EXIF data'. Works only with image and movie strips 
 
 to get exif info panel you need to install exiftools:
 
@@ -198,59 +239,27 @@ Only visible with a Metastrip selected
 
 
 
- Trim to Timeline Content
-
-Automatically set start and end frames of current scene according to the content of the Sequence Editor.
-Trim to Selection
-
-Set start and end frames of current scene to match selected strips in the Sequence Editor.
-Select All by Type
-
-Select all the strips of the specified type in the Sequence Editor.
-Current-Frame-Aware Select
-
-Select strips on all channels according to current frame. Available modes are:
-
-    Before (select all strips before current frame),
-    After (select all strips after current frame),
-    On (select all strips underneath playhead). 
 
 
 
-Open active strip with Movie Clip Editor or Image Editor, according to strip type. If a clip is already loaded, existing data is used.
-Open with External Editor
-
-Open active image strip with the default external image editor. To use this operator a valid path to the external editor must be specified in User Preferences > File.
-Create a Movieclip strip
-
-When a movie or image strip is selected, this operator creates a movieclip or find the correspondent movieclip that already exists for this footage, and add a VSE strip with same cuts the original strip has.It can convert movie strips and image sequences, both with hard cuts or soft cuts.
-File Name to Strip Name
-
-Set strip name to input file name. This operator is useful after separating images of a sequence.
-File Place
-
-Place active file from File Browser to Sequencer Editor on current frame.
-File Insert
-
-Same as above, but also shift forward forward all strips after current frame.
-Proxy Place
-
-Same as File Place, adding a proxy file.
-Proxy Insert
-
-Same as File Insert, adding a proxy file.
 
 
 
-Open from File Browser
+
+
+
+
+
+
+#### Open from File Browser
 
 Load a Movie or Image Sequence from File Browser to Movie Clip Editor. If a clip is already loaded, existing data is used.
 
-Open Active Strip
+#### Open Active Strip
 
 Load a Movie or Image Sequence from Sequence Editor to Movie Clip Editor. If a clip is already loaded, existing data is used.
 
-Skip One Second
+#### Skip One Second
 
 Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
 
@@ -258,10 +267,6 @@ Skip through the Timeline by one-second increments. The number of frames to skip
     ctrl + shift + right arrow to skip forward one second. 
 
 
-
-EXIF info panel
-
-Select a strip and press 'Read EXIF data'. Works only with image and movie strips 
 
 
 
