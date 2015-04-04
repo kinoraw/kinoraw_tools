@@ -23,14 +23,14 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
 
-#### Skip One Second
+#### Seconds
 
 Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
 
 * shortcut keys **ctrl + shift + left arrow** to skip back one second,
 * shortcut keys **ctrl + shift + right arrow** to skip forward one second. 
 
-#### Cut previous / Cut next
+#### Cuts
 
 The timeline cursor jumps from edit point to edit point. Edit point is any point of entry or departure of a clip, or the cutting start and end. 
 
@@ -41,7 +41,7 @@ The timeline cursor jumps from edit point to edit point. Edit point is any point
 **This buttons are shortcuts for the new internal operator (added recently in Gooseberry project)**
 
 
-#### Marker Previous / Marker next :
+#### Markers
 
 As you can guess, jump from marker to marker.
 
