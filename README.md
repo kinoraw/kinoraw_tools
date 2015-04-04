@@ -82,12 +82,15 @@ Create a marker IN at the selected strip start frame and a marker OUT at the sel
 
 Trim (soft cut) the selected clip on both sides to adhere to the In and Out markers, as long as the clip is within that range. If not, or in absence of In and Out, does nothing. I.E. It is a quick option to cut many clips at the same duration.
 
-![kinoraw addon](/imgs/io_tools.png?raw=true "kinoraw addon")
-
 #### Auto Markers
 
 Bli bli bla bla
+
+![kinoraw addon](/imgs/io_tools.png?raw=true "kinoraw addon")
  
+
+Bli bli bla bla Bli bli bla bla
+
 
 ![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
 
