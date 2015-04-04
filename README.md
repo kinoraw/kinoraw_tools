@@ -92,7 +92,11 @@ Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla b
 
 #### Snap 
 
+This are self explanatory, otherwise you can test and see what happens...
+
 #### Handle selector
+
+This are self explanatory, otherwise you can test and see what happens...
 
 ### Meta Tools
 
@@ -108,6 +112,8 @@ If there is no IN and OUT markers, the meta is not trimmed.
 Paste the clipboard content starting at the timeline cursor.
 
 #### Un-meta + Trim
+
+### IN and OUT Tools
 
 ![kinoraw addon](/imgs/io_tools2.png?raw=true "kinoraw addon")
 
