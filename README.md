@@ -40,6 +40,13 @@ Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla b
 
 ![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
 
+
+![kinoraw addon](/imgs/snap.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/meta_tools.png?raw=true "kinoraw addon")
+![kinoraw addon](/imgs/io_tools.png?raw=true "kinoraw addon")
+
+![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
+
 #### Jog/Shuttle
 
 Jog through current sequence, looping between start and end frames. This action is known as jogging, shuttling or scrubbing. Click the operator to enter interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
@@ -52,17 +59,21 @@ Move current view to parent timeline. Only enabled when current view is relative
 
 Extend active strip forward to fill adjacent space. If there no other strip is following active one on the same channel, the clip is extended to the end of the sequence.
 
+![kinoraw addon](/imgs/extra2.png?raw=true "kinoraw addon")
+
 #### File Place
 
 Place active file from File Browser to Sequencer Editor on current frame.
 
 #### File Insert
 
-Same as above, but also shift forward forward all strips after current frame.
+Same as above, but also move forward all strips after current frame.
 
 #### Slide Grab
 
 Same as above, interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
+
+![kinoraw addon](/imgs/extra3.png?raw=true "kinoraw addon")
 
 #### Fade
 
