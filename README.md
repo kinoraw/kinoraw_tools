@@ -28,7 +28,7 @@ then you can start blender and activate the addon in the user preferences window
 
 ### install the zip package
 
-<img align="" width="500px" src="/imgs/git.png">
+<img align="" width="300px" src="/imgs/git.png">
 
 * Download the zip file from this page
 
