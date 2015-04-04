@@ -6,113 +6,113 @@ a compilation of tools to improve video editing with blender's VSE
 
 ![kinoraw addon](/imgs/kinoraw_addon.png?raw=true "kinoraw addon")
 
-*Bli bli bli bla bli* **useful tools grouped in the same panel** *bla bli bli, Bli bli bli bla* **http://kinoraw.net** *bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla* **[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** *bli bla bli bli, Bli bli bli* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli* **[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco)** *bli bli bla bli bla bli* **fast video editing** bli, Bli bli **with Blender** bli bla **of course**. Bli bla bli bli blau:*
+*Bli bli bli bla bli*  *useful tools grouped in the same panel * *bla bli bli, Bli bli bli bla*  *http://kinoraw.net * *bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla*  *[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut) * *bli bla bli bli, Bli bli bli*  *[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions) * *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli*  *[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco) * *bli bli bla bli bla bli*  *fast video editing * bli, Bli bli  *with Blender * bli bla  *of course *. Bli bla bli bli blau:*
 
 * Kinoraw Tools
 * * Jump to Cut 6
 * * * Main Controls
-*** VSE fundamentals
-*** Trim Timeline Tools
-** Extra Tools
-*** Snap & Handles
-*** Meta Tools
-** IN and OUT Tools
-** Sequencer Extra Actions
-** Strip Data
-** View Modifiers
-** Extra Data
-** Menus
-*** VSE Header Menu > strip
-*** VSE Header Menu > select
+  * VSE fundamentals
+  * Trim Timeline Tools
+ * Extra Tools
+  * Snap & Handles
+  * Meta Tools
+ * IN and OUT Tools
+ * Sequencer Extra Actions
+ * Strip Data
+ * View Modifiers
+ * Extra Data
+ * Menus
+  * VSE Header Menu > strip
+  * VSE Header Menu > select
 
-*** VSE Header Menu > add
-*** VSE Header Menu > input
-*** MovieClip Editor Header Menu > Clip
-*** Timeline Header Menu > frame
-** Proxy Tools
-** Audio Tools
-*** Extract WAV
-*** Sync Tool
-** Exif info panel
-** Eco Tools    (WARNING!: CPU INTENSIVE:)
-** Random Editor panel (EXPERIMENTAL)
-***Random Scratch Operator
-*** Random Editor Operator
-** Glitch panel (EXPERIMENTAL)
+  * VSE Header Menu > add
+  * VSE Header Menu > input
+  * MovieClip Editor Header Menu > Clip
+  * Timeline Header Menu > frame
+ * Proxy Tools
+ * Audio Tools
+  * Extract WAV
+  * Sync Tool
+ * Exif info panel
+ * Eco Tools    (WARNING!: CPU INTENSIVE:)
+ * Random Editor panel (EXPERIMENTAL)
+  *Random Scratch Operator
+  * Random Editor Operator
+ * Glitch panel (EXPERIMENTAL)
 
 
 * Kinoraw Tools
-** Jump to Cut 6
-*** Main Controls
-**** Seconds 
-**** Cuts
-**** Markers
-*** VSE fundamentals
-*** Trim Timeline Tools
-**** In / Out
-**** Selection
-**** All
-** Extra Tools
-*** Snap & Handles
-**** Snap 
-**** Handle selector
-*** Meta Tools
-**** Meta + Copy
-**** Paste + Snap
-**** Un-meta + Trim
-** IN and OUT Tools
-**** set IN / set OUT:
-**** Selected:
-**** Trim:
-**** Auto Markers
-** Sequencer Extra Actions
-**** Jog/Shuttle
-**** Navigate Up
-**** Extend to Fill
-**** File Place
-**** File Insert
-**** Slip
-**** Fade
-**** Copy Properties
-** Strip Data
-** View Modifiers
-** Extra Data
-** Menus
-*** VSE Header Menu > strip
-**** Ripple Delete
-**** Ripple cut
-**** insert 
-**** Insert (Single Channel)
-*** VSE Header Menu > select
-**** Select All by Type
-**** Current-Frame-Aware Select
-**** Select same channel
-*** VSE Header Menu > add
-**** Recursive Loader
-*** VSE Header Menu > input
-**** Open with Editor
-**** Open with External Editor
-**** Create a Movieclip strip
-**** File Name to Strip Name
-*** MovieClip Editor Header Menu > Clip
-*** Timeline Header Menu > frame
-** Proxy Tools
-** Audio Tools
-*** Extract WAV
-*** Sync Tool
-** Exif info panel
-** Eco Tools    (WARNING!: CPU INTENSIVE:)
-** Random Editor panel (EXPERIMENTAL)
-***Random Scratch Operator
-*** Random Editor Operator
-** Glitch panel (EXPERIMENTAL)
-**** Open from File Browser
-**** Open Active Strip
-**** Skip One Second 
+ * Jump to Cut 6
+  * Main Controls
+   * Seconds 
+   * Cuts
+   * Markers
+  * VSE fundamentals
+  * Trim Timeline Tools
+   * In / Out
+   * Selection
+   * All
+ * Extra Tools
+  * Snap & Handles
+   * Snap 
+   * Handle selector
+  * Meta Tools
+   * Meta + Copy
+   * Paste + Snap
+   * Un-meta + Trim
+ * IN and OUT Tools
+   * set IN / set OUT:
+   * Selected:
+   * Trim:
+   * Auto Markers
+ * Sequencer Extra Actions
+   * Jog/Shuttle
+   * Navigate Up
+   * Extend to Fill
+   * File Place
+   * File Insert
+   * Slip
+   * Fade
+   * Copy Properties
+ * Strip Data
+ * View Modifiers
+ * Extra Data
+ * Menus
+  * VSE Header Menu > strip
+   * Ripple Delete
+   * Ripple cut
+   * insert 
+   * Insert (Single Channel)
+  * VSE Header Menu > select
+   * Select All by Type
+   * Current-Frame-Aware Select
+   * Select same channel
+  * VSE Header Menu > add
+   * Recursive Loader
+  * VSE Header Menu > input
+   * Open with Editor
+   * Open with External Editor
+   * Create a Movieclip strip
+   * File Name to Strip Name
+  * MovieClip Editor Header Menu > Clip
+  * Timeline Header Menu > frame
+ * Proxy Tools
+ * Audio Tools
+  * Extract WAV
+  * Sync Tool
+ * Exif info panel
+ * Eco Tools    (WARNING!: CPU INTENSIVE:)
+ * Random Editor panel (EXPERIMENTAL)
+  *Random Scratch Operator
+  * Random Editor Operator
+ * Glitch panel (EXPERIMENTAL)
+   * Open from File Browser
+   * Open Active Strip
+   * Skip One Second 
 
 ## Jump to Cut 6
 
-**[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** has been there for a while (in October will fulfill five years!) and it's still running to help you keep important things together when editing video with blender.
+ *[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut) * has been there for a while (in October will fulfill five years!) and it's still running to help you keep important things together when editing video with blender.
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
@@ -128,25 +128,25 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:
 
-* shortcut keys **ctrl + shift + left arrow** to skip back one second,
-* shortcut keys **ctrl + shift + right arrow** to skip forward one second. 
+* shortcut keys  *ctrl + shift + left arrow * to skip back one second,
+* shortcut keys  *ctrl + shift + right arrow * to skip forward one second. 
 
 #### Cuts
 
 The timeline cursor jumps from edit point to edit point. Edit point is any point of entry or departure of a clip, or the cutting start and end. 
 
-* shortcut keys **Q** and **W**   
+* shortcut keys  *Q * and  *W *   
 
-(it is assigned by default to **PgUp** and **PgDown**)
+(it is assigned by default to  *PgUp * and  *PgDown *)
 
-**This buttons are shortcuts for the new internal operator (added recently in Gooseberry project)**
+ *This buttons are shortcuts for the new internal operator (added recently in Gooseberry project) *
 
 
 #### Markers
 
 As you can guess, jump from marker to marker.
 
-* shortcut keys **alt + Q** and **alt + W**  
+* shortcut keys  *alt + Q * and  *alt + W *  
 
 ### VSE fundamentals
 
@@ -178,15 +178,15 @@ It also centers the view into the selection
 
 ## Extra Tools
 
-Bli bli bli **2012** bla bli bla bli bli, **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** Bli bli bli by **[Turi Scandurra](http://www.turiscandurra.com/)** bli bla bli bli
+Bli bli bli  *2012 * bla bli bla bli bli,  *[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions) * Bli bli bli by  *[Turi Scandurra](http://www.turiscandurra.com/) * bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_tools2.png?raw=true "kinoraw addon")
 
-Bli bli bli bla bli bla bli bli, **in/out tools** Bli bli bli bla bli bla bli bli
+Bli bli bli bla bli bla bli bli,  *in/out tools * Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_tools1.png?raw=true "kinoraw addon")
 
-Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
+Bli bli bli bla bli bla bli bli,  *full size buttons * Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
 
@@ -283,7 +283,7 @@ Alter in and out points of a strip but not its duration. Only available when a t
 
 Interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
 
-**This button is shortcut for the new internal operator (added recently in Gooseberry project)**
+ *This button is shortcut for the new internal operator (added recently in Gooseberry project) *
 
 ![kinoraw addon](/imgs/extra3.png?raw=true "kinoraw addon")
 
@@ -298,15 +298,15 @@ Copy properties of active strip to selected strips. Start selecting multiple str
 
 ## Strip Data
 
-Bli bli bli bla bli bla bli bli, **accesible data from selected strip** Bli bli bli bla bli bla bli bli
+Bli bli bli bla bli bla bli bli,  *accesible data from selected strip * Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_info_movie.png?raw=true "kinoraw addon")
 
-Bli bli bli **trim information** bla bli bla bli bli, **soft & hard** Bli bli bli bla bli bla bli bli
+Bli bli bli  *trim information * bla bli bla bli bli,  *soft & hard * Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_info_color.png?raw=true "kinoraw addon")
 
-bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli blau
+bla bli bla bli bli,  *all strip types * Bli bli bli bla bli bla bli bli blau
 
 ![kinoraw addon](/imgs/jump_to_cut_info_wipe.png?raw=true "kinoraw addon")
 
@@ -318,17 +318,17 @@ bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli blau
 
 ![kinoraw addon](/imgs/jump_to_cut_info_modifier.png?raw=true "kinoraw addon")
 
-bla bli bla bli bli, **same menus, less space** Bli bli bli bla bli bla bli bli blau
+bla bli bla bli bli,  *same menus, less space * Bli bli bli bla bli bla bli bli blau
 
 ![kinoraw addon](/imgs/jump_to_cut_info_modifier2.png?raw=true "kinoraw addon")
 
 ## Extra Data
 
-Bli bli bli bla bli bla bli bli, **secondary properties** Bli bli bli bla bli bla bli bli
+Bli bli bli bla bli bla bli bli,  *secondary properties * Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_info_sound.png?raw=true "kinoraw addon")
 
-Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla bli bli
+Bli bli bli bla bli bla bli bli,  *geometry properties * Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_info_image.png?raw=true "kinoraw addon")
 
@@ -347,14 +347,14 @@ Delete the active strip and shift back all other strips the number of frames bet
 
 Same as above, but copying active strip to memory buffer before deleting it. Copied strip can be pasted in place as usual, for example using the keystroke combination ctrl-V.
 
-* **TO FIX:** ripple cut and ripple delete: some strips change their channel position
+*  *TO FIX: * ripple cut and ripple delete: some strips change their channel position
 it seems to happend when one involved strips is the one in higher position...
 
 #### insert 
 
 Shift forward all strips after current frame and insert active strip.
 
-* **TO FIX:** insert operator works fine but sometimes some strips change their
+*  *TO FIX: * insert operator works fine but sometimes some strips change their
 channel position.
 
 
@@ -445,9 +445,9 @@ You can also generate ffmpeg scripts to launch a batch conversion out of blender
 
 This is useful to sync diferent audio strips to a single movie strip. It does not mantain the sync if you move only the movie strip, but anytime you can delete audio strips and reload again synced.
 
-Select an audio strip and a movie strip and press **set sync** to store sync information in a text file. 
+Select an audio strip and a movie strip and press  *set sync * to store sync information in a text file. 
 
-Press **reload audio** with a movie strip selected to reload the audio files
+Press  *reload audio * with a movie strip selected to reload the audio files
 
 ## Exif info panel
 
