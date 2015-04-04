@@ -20,8 +20,25 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
 
+
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
 
+#### Cut previous / Cut next
+
+The timeline cursor jumps from edit point to edit point. Edit point is any point of entry or departure of a clip, or the cutting start and end. 
+
+* shortcut keys **Q** and **W**   
+
+(it is assigned by default to **PgUp** and **PgDown**)
+
+**This buttons are shortcuts for the new internal operator (added recently in Gooseberry project)**
+
+
+#### Marker Previous / Marker next :
+
+As you can guess, jump from marker to marker.
+
+* shortcut keys **alt + Q** and **alt + W**  
 
 
 ![kinoraw addon](/imgs/trimmers.png?raw=true "kinoraw addon")
