@@ -65,17 +65,35 @@ Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla
 ![kinoraw addon](/imgs/jump_to_cut_info_image.png?raw=true "kinoraw addon")
 
 
+## VSE Header Menu
 
+### VSE Header Menu > strip
 
 ![kinoraw addon](/imgs/menu_strip.png?raw=true "kinoraw addon")
 
+### VSE Header Menu > select
+
 ![kinoraw addon](/imgs/menu_select.png?raw=true "kinoraw addon")
 
-![kinoraw addon](/imgs/menu_input.png?raw=true "kinoraw addon")
+### VSE Header Menu > add
 
 ![kinoraw addon](/imgs/menu_add.png?raw=true "kinoraw addon")
 
+### VSE Header Menu > input
+
+![kinoraw addon](/imgs/menu_input.png?raw=true "kinoraw addon")
+
+## MovieClip Editor Header Menu
+
+### MovieClip Editor Header Menu > Clip
+
 ![kinoraw addon](/imgs/menu_movieclip.png?raw=true "kinoraw addon")
+
+## Timeline Header Menu
+
+### Timeline Header Menu > frame
+
+![kinoraw addon](/imgs/menu_frame.png?raw=true "kinoraw addon")
 
 
 
