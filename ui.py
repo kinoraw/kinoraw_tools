@@ -150,7 +150,7 @@ def draw_color_balance(layout, color_balance):
 class JumptoCut(bpy.types.Panel):
     bl_space_type = "SEQUENCE_EDITOR"
     bl_region_type = "UI"
-    bl_label = "JumptoCut 6"
+    bl_label = "Jump to Cut 6"
 
     COMPAT_ENGINES = {'BLENDER_RENDER'}
     

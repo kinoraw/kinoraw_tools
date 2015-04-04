@@ -6,7 +6,7 @@ a compilation of tools to improve video editing with blender's VSE
 
 ![kinoraw addon](/imgs/kinoraw_addon.png?raw=true "kinoraw addon")
 
-*Bli bli bli bla bli* **useful tools grouped in the same panel** *bla bli bli, Bli bli bli bla* **http://kinoraw.net** *bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla* **[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** *bli bla bli bli, Bli bli bli* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli* **[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco)** *bli bli bla bli bla bli* **fast video editing** bli, Bli bli **with Blender** bli bla **of course.** *Bli bla bli bli blau:*
+*Bli bli bli bla bli* **useful tools grouped in the same panel** *bla bli bli, Bli bli bli bla* **http://kinoraw.net** *bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla* **[Jump to Cut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** *bli bla bli bli, Bli bli bli* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli* **[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco)** *bli bli bla bli bla bli* **fast video editing** bli, Bli bli **with Blender** bli bla **of course.** *Bli bla bli bli blau:*
 
 **Table of Contents**
 
@@ -16,7 +16,7 @@ a compilation of tools to improve video editing with blender's VSE
 		- [VSE fundamentals](#vse-fundamentals)
 		- [Trim Timeline Tools](#trim-timeline-tools)
 	- [Extra Tools](#extra-tools)
-		- [Snap & Handles](#snap--handles)
+		- [Snap and Handles](#snap-and-handles)
 		- [Meta Tools](#meta-tools)
 	- [IN and OUT Tools](#in-and-out-tools)
 	- [Sequencer Extra Actions](#sequencer-extra-actions)
@@ -39,7 +39,7 @@ a compilation of tools to improve video editing with blender's VSE
 
 ## Jump to Cut 6
 
-**[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** has been there for a while (in October will fulfill five years!) and it's still running to help you keep important things together when editing video with blender.
+**[Jump to Cut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** has been there for a while (in October will fulfill five years!) and it's still running to help you keep important things together when editing video with blender.
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
@@ -118,7 +118,7 @@ Bli bli bli bla bli bla bli bli, **in/out tools** Bli bli bli bla bli bla bli bl
 ![kinoraw addon](/imgs/jump_to_cut_tools1.png?raw=true "kinoraw addon")
 
 
-### Snap & Handles
+### Snap and Handles
 
 ![kinoraw addon](/imgs/snap.png?raw=true "kinoraw addon")
 
@@ -456,3 +456,4 @@ more info here:
  http://ucnv.github.io/aviglitch/
 
 
+cc-by: **[Carlos Padial](http://surreal.asturnazari.com)**, 2015 
