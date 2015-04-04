@@ -209,9 +209,16 @@ Delete the active strip and shift back all other strips the number of frames bet
 
 Same as above, but copying active strip to memory buffer before deleting it. Copied strip can be pasted in place as usual, for example using the keystroke combination ctrl-V.
 
-#### Insert
+* **TO FIX:** ripple cut and ripple delete: some strips change their channel position
+it seems to happend when one involved strips is the one in higher position...
+
+#### insert       (TODO: FIX)
 
 Shift forward all strips after current frame and insert active strip.
+
+* **TO FIX:** insert operator works fine but sometimes some strips change their
+channel position.
+
 
 #### Insert (Single Channel)
 
