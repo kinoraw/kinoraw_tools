@@ -37,6 +37,9 @@ then you can start blender and activate the addon in the user preferences window
 
 Every panel can be switched visible/invisible in the addon preferences panel.
 
+
+
+
 **Table of Contents**
 
 - [Kinoraw Tools](#)
