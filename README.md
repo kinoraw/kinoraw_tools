@@ -54,19 +54,21 @@ This are self explanatory, some useful internal operators...
 
 ### Trim Timeline Tools
 
+* TODO: use also preview timeline!!
+
 ![kinoraw addon](/imgs/trimmers.png?raw=true "kinoraw addon")
 
-#### In / Out (Trim to In and Out)
+#### In / Out
 
 Automatically set start and end frames of current scene according to In and Out markers.
 
-#### Selection (Trim to Selection)
+#### Selection
 
 Set start and end frames of current scene to match selected strips in the Sequence Editor.
 
 It also centers the view into the selection
 
-#### All (Trim to Timeline Content)
+#### All
 
 Automatically set start and end frames of current scene according to the content of the Sequence Editor.
 
