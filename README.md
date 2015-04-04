@@ -32,34 +32,28 @@ Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla b
 
 ![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
 
-####Ripple Delete
-Delete the active strip and shift back all other strips the number of frames between the beginning of deleted strip and the next edit in the sequence.
-####Ripple Cut
-Same as above, but copying active strip to memory buffer before deleting it. Copied strip can be pasted in place as usual, for example using the keystroke combination ctrl-V.
-####Insert
-Shift forward all strips after current frame and insert active strip.
-Insert (Single Channel)
+#### Extend to Fill
 
-Same as above, but shifting occurs only on the same channel as active strip.
-Slide
+Extend active strip forward to fill adjacent space. If there no other strip is following active one on the same channel, the clip is extended to the end of the sequence.
+Open with Editor
+
+
+#### Slide
 
 Alter in and out points of a strip but not its duration. Only available when a the type of active strip is Movie, Scene or Meta. Click 'Input...' to choose the amount of sliding desired. The start and end frame of active strip will be moved, but its length and position will remain unchanged. This action is also known as slipping. Click 'Current Frame to Start' or 'Current Frame to End' to perform the slide according to current frame.
 Slide Grab
 
 Same as above, interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.
+
 Copy Properties
 
 Copy properties of active strip to selected strips. Start selecting multiple strips, then make active the strip whose properties need to be copied to the selected strips. Click the desired operator to perform the action. Some operators affect single properties, while some others affect a group of properties.
+
 Fade
 
 Fade opacity of active strip, or its volume if its type is Sound, creating keyframes for the corresponding property. Possible fade directions are In, Out, In and Out. Duration defines the number of frames between the start and the end of the fade. Amount defines the maximum value that the fade will set. For opacity fades, the maximum value is 1.0. The minimum value reached by the fade is always 0. Keyframes created with this operator can be manipulated through the F-Curve Editor.
-Distribute
 
-Evenly distribute selected strips along the timeline according to a specified offset. This operator is useful to reassign strip length to every element of an image sequence. The operator also allows to reverse the order of the distributed strips. To perform a simple reversion of an image sequence, first separate its images and select them, then run Distribute with Offset set to 1 and Reverse Order enabled.
-Extend to Fill
 
-Extend active strip forward to fill adjacent space. If there no other strip is following active one on the same channel, the clip is extended to the end of the sequence.
-Open with Editor
 
 ### Strip Data
 
@@ -100,9 +94,21 @@ Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla
 
 ![kinoraw addon](/imgs/menu_strip.png?raw=true "kinoraw addon")
 
-Main functions are described here:
+#### Ripple Delete  (TODO: FIX)
 
-http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions
+Delete the active strip and shift back all other strips the number of frames between the beginning of deleted strip and the next edit in the sequence.
+
+#### Ripple cut    (TODO: FIX)
+
+Same as above, but copying active strip to memory buffer before deleting it. Copied strip can be pasted in place as usual, for example using the keystroke combination ctrl-V.
+
+#### Insert
+
+Shift forward all strips after current frame and insert active strip.
+
+#### Insert (Single Channel)
+
+Same as above, but shifting occurs only on the same channel as active strip.
 
 
 ### VSE Header Menu > select
