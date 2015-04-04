@@ -20,10 +20,6 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bl
 
 Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
-![kinoraw addon](/imgs/maincontrols.png?raw=true "kinoraw addon")
-
-This are self explanatory, some useful internal operators...
-
 ![kinoraw addon](/imgs/jumpers.png?raw=true "kinoraw addon")
 
 #### Seconds 
@@ -49,6 +45,10 @@ The timeline cursor jumps from edit point to edit point. Edit point is any point
 As you can guess, jump from marker to marker.
 
 * shortcut keys **alt + Q** and **alt + W**  
+
+![kinoraw addon](/imgs/maincontrols.png?raw=true "kinoraw addon")
+
+This are self explanatory, some useful internal operators...
 
 
 ![kinoraw addon](/imgs/trimmers.png?raw=true "kinoraw addon")
