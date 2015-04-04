@@ -263,6 +263,20 @@ Set strip name to input file name. This operator is useful after separating imag
 
 ![kinoraw addon](/imgs/audio_tools.png?raw=true "kinoraw addon")
 
+### EXTRACT WAV
+
+create a wav file out of a selected movie strip in the indicated path.
+If the audio file already exists in the path, it is loaded and trimmed according to the selected movie strip.
+
+You can also generate ffmpeg scripts to launch a batch conversion out of blender.
+
+### sync tool
+
+This is useful to sync diferent audio strips to a single movie strip. It does not mantain the sync if you move only the movie strip, but anytime you can delete audio strips and reload again synced.
+
+Select an audio strip and a movie strip and press **set sync** to store sync information in a text file. 
+
+Press **reload audio** with a movie strip selected to reload the audio files
 
 ## Exif info panel
 
@@ -297,6 +311,14 @@ All clips are finally grouped inside a meta. Press home after running the script
 Only visible with a Metastrip selected
 
 ![kinoraw addon](/imgs/random_editor.png?raw=true "kinoraw addon")
+
+###Random Scratch Operator
+
+Given *IN and OUT* points, a *duration* in frames, and a Meta as *source*, the operator populates the in and out range with random cuts from source, all with the same *duration*
+
+### Random Editor Operator
+
+Not working yet!
 
 ## Glitch panel (EXPERIMENTAL)
 
