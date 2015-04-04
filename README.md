@@ -71,6 +71,11 @@ Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla
 
 ![kinoraw addon](/imgs/menu_strip.png?raw=true "kinoraw addon")
 
+Main functions are described here:
+
+http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions
+
+
 ### VSE Header Menu > select
 
 ![kinoraw addon](/imgs/menu_select.png?raw=true "kinoraw addon")
@@ -98,59 +103,49 @@ Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla
 
 ## Proxy Tools
 
-## Audio Tools
+![kinoraw addon](/imgs/proxy_tools.png?raw=true "kinoraw addon")
 
-## Exif info panel
-
-## Eco Tools
-
-## Random Editor panel
-
-
-
-
-
-
-
-
-here is some old related documentation:
-
-sequencer_extra_actions
------------------------
-
-1.- ZIP the sequencer_extra_actions folder
-
-2.- open the user preferences window (ctrl+alt+u) and load the zip file with the button 'install from file' you can find at the bottom of the window.
-
-3.- now in the addons window, you should activate the addon by presing the checkbox next to the addon 
-
-
-There are some spreaded documentation. Main functions are described here:
-
-http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions
-
-for audio and proxy tools check this old explanation:
-
-http://kinoraw.net/wordpress/herramientas-para-la-produccion-de-cine-libre/addons-para-blender/proxy-and-audio-tools/extractimport-wav/
+old explanation:
 
 http://kinoraw.net/wordpress/herramientas-para-la-produccion-de-cine-libre/addons-para-blender/proxy-and-audio-tools/createset-proxy/
 
-for jump to cut check this, but many things changed since this docs...
+## Audio Tools
 
-http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut
+![kinoraw addon](/imgs/audio_tools.png?raw=true "kinoraw addon")
 
-for eco tools check:
+old explanation:
 
-http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco
+http://kinoraw.net/wordpress/herramientas-para-la-produccion-de-cine-libre/addons-para-blender/proxy-and-audio-tools/extractimport-wav/
+
+## Exif info panel
+
+![kinoraw addon](/imgs/exif.png?raw=true "kinoraw addon")
 
 to get exif info panel you need to install exiftools:
 
     sudo apt-get install libimage-exiftool-perl
 
-it is suposed to work fine with windows and mac. Some feedback with steps to acomplish this will be apreciated.
+## Eco Tools
+
+![kinoraw addon](/imgs/eco.png?raw=true "kinoraw addon")
+
+for eco tools check:
+
+http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco
+
+## Random Editor panel
+
+![kinoraw addon](/imgs/random_editor.png?raw=true "kinoraw addon")
+
+## Glitch panel
+
+![kinoraw addon](/imgs/glitch.png?raw=true "kinoraw addon")
 
 
-changelog:
 
-change default settings for automarkers. Now it is off by default.
+
+
+
+
+
 
