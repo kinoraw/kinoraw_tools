@@ -8,7 +8,7 @@ a compilation of tools to improve video editing with blender's VSE
 
 *Bli bli bli bla bli* **useful tools grouped in the same panel** *bla bli bli, Bli bli bli bla* **http://kinoraw.net** *bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla* **[JumptoCut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** *bli bla bli bli, Bli bli bli* **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** *bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli* **[Eco](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco)** *bli bli bla bli bla bli* **fast video editing** bli, Bli bli **with Blender** bli bla **of course.** *Bli bla bli bli blau:*
 
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+**Table of Contents**
 
 - [Kinoraw Tools](#)
 	- [Jump to Cut 6](#jump-to-cut-6)
@@ -24,9 +24,9 @@ a compilation of tools to improve video editing with blender's VSE
 	- [View Modifiers](#view-modifiers)
 	- [Extra Data](#extra-data)
 	- [Menus](#menus)
-		- [VSE Header Menu > strip](#VSE-Header-Menu--strip)
-		- [VSE Header Menu > select](#VSE-Header-Menu--select)
-		- [VSE Header Menu > add](#VSE-Header-Menu--add)
+		- [VSE Header Menu > strip](#vse-header-menu--strip)
+		- [VSE Header Menu > select](#vse-header-menu--select)
+		- [VSE Header Menu > add](#vse-header-menu--add)
 		- [VSE Header Menu > input](#vse-header-menu--input)
 		- [MovieClip Editor Header Menu > Clip](#movieclip-editor header-menu--clip)
 		- [Timeline Header Menu > frame](#timeline-header-menu--frame)
