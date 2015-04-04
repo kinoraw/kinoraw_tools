@@ -201,18 +201,18 @@ Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla
 
 ![kinoraw addon](/imgs/menu_strip.png?raw=true "kinoraw addon")
 
-#### Ripple Delete  (TODO: FIX)
+#### Ripple Delete
 
 Delete the active strip and shift back all other strips the number of frames between the beginning of deleted strip and the next edit in the sequence.
 
-#### Ripple cut    (TODO: FIX)
+#### Ripple cut
 
 Same as above, but copying active strip to memory buffer before deleting it. Copied strip can be pasted in place as usual, for example using the keystroke combination ctrl-V.
 
 * **TO FIX:** ripple cut and ripple delete: some strips change their channel position
 it seems to happend when one involved strips is the one in higher position...
 
-#### insert       (TODO: FIX)
+#### insert 
 
 Shift forward all strips after current frame and insert active strip.
 
