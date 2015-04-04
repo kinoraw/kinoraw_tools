@@ -74,7 +74,7 @@ Automatically set start and end frames of current scene according to the content
 
 It also centers the view into the selection
 
-### Extra Tools
+## Extra Tools
 
 Bli bli bli **2012** bla bli bla bli bli, **[Extra Sequencer Actions](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions)** Bli bli bli by **[Turi Scandurra](http://www.turiscandurra.com/)** bli bla bli bli
 
@@ -115,7 +115,8 @@ Paste the clipboard content starting at the timeline cursor.
 
 #### Un-meta + Trim
 
-### IN and OUT Tools
+
+## IN and OUT Tools
 
 ![kinoraw addon](/imgs/io_tools2.png?raw=true "kinoraw addon")
 
@@ -146,7 +147,7 @@ You can access this in and out markers with this:
 
     bpy.data.scenes['Scene'].kr_out_marker
 
-### Sequencer Extra Actions
+## Sequencer Extra Actions
 
 ![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
 
@@ -191,7 +192,7 @@ Fade opacity of active strip, or its volume if its type is Sound, creating keyfr
 Copy properties of active strip to selected strips. Start selecting multiple strips, then make active the strip whose properties need to be copied to the selected strips. Click the desired operator to perform the action. Some operators affect single properties, while some others affect a group of properties.
 
 
-### Strip Data
+## Strip Data
 
 Bli bli bli bla bli bla bli bli, **accesible data from selected strip** Bli bli bli bla bli bla bli bli
 
@@ -209,7 +210,7 @@ bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli blau
 
 ![kinoraw addon](/imgs/jump_to_cut_info_blur.png?raw=true "kinoraw addon")
 
-### View Modifiers
+## View Modifiers
 
 ![kinoraw addon](/imgs/jump_to_cut_info_modifier.png?raw=true "kinoraw addon")
 
@@ -217,7 +218,7 @@ bla bli bla bli bli, **same menus, less space** Bli bli bli bla bli bla bli bli 
 
 ![kinoraw addon](/imgs/jump_to_cut_info_modifier2.png?raw=true "kinoraw addon")
 
-### Extra Data
+## Extra Data
 
 Bli bli bli bla bli bla bli bli, **secondary properties** Bli bli bli bla bli bla bli bli
 
@@ -228,7 +229,7 @@ Bli bli bli bla bli bla bli bli, **geometry properties** Bli bli bli bla bli bla
 ![kinoraw addon](/imgs/jump_to_cut_info_image.png?raw=true "kinoraw addon")
 
 
-## VSE Header Menu
+## Menus
 
 ### VSE Header Menu > strip
 
@@ -283,7 +284,7 @@ Select strips on the same channel as selected
 
 ![kinoraw addon](/imgs/menu_add.png?raw=true "kinoraw addon")
 
-####Recursive Loader
+#### Recursive Loader
 
 In a File Browser area, select a file and in the VSE panel press "Import from Browser" button. All movie clips will be imported (sorted alphabeticaly by filename) in the VSE
 
