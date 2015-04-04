@@ -18,13 +18,17 @@ Bli bli bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_panel_001.png?raw=true "kinoraw addon")
 
-#### Trim to Timeline Content
+#### In / Out (Trim to In and Out)
 
-Automatically set start and end frames of current scene according to the content of the Sequence Editor.
+Automatically set start and end frames of current scene according to In and Out markers.
 
-#### Trim to Selection
+#### Selection (Trim to Selection)
 
 Set start and end frames of current scene to match selected strips in the Sequence Editor.
+
+#### All (Trim to Timeline Content)
+
+Automatically set start and end frames of current scene according to the content of the Sequence Editor.
 
 ### Extra Tools
 
