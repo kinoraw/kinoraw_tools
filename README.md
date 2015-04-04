@@ -109,13 +109,14 @@ Bli bli bli **2012** bla bli bla bli bli, **[Extra Sequencer Actions](http://wik
 
 ![kinoraw addon](/imgs/jump_to_cut_tools2.png?raw=true "kinoraw addon")
 
+Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
+
+![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
+
 Bli bli bli bla bli bla bli bli, **in/out tools** Bli bli bli bla bli bla bli bli
 
 ![kinoraw addon](/imgs/jump_to_cut_tools1.png?raw=true "kinoraw addon")
 
-Bli bli bli bla bli bla bli bli, **full size buttons** Bli bli bli bla bli bla bli bli
-
-![kinoraw addon](/imgs/jump_to_cut_tools3.png?raw=true "kinoraw addon")
 
 ### Snap & Handles
 
