@@ -30,12 +30,12 @@ a compilation of tools to improve video editing with blender's VSE
 		- [VSE Header Menu > input](#vse-header-menu--input)
 		- [MovieClip Editor Header Menu > Clip](#movieclip-editor-header-menu--clip)
 		- [Timeline Header Menu > frame](#timeline-header-menu--frame)
-	- [Proxy Tools](#proxy-tools)
-	- [Audio Tools](#audio-tools)
-	- [Exif info panel](#exif-info-panel)
+	- [Proxy Tools WIP](#proxy-tools)
+	- [Audio Tools WIP](#audio-tools)
+	- [Exif info panel WIP](#exif-info-panel)
 	- [Eco Tools    (WARNING!: CPU INTENSIVE:)](#eco-tools----warning-cpu-intensive)
-	- [Random Editor panel (EXPERIMENTAL)](#random-editor-panel-experimental)
-	- [Glitch panel (EXPERIMENTAL)](#glitch-panel-experimental)
+	- [Random Editor panel WIP (EXPERIMENTAL)](#random-editor-panel-experimental)
+	- [Glitch panel WIP (EXPERIMENTAL)](#glitch-panel-experimental)
 
 ## Jump to Cut 6
 
