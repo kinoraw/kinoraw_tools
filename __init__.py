@@ -18,7 +18,7 @@
 
 bl_info = {
     "name": "Kinoraw Tools",
-    "author": "Carlos Padial", "Turi Scandurra",
+    "author": "Carlos Padial, Turi Scandurra",
     "version": (0, 3),
     "blender": (2, 74, 0),
     "category": "Sequencer",
