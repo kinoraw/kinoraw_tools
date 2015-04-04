@@ -146,6 +146,8 @@ You can access this in and out markers with this:
 
     bpy.data.scenes['Scene'].kr_out_marker
 
+### Sequencer Extra Actions
+
 ![kinoraw addon](/imgs/extra1.png?raw=true "kinoraw addon")
 
 #### Jog/Shuttle
