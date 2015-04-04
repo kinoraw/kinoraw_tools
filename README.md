@@ -11,7 +11,7 @@ a compilation of tools to improve video editing with blender's VSE
 	-- Carlos Padial, 2015 ;)
 
 
-<img align="" width="500px" src="/imgs/fullscreen.png">
+<img align="center" width="500px" src="/imgs/fullscreen.png">
 
 
 ## How to Install
@@ -28,7 +28,7 @@ then you can start blender and activate the addon in the user preferences window
 
 ### install the zip package
 
-<img align="" width="300px" src="/imgs/git.png">
+<img align="center" width="300px" src="/imgs/git.png">
 
 * Download the zip file from this page
 
@@ -38,11 +38,11 @@ then you can start blender and activate the addon in the user preferences window
 
 * after that, you should activate the addon by presing the checkbox next to the addon 
 
-<img align="" width="500px" src="/imgs/kinoraw_addon.png">
+<img align="center" width="500px" src="/imgs/kinoraw_addon.png">
 
 Every panel can be switched visible/invisible in the addon preferences panel.
 
-<img align="right" width="250px" src="/imgs/full_panel.png">
+<img align="right" width="280px" src="/imgs/full_panel.png">
 
 
 **Table of Contents**
