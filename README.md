@@ -105,17 +105,11 @@ http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequ
 
 ![kinoraw addon](/imgs/proxy_tools.png?raw=true "kinoraw addon")
 
-old explanation:
-
-http://kinoraw.net/wordpress/herramientas-para-la-produccion-de-cine-libre/addons-para-blender/proxy-and-audio-tools/createset-proxy/
 
 ## Audio Tools
 
 ![kinoraw addon](/imgs/audio_tools.png?raw=true "kinoraw addon")
 
-old explanation:
-
-http://kinoraw.net/wordpress/herramientas-para-la-produccion-de-cine-libre/addons-para-blender/proxy-and-audio-tools/extractimport-wav/
 
 ## Exif info panel
 
@@ -125,9 +119,12 @@ to get exif info panel you need to install exiftools:
 
     sudo apt-get install libimage-exiftool-perl
 
+
 ## Eco Tools
 
 ![kinoraw addon](/imgs/eco.png?raw=true "kinoraw addon")
+
+Only visible with a Metastrip selected
 
 for eco tools check:
 
@@ -135,11 +132,17 @@ http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Eco
 
 ## Random Editor panel
 
+Only visible with a Metastrip selected
+
 ![kinoraw addon](/imgs/random_editor.png?raw=true "kinoraw addon")
 
 ## Glitch panel
 
 ![kinoraw addon](/imgs/glitch.png?raw=true "kinoraw addon")
+
+EXPERIMENTAL!! 
+
+Only visible with a Metastrip selected
 
 
 
