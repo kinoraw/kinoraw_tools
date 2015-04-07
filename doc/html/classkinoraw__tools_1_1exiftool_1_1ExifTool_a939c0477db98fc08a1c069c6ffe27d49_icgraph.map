@@ -1,0 +1,5 @@
+<map id="kinoraw_tools.exiftool.ExifTool.get_tags_batch" name="kinoraw_tools.exiftool.ExifTool.get_tags_batch">
+<area shape="rect" id="node2" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#af97fd7d794de6f36d85a347464de50e0" title="Return only specified tags for a single file. " alt="" coords="230,5,405,46"/>
+<area shape="rect" id="node3" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a34f672666bd1089e8a669d39551adf96" title="Extract a single tag from the given files. " alt="" coords="230,70,405,111"/>
+<area shape="rect" id="node4" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a049f6f9b7dd90169d55edbc76cd9e6c1" title="Extract a single tag from a single file. " alt="" coords="454,70,629,111"/>
+</map>

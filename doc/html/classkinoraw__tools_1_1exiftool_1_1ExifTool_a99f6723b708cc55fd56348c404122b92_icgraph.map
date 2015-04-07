@@ -1,0 +1,8 @@
+<map id="kinoraw_tools.exiftool.ExifTool.execute_json" name="kinoraw_tools.exiftool.ExifTool.execute_json">
+<area shape="rect" id="node2" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a786d62efe225d588e4378f166bd09e93" title="Return all meta&#45;data for the given files. " alt="" coords="230,5,405,46"/>
+<area shape="rect" id="node3" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#adbcbcd4ff69f034d10adb793d2c9cc04" title="Return meta&#45;data for a single file. " alt="" coords="230,70,405,111"/>
+<area shape="rect" id="node4" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a939c0477db98fc08a1c069c6ffe27d49" title="Return only specified tags for the given files. " alt="" coords="230,135,405,177"/>
+<area shape="rect" id="node5" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#af97fd7d794de6f36d85a347464de50e0" title="Return only specified tags for a single file. " alt="" coords="454,102,629,143"/>
+<area shape="rect" id="node6" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a34f672666bd1089e8a669d39551adf96" title="Extract a single tag from the given files. " alt="" coords="454,167,629,209"/>
+<area shape="rect" id="node7" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a049f6f9b7dd90169d55edbc76cd9e6c1" title="Extract a single tag from a single file. " alt="" coords="678,167,853,209"/>
+</map>

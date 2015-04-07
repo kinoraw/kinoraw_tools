@@ -1,0 +1,4 @@
+<map id="kinoraw_tools.functions.generate_subsets_list" name="kinoraw_tools.functions.generate_subsets_list">
+<area shape="rect" id="node2" href="$namespacekinoraw__tools_1_1functions.html#a0310a140c297671df78f7aa1ed003869" title="return a dict where: keys = subset names values = list of markers " alt="" coords="280,5,461,46"/>
+<area shape="rect" id="node3" href="$namespacekinoraw__tools_1_1functions.html#af93853e4146a29a92adf9345f4cf1f3f" title="return a random edit from random subsets " alt="" coords="267,70,474,111"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="kinoraw_tools.audio_tools.createsyncfile" name="kinoraw_tools.audio_tools.createsyncfile">
+<area shape="rect" id="node2" href="$classkinoraw__tools_1_1audio__tools_1_1ExternalAudioSetSyncOperator.html#ab2dffefab454c6f5baba6598345e6108" title="kinoraw_tools.audio\l_tools.ExternalAudioSetSync\lOperator.execute" alt="" coords="197,63,389,119"/>
+<area shape="rect" id="node3" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a99f6723b708cc55fd56348c404122b92" title="Execute the given batch of parameters and parse the JSON output. " alt="" coords="438,70,613,111"/>
+<area shape="rect" id="node4" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a786d62efe225d588e4378f166bd09e93" title="Return all meta&#45;data for the given files. " alt="" coords="662,5,837,46"/>
+<area shape="rect" id="node5" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#adbcbcd4ff69f034d10adb793d2c9cc04" title="Return meta&#45;data for a single file. " alt="" coords="662,70,837,111"/>
+<area shape="rect" id="node6" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a939c0477db98fc08a1c069c6ffe27d49" title="Return only specified tags for the given files. " alt="" coords="662,135,837,177"/>
+<area shape="rect" id="node7" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#af97fd7d794de6f36d85a347464de50e0" title="Return only specified tags for a single file. " alt="" coords="886,102,1061,143"/>
+<area shape="rect" id="node8" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a34f672666bd1089e8a669d39551adf96" title="Extract a single tag from the given files. " alt="" coords="886,167,1061,209"/>
+<area shape="rect" id="node9" href="$classkinoraw__tools_1_1exiftool_1_1ExifTool.html#a049f6f9b7dd90169d55edbc76cd9e6c1" title="Extract a single tag from a single file. " alt="" coords="1110,167,1285,209"/>
+</map>
