@@ -16,7 +16,19 @@ a compilation of tools to improve video editing with blender's VSE
 
 ## How to Install
 
-### Clone the repo
+### install the zip package (STABLE VERSION)
+
+* Download the zip file from this page https://github.com/kinoraw/kinoraw_repo
+
+* Open Blender
+
+* Open the user preferences window (ctrl+alt+u) and load the zip file named *kinoraw_tools_Vxxx.zip* with the button 'install from file' you can find at the bottom of the window.
+
+* After that, you should activate the addon by presing the checkbox next to the addon 
+
+<img align="center" width="500px" src="/imgs/kinoraw_addon.png">
+
+### Clone the repo (DEVELOPMENT VERSION)
 
 You can clone the addon directly in the blender addons folder, i.e: in my ubuntu computer i had to do:
 
@@ -26,19 +38,8 @@ You can clone the addon directly in the blender addons folder, i.e: in my ubuntu
 
 then you can start blender and activate the addon in the user preferences window.
 
-### install the zip package
 
-* Download the zip file from this page
 
-<img align="center" width="300px" src="/imgs/git.png">
-
-* Open Blender
-
-* Open the user preferences window (ctrl+alt+u) and load the zip file with the button 'install from file' you can find at the bottom of the window.
-
-* After that, you should activate the addon by presing the checkbox next to the addon 
-
-<img align="center" width="500px" src="/imgs/kinoraw_addon.png">
 
     Every panel can be switched visible/invisible in the addon preferences panel.
 

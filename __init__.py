@@ -24,8 +24,7 @@ bl_info = {
     "category": "Sequencer",
     "location": "Sequencer",
     "description": "a compilation of tools to improve video editing with blender's VSE",
-    "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.6/Py/"
-        "Scripts/Sequencer/",
+    "wiki_url": "https://github.com/kinoraw/kinoraw_tools/blob/master/README.md",
     "tracker_url": "",
     "support": "COMMUNITY"}
 
