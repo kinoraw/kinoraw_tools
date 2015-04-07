@@ -1,0 +1,290 @@
+<h1 id="kinoraw-tools">Kinoraw Tools</h1>
+<p>a compilation of tools to improve video editing with blender's VSE</p>
+<p>(Tested with blender 2.74)</p>
+<p><em>Bli bli bli bla bli bla bli bli, Bli bli bli bla</em> <strong><a href="http://kinoraw.net">http://kinoraw.net</a></strong> <em>bli bla bli bli, Bli bli bli</em> <strong>FLOSS video editing</strong> <em>bla bli bla bli bli, Bli bli bli</em> <strong><a href="http://www.blender.org">BLENDER!</a></strong> <em>bla bli bla bli bli, Bli bli bli bla</em> <strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut">Jump to Cut</a></strong> <em>bli bla bli bli, Bli bli bli</em> <strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions">Extra Sequencer Actions</a></strong> <em>bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli</em> FCP XDXDXDXD <em>bla bli bla bli bli, Bli bli</em> <strong>useful tools grouped in the same panel</strong> <em>bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli. Bli bla bla bli</em> <strong>fast video editing</strong> <em>bli, bli bli</em> <strong>with Blender</strong> <em>bli bla</em> <strong>linux, of course.</strong> <em>Bli bla bli bli blau</em></p>
+<pre><code>-- Carlos Padial, 2015 ;)</code></pre>
+<p><img align="center" width="500px" src="./imgs/full_screen.jpg"></p>
+<h2 id="how-to-install">How to Install</h2>
+<h3 id="clone-the-repo">Clone the repo</h3>
+<p>You can clone the addon directly in the blender addons folder, i.e: in my ubuntu computer i had to do:</p>
+<pre><code>cd ~/.config/blender/2.74/scripts/addons
+
+git clone https://github.com/kinoraw/kinoraw_tools</code></pre>
+<p>then you can start blender and activate the addon in the user preferences window.</p>
+<h3 id="install-the-zip-package">install the zip package</h3>
+<ul>
+<li>Download the zip file from this page</li>
+</ul>
+<p><img align="center" width="300px" src="./imgs/git.png"></p>
+<ul>
+<li><p>Open Blender</p></li>
+<li><p>Open the user preferences window (ctrl+alt+u) and load the zip file with the button 'install from file' you can find at the bottom of the window.</p></li>
+<li><p>After that, you should activate the addon by presing the checkbox next to the addon</p></li>
+</ul>
+<p><img align="center" width="500px" src="./imgs/kinoraw_addon.png"></p>
+<pre><code>Every panel can be switched visible/invisible in the addon preferences panel.</code></pre>
+<p><img align="right" width="280px" src="./imgs/full_panel.png"></p>
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><p><a href="#">Kinoraw Tools</a></p>
+<ul>
+<li><a href="#how-to-install">How to Install</a><br /></li>
+<li><p><a href="#jump-to-cut-6">Jump to Cut 6</a></p>
+<ul>
+<li><a href="#main-controls">Main Controls</a><br /></li>
+<li><a href="#vse-fundamentals">VSE fundamentals</a><br /></li>
+<li><a href="#trim-timeline-tools">Trim Timeline Tools</a><br /></li>
+</ul></li>
+<li><p><a href="#extra-tools">Extra Tools</a></p>
+<ul>
+<li><a href="#snap-and-handles">Snap and Handles</a><br /></li>
+<li><a href="#meta-tools">Meta Tools</a><br /></li>
+</ul></li>
+<li><a href="#in-and-out-tools">IN and OUT Tools</a><br /></li>
+<li><a href="#extra-sequencer-actions">Extra Sequencer Actions</a><br /></li>
+<li><a href="#strip-data">Strip Data</a><br /></li>
+<li><a href="#view-modifiers">View Modifiers</a><br /></li>
+<li><a href="#extra-data">Extra Data</a><br /></li>
+<li><p><a href="#menus">Menus</a></p>
+<ul>
+<li><a href="#vse-header-menu--strip">VSE Header Menu &gt; strip</a><br /></li>
+<li><a href="#vse-header-menu--select">VSE Header Menu &gt; select</a><br /></li>
+<li><a href="#vse-header-menu--add">VSE Header Menu &gt; add</a><br /></li>
+<li><a href="#vse-header-menu--input">VSE Header Menu &gt; input</a><br /></li>
+<li><a href="#movieclip-editor-header-menu--clip">MovieClip Editor Header Menu &gt; Clip</a><br /></li>
+<li><a href="#timeline-header-menu--frame">Timeline Header Menu &gt; frame</a><br /></li>
+</ul></li>
+<li><a href="#proxy-tools">Proxy Tools WIP</a><br /></li>
+<li><a href="#audio-tools">Audio Tools WIP</a><br /></li>
+<li><a href="#exif-info-panel">Exif info panel WIP</a><br /></li>
+<li><a href="#eco-tools----warning-cpu-intensive">Eco Tools (WARNING!: CPU INTENSIVE:)</a><br /></li>
+<li><a href="#random-editor-panel-experimental">Random Editor panel WIP (EXPERIMENTAL)</a><br /></li>
+<li><p><a href="#glitch-panel-experimental">Glitch panel WIP (EXPERIMENTAL)</a></p></li>
+</ul></li>
+</ul>
+<h2 id="jump-to-cut-6">Jump to Cut 6</h2>
+<p><strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut">Jump to Cut</a></strong> has been there for a while (in October will fulfill five years!) and it's still running to help you keep important things together when editing video with blender.</p>
+<p>Since version 2.73 there is an option to jump to edit points, so Jump to Cut's original feature has been integrated into Blender code !! =)</p>
+<p><img align="" src="./imgs/jump_to_cut_panel_001.png"></p>
+<h3 id="main-controls">Main Controls</h3>
+<p><img align="" src="./imgs/jumpers.png"></p>
+<h5 id="seconds">Seconds</h5>
+<p>Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:</p>
+<ul>
+<li>shortcut keys <strong>ctrl + shift + left arrow</strong> to skip back one second,<br /></li>
+<li>shortcut keys <strong>ctrl + shift + right arrow</strong> to skip forward one second.</li>
+</ul>
+<h5 id="cuts">Cuts</h5>
+<p>The timeline cursor jumps from edit point to edit point. Edit point is any point of entry or departure of a clip, or the cutting start and end.</p>
+<ul>
+<li>shortcut keys <strong>Q</strong> and <strong>W</strong></li>
+</ul>
+<p>(it is assigned by default to <strong>PgUp</strong> and <strong>PgDown</strong>)</p>
+<p><strong>This buttons are shortcuts for the new internal operator (added recently in Gooseberry project)</strong></p>
+<h5 id="markers">Markers</h5>
+<p>As you can guess, jump from marker to marker.</p>
+<ul>
+<li>shortcut keys <strong>alt + Q</strong> and <strong>alt + W</strong></li>
+</ul>
+<h3 id="vse-fundamentals">VSE fundamentals</h3>
+<p><img align="" src="./imgs/maincontrols.png"></p>
+<p>This are self explanatory, some useful internal operators...</p>
+<h3 id="trim-timeline-tools">Trim Timeline Tools</h3>
+<ul>
+<li>TODO: use also preview timeline!!</li>
+</ul>
+<p><img align="" src="./imgs/trimmers.png"></p>
+<h5 id="in-out">In / Out</h5>
+<p>Set start and end frames of current scene according to In and Out markers.</p>
+<h5 id="selection">Selection</h5>
+<p>Set start and end frames of current scene to match selected strips in the Sequence Editor.</p>
+<p>It also centers the view into the selection</p>
+<h5 id="all">All</h5>
+<p>Set start and end frames of current scene according to the content of the Sequence Editor.</p>
+<p>It also centers the view into the selection</p>
+<h2 id="extra-tools">Extra Tools</h2>
+<p>Many of the following operators are from the addon <strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions">Extra Sequencer Actions</a></strong> made in 2012 by <strong><a href="http://www.turiscandurra.com/">Turi Scandurra</a></strong></p>
+<p><img align="" src="./imgs/jump_to_cut_tools2.png"></p>
+<p><em>Bli bli bli</em> <strong>mini UI</strong> <em>bla bli bla bli bli,</em> <strong>full size buttons</strong> <em>Bli bli bli bla bli bla bli bli</em></p>
+<p><img align="" src="./imgs/jump_to_cut_tools3.png"></p>
+<p><em>Bli bli bli bla bli bla bli bli,</em> <strong>in/out tools</strong> <em>Bli bli bli bla bli bla</em> <strong>invasive features</strong> <em>bli bli Bli bli bli bla bli bla bli, bli bli bli bla bli</em> <strong>deactivated by default</strong> <em>bla bli. Bli bli bli bla bli bla bli</em></p>
+<p><img align="" src="./imgs/jump_to_cut_tools1.png"></p>
+<h3 id="snap-and-handles">Snap and Handles</h3>
+<p><img align="" src="./imgs/snap2.png"></p>
+<p><img align="" src="./imgs/snap.png"></p>
+<h5 id="snap">Snap</h5>
+<p>This are self explanatory, otherwise you can test and see what happens...</p>
+<h5 id="handle-selector">Handle selector</h5>
+<p>This are self explanatory, otherwise you can test and see what happens...</p>
+<h3 id="meta-tools">Meta Tools</h3>
+<p><img align="" src="./imgs/meta_tools2.png"></p>
+<p><img align="" src="./imgs/meta_tools.png"></p>
+<h5 id="meta-copy">Meta + Copy</h5>
+<p>This operator makes a metastrip with all selected items, and trim them to in and out.<br />If there is no IN and OUT markers, the meta is not trimmed.</p>
+<h5 id="paste-snap">Paste + Snap</h5>
+<p>Paste the clipboard content starting at the timeline cursor.</p>
+<h5 id="un-meta-trim">Un-meta + Trim</h5>
+<p>The selected meta is ungrouped and all related strips outside in and out range are trimmed.</p>
+<h2 id="in-and-out-tools">IN and OUT Tools</h2>
+<p><img align="" src="./imgs/io_tools4.png"></p>
+<p><img align="" src="./imgs/io_tools2.png"></p>
+<h5 id="set-in-set-out">set IN / set OUT:</h5>
+<p>Create a marker IN and a marker OUT where the timeline cursor are. Two specific markers that can then be used for editing.</p>
+<h5 id="selected">Selected:</h5>
+<p>Create a marker IN at the selected strip start frame and a marker OUT at the selected strip end frame.</p>
+<h5 id="trim">Trim:</h5>
+<p>Trim (soft cut) the selected clip on both sides to adhere to the In and Out markers, as long as the clip is within that range. If not, or in absence of In and Out, does nothing. I.E. It is a quick option to cut many clips at the same duration.</p>
+<h5 id="auto-markers">Auto Markers</h5>
+<p>Bli bli bla bla</p>
+<p><img align="" src="./imgs/io_tools3.png"></p>
+<p><img align="" src="./imgs/io_tools.png"></p>
+<p>If automarkers is selected, each scene stores his owns IN and OUT markers and you can move it only with this tools...</p>
+<p>You can access this in and out markers with this:</p>
+<pre><code>bpy.data.scenes[&#39;Scene&#39;].kr_in_marker
+
+bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
+<h2 id="extra-sequencer-actions">Extra Sequencer Actions</h2>
+<p><img align="" src="./imgs/extra.png"></p>
+<p><img align="" src="./imgs/extra1.png"></p>
+<h5 id="jogshuttle">Jog/Shuttle</h5>
+<p>Jog through current sequence, looping between start and end frames. This action is known as jogging, shuttling or scrubbing. Click the operator to enter interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.</p>
+<h5 id="navigate-up">Navigate Up</h5>
+<p>Move current view to parent timeline. Only enabled when current view is relative to a Meta strip. This operator does not perform any modification to timeline elements.</p>
+<h5 id="extend-to-fill">Extend to Fill</h5>
+<p>Extend active strip forward to fill adjacent space. If there no other strip is following active one on the same channel, the clip is extended to the end of the sequence.</p>
+<p><img align="" src="./imgs/extra2.png"></p>
+<h5 id="file-place">File Place</h5>
+<p>Place active file from File Browser to Sequencer Editor on current frame.</p>
+<h5 id="file-insert">File Insert</h5>
+<p>Same as above, but also move forward all strips after current frame.</p>
+<h5 id="slip">Slip</h5>
+<p>Alter in and out points of a strip but not its duration. Only available when a the type of active strip is Movie, Scene or Meta. Click 'Input...' to choose the amount of sliding desired. The start and end frame of active strip will be moved, but its length and position will remain unchanged.</p>
+<p>Interactive mode. Move mouse cursor along X axis to jog. To exit, click left or right mouse button or hit ESC.</p>
+<p><strong>This button is shortcut for the new internal operator (added recently in Gooseberry project)</strong></p>
+<p><img align="" src="./imgs/extra3.png"></p>
+<h5 id="fade">Fade</h5>
+<p>Fade opacity of active strip, or its volume if its type is Sound, creating keyframes for the corresponding property. Possible fade directions are In, Out, In and Out. Duration defines the number of frames between the start and the end of the fade. Amount defines the maximum value that the fade will set. For opacity fades, the maximum value is 1.0. The minimum value reached by the fade is always 0. Keyframes created with this operator can be manipulated through the F-Curve Editor.</p>
+<h5 id="copy-properties">Copy Properties</h5>
+<p>Copy properties of active strip to selected strips. Start selecting multiple strips, then make active the strip whose properties need to be copied to the selected strips. Click the desired operator to perform the action. Some operators affect single properties, while some others affect a group of properties.</p>
+<h2 id="strip-data">Strip Data</h2>
+<p>Bli bli bli bla bli bla bli bli, <strong>accesible data from selected strip</strong> Bli bli bli bla bli bla bli bli</p>
+<p><img align="" src="./imgs/jump_to_cut_info_movie.png"></p>
+<p>Bli bli bli <strong>trim information</strong> bla bli bla bli bli, <strong>soft &amp; hard</strong> Bli bli bli bla bli bla bli bli</p>
+<p><img align="" src="./imgs/jump_to_cut_info_color.png"></p>
+<p>bla bli bla bli bli, <strong>all strip types</strong> Bli bli bli bla bli bla bli bli blau</p>
+<p><img align="" src="./imgs/jump_to_cut_info_wipe.png"></p>
+<p><img align="" src="./imgs/jump_to_cut_info_speed.png"></p>
+<p><img align="" src="./imgs/jump_to_cut_info_blur.png"></p>
+<h2 id="view-modifiers">View Modifiers</h2>
+<p><img align="" src="./imgs/jump_to_cut_info_modifier.png"></p>
+<p>bla bli bla bli bli, <strong>same menus, less space</strong> Bli bli bli bla bli bla bli bli blau</p>
+<p><img align="" src="./imgs/jump_to_cut_info_modifier2.png"></p>
+<h2 id="extra-data">Extra Data</h2>
+<p>Bli bli bli bla bli bla bli bli, <strong>secondary properties</strong> Bli bli bli bla bli bla bli bli</p>
+<p><img align="" src="./imgs/jump_to_cut_info_sound.png"></p>
+<p>Bli bli bli bla bli bla bli bli, <strong>geometry properties</strong> Bli bli bli bla bli bla bli bli</p>
+<p><img align="" src="./imgs/jump_to_cut_info_image.png"></p>
+<h2 id="menus">Menus</h2>
+<h3 id="vse-header-menu-strip">VSE Header Menu &gt; strip</h3>
+<p><img align="" src="./imgs/menu_strip.png"></p>
+<h5 id="ripple-delete">Ripple Delete</h5>
+<p>Delete the active strip and shift back all other strips the number of frames between the beginning of deleted strip and the next edit in the sequence.</p>
+<h5 id="ripple-cut">Ripple cut</h5>
+<p>Same as above, but copying active strip to memory buffer before deleting it. Copied strip can be pasted in place as usual, for example using the keystroke combination ctrl-V.</p>
+<ul>
+<li><strong>TO FIX:</strong> ripple cut and ripple delete: some strips change their channel position<br />it seems to happend when one involved strips is the one in higher position...</li>
+</ul>
+<h5 id="insert">insert</h5>
+<p>Shift forward all strips after current frame and insert active strip.</p>
+<ul>
+<li><strong>TO FIX:</strong> insert operator works fine but sometimes some strips change their<br />channel position.</li>
+</ul>
+<h5 id="insert-single-channel">Insert (Single Channel)</h5>
+<p>Same as above, but shifting occurs only on the same channel as active strip.</p>
+<h3 id="vse-header-menu-select">VSE Header Menu &gt; select</h3>
+<p><img align="" src="./imgs/menu_select.png"></p>
+<h5 id="select-all-by-type">Select All by Type</h5>
+<p>Select all the strips of the specified type in the Sequence Editor.</p>
+<h5 id="current-frame-aware-select">Current-Frame-Aware Select</h5>
+<p>Select strips on all channels according to current frame. Available modes are:</p>
+<ul>
+<li>Before (select all strips before current frame),<br /></li>
+<li>After (select all strips after current frame),<br /></li>
+<li>On (select all strips underneath playhead).</li>
+</ul>
+<h5 id="select-same-channel">Select same channel</h5>
+<p>Select strips on the same channel as selected</p>
+<h3 id="vse-header-menu-add">VSE Header Menu &gt; add</h3>
+<p><img align="" src="./imgs/menu_add.png"></p>
+<h5 id="recursive-loader">Recursive Loader</h5>
+<p>In a File Browser area, select a file and in the VSE panel press &quot;Import from Browser&quot; button. All movie clips will be imported (sorted alphabeticaly by filename) in the VSE</p>
+<ul>
+<li>Check &quot;Recursive&quot; option to search recursively in this folder<br /></li>
+<li>Check &quot;Select by extension&quot; to force import only files with the selected extension.</li>
+</ul>
+<h3 id="vse-header-menu-input">VSE Header Menu &gt; input</h3>
+<p><img align="" src="./imgs/menu_input.png"></p>
+<h5 id="open-with-editor">Open with Editor</h5>
+<p>Open active strip with Movie Clip Editor or Image Editor, according to strip type. If a clip is already loaded, existing data is used.</p>
+<h5 id="open-with-external-editor">Open with External Editor</h5>
+<p>Open active image strip with the default external image editor. To use this operator a valid path to the external editor must be specified in User Preferences &gt; File.</p>
+<h5 id="create-a-movieclip-strip">Create a Movieclip strip</h5>
+<p>When a movie or image strip is selected, this operator creates a movieclip or find the correspondent movieclip that already exists for this footage, and add a VSE strip with same cuts the original strip has.It can convert movie strips and image sequences, both with hard cuts or soft cuts.</p>
+<h5 id="file-name-to-strip-name">File Name to Strip Name</h5>
+<p>Set strip name to input file name. This operator is useful after separating images of a sequence.</p>
+<h3 id="movieclip-editor-header-menu-clip">MovieClip Editor Header Menu &gt; Clip</h3>
+<p><img align="" src="./imgs/menu_movieclip.png"></p>
+<h5 id="open-from-file-browser">Open from File Browser</h5>
+<p>Bli bla bli bla bla</p>
+<h5 id="open-active-strip">Open Active Strip</h5>
+<p>Bli bla bli bli blau</p>
+<h3 id="timeline-header-menu-frame">Timeline Header Menu &gt; frame</h3>
+<p><img align="" src="./imgs/menu_frame.png"></p>
+<h5 id="skip-one-second">Skip One Second</h5>
+<p>Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:</p>
+<ul>
+<li>shortcut keys <strong>ctrl + shift + left arrow</strong> to skip back one second,<br /></li>
+<li>shortcut keys <strong>ctrl + shift + right arrow</strong> to skip forward one second.</li>
+</ul>
+<h5 id="trim-to-selection">Trim to Selection</h5>
+<p>Set start and end frames of current scene to match selected strips in the Sequence Editor.</p>
+<p>It also centers the view into the selection</p>
+<h5 id="trim-to-timeline-content">Trim to Timeline Content</h5>
+<p>Set start and end frames of current scene according to the content of the Sequence Editor.</p>
+<p>It also centers the view into the selection</p>
+<h2 id="proxy-tools">Proxy Tools</h2>
+<p><img align="" src="./imgs/proxy_tools.png"></p>
+<h2 id="audio-tools">Audio Tools</h2>
+<p><img align="" src="./imgs/audio_tools.png"></p>
+<h3 id="extract-wav">Extract WAV</h3>
+<p>create a wav file out of a selected movie strip in the indicated path.<br />If the audio file already exists in the path, it is loaded and trimmed according to the selected movie strip.</p>
+<p>You can also generate ffmpeg scripts to launch a batch conversion out of blender.</p>
+<h3 id="sync-tool">Sync Tool</h3>
+<p>This is useful to sync diferent audio strips to a single movie strip. It does not mantain the sync if you move only the movie strip, but anytime you can delete audio strips and reload again synced.</p>
+<p>Select an audio strip and a movie strip and press <strong>set sync</strong> to store sync information in a text file.</p>
+<p>Press <strong>reload audio</strong> with a movie strip selected to reload the audio files</p>
+<h2 id="exif-info-panel">Exif info panel</h2>
+<p><img align="" src="./imgs/exif.png"></p>
+<p>Select a strip and press 'Read EXIF data'. Works only with image and movie strips</p>
+<p>to get exif info panel you need to install exiftools:</p>
+<pre><code>sudo apt-get install libimage-exiftool-perl</code></pre>
+<h2 id="eco-tools-warning-cpu-intensive">Eco Tools (WARNING!: CPU INTENSIVE:)</h2>
+<p><img align="" src="./imgs/eco.png"></p>
+<p>TODO: keep metastrip in the same channel</p>
+<p>Only visible with a Metastrip selected</p>
+<p>Select a movie or meta strip, set number of echoes and offset (in frames), and press Eco button.</p>
+<p>The opacity of all strips is updated to 1/number of echoes to mantain luminance. The blending is set to alpha over for all clips except first one.</p>
+<p>If add mode is selected, the blending is set to add.</p>
+<p>All clips are finally grouped inside a meta. Press home after running the script to see the meta.</p>
+<h2 id="random-editor-panel-experimental">Random Editor panel (EXPERIMENTAL)</h2>
+<p>Only visible with a Metastrip selected</p>
+<p><img align="" src="./imgs/random_editor.png"></p>
+<h3 id="random-scratch-operator">Random Scratch Operator</h3>
+<p>Given <em>IN and OUT</em> points, a <em>duration</em> in frames, and a Meta as <em>source</em>, the operator populates the in and out range with random cuts from source, all with the same <em>duration</em></p>
+<h3 id="random-editor-operator">Random Editor Operator</h3>
+<p>Not working yet!</p>
+<h2 id="glitch-panel-experimental">Glitch panel (EXPERIMENTAL)</h2>
+<p><img align="" src="./imgs/glitch.png"></p>
+<p>for the moment it has only glitch algorithm, you need to install aviglitch<br />more info here:</p>
+<p><a href="http://ucnv.github.io/aviglitch/">http://ucnv.github.io/aviglitch/</a></p>
+<p>cc-by: <strong><a href="http://surreal.asturnazari.com">Carlos Padial</a></strong>, 2015</p>
