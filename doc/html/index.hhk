@@ -302,6 +302,11 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classkinoraw__tools_1_1ui_1_1JumptoCut.html#acd9793b6481fc7a48757127195cbd98e"><param name="Name" value="kinoraw_tools::ui::JumptoCut"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="classkinoraw__tools_1_1ui_1_1SEQUENCER__EXTRA__MT__input.html#aff41e85c49adcb92d31a5fc783827afd"><param name="Name" value="kinoraw_tools::ui::SEQUENCER_EXTRA_MT_input"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacekinoraw__tools_1_1ui.html#abe839c21f66eed3748719a8a4c6a5b5d"><param name="Name" value="draw_color_balance"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacekinoraw__tools_1_1ui.html#abe839c21f66eed3748719a8a4c6a5b5d"><param name="Name" value="kinoraw_tools::ui"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacekinoraw__tools_1_1ui.html#abe839c21f66eed3748719a8a4c6a5b5d"><param name="Name" value="ui.py"></OBJECT>
+  </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classkinoraw__tools_1_1ui_1_1JumptoCut.html#a221c326f83dd1c65b94ff590589c4e3b"><param name="Name" value="draw_framerate"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="classkinoraw__tools_1_1audio__tools_1_1CreateAudioToolPanel.html#a30de16d3ed35822f5e0ed82d22343a29"><param name="Name" value="draw_header"></OBJECT>
   <UL>
@@ -1044,6 +1049,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacekinoraw__tools_1_1ui.html#a4dc959c37357fb6b86a0162109ce1e55"><param name="Name" value="clip_clip_menu_func"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacekinoraw__tools_1_1ui.html#a16d97651e9af07765e2d890c2a1ded85"><param name="Name" value="clip_header_func"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacekinoraw__tools_1_1ui.html#abe839c21f66eed3748719a8a4c6a5b5d"><param name="Name" value="draw_color_balance"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacekinoraw__tools_1_1ui.html#ac2a6b13757086fe50e8a9840553b43d9"><param name="Name" value="sequencer_add_menu_func"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacekinoraw__tools_1_1ui.html#aab5d2683632718f8f596d805180a25bc"><param name="Name" value="sequencer_header_func"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="namespacekinoraw__tools_1_1ui.html#a282f23f9d96b7fcec1889642368b7a15"><param name="Name" value="sequencer_select_menu_func"></OBJECT>
@@ -1264,6 +1270,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="ui_8py.html#a4dc959c37357fb6b86a0162109ce1e55"><param name="Name" value="clip_clip_menu_func"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="ui_8py.html#a16d97651e9af07765e2d890c2a1ded85"><param name="Name" value="clip_header_func"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="ui_8py.html#abe839c21f66eed3748719a8a4c6a5b5d"><param name="Name" value="draw_color_balance"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="ui_8py.html#ac2a6b13757086fe50e8a9840553b43d9"><param name="Name" value="sequencer_add_menu_func"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="ui_8py.html#aab5d2683632718f8f596d805180a25bc"><param name="Name" value="sequencer_header_func"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="ui_8py.html#a282f23f9d96b7fcec1889642368b7a15"><param name="Name" value="sequencer_select_menu_func"></OBJECT>
