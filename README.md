@@ -18,6 +18,8 @@ a compilation of tools to improve video editing with blender's VSE
 
 ### install the zip package (STABLE VERSION)
 
+    The source in this repo is a development version and maybe unstable. To get the most stable version follow this instructions:
+
 * Download the zip file from this page https://github.com/kinoraw/kinoraw_repo and extract it somewhere.
 
 * Once in Blender, open the user preferences window (ctrl+alt+u) and load the zip file named *kinoraw_tools_Vxxx.zip* with the button 'install from file' you can find at the bottom of the window.
