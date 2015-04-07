@@ -26,6 +26,9 @@ a compilation of tools to improve video editing with blender's VSE
 
 <img align="center" width="500px" src="/imgs/kinoraw_addon.png">
 
+    Every panel can be switched visible/invisible in the addon preferences panel.
+
+
 ### Clone the repo (DEVELOPMENT VERSION)
 
 You can clone the addon directly in the blender addons folder, i.e: in my ubuntu computer i had to do:
@@ -36,10 +39,6 @@ You can clone the addon directly in the blender addons folder, i.e: in my ubuntu
 
 then you can start blender and activate the addon in the user preferences window.
 
-
-
-
-    Every panel can be switched visible/invisible in the addon preferences panel.
 
 <img align="right" width="280px" src="/imgs/full_panel.png">
 
