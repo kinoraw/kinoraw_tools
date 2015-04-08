@@ -25,6 +25,7 @@ from bpy.props import IntProperty, BoolProperty
 from bpy.app.handlers import persistent
 
 
+
 class OBJECT_OT_Setinout(bpy.types.Operator):
     bl_label = "set IN and OUT to selected"
     bl_idname = "sequencerextra.setinout"
@@ -600,8 +601,6 @@ class OBJECT_OT_Extrahandles(bpy.types.Operator):  #Operator paste source in/out
 #-----------------------------------------------------------------------------------------------------
 
 
-        
-
 
 @persistent
 def marker_handler(scn):
@@ -637,5 +636,10 @@ def marker_handler(scn):
         return {'CANCELLED'}
 
 bpy.app.handlers.scene_update_post.append(marker_handler)
+
+
+
+
+
 
 

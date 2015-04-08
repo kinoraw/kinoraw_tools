@@ -59,6 +59,8 @@ from bpy.props import IntProperty, StringProperty, BoolProperty, EnumProperty
 
 
 class KinorawToolsAddon(bpy.types.AddonPreferences):
+    # this must match the addon name, use '__package__'
+    # when defining this in a submodule of a python package.
     bl_idname = __package__
     bl_option = {'REGISTER'}
 
@@ -277,7 +279,13 @@ def register():
 def unregister():
     bpy.utils.unregister_module(__name__)
 
-    bpy.utils.unregister_class(KinorawToolsAddon)
+
+    try:
+        bpy.utils.unregister_class(KinorawToolsAddon)
+    except RuntimeError:
+        pass
+
+    
 
     #  Remove menu entries
     bpy.types.SEQUENCER_MT_add.remove(ui.sequencer_add_menu_func)
