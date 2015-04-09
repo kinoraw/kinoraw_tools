@@ -1,0 +1,5 @@
+<map id="VSE_Transform_Tool_mod.crop_scale" name="VSE_Transform_Tool_mod.crop_scale">
+<area shape="rect" id="node2" href="$classVSE__Transform__Tool__mod_1_1TF__Add__Transform.html#a3a757a26bdfa757008a744353575754c" title="VSE_Transform_Tool\l_mod.TF_Add_Transform.execute" alt="" coords="201,5,421,46"/>
+<area shape="rect" id="node3" href="$classVSE__Transform__Tool__mod_1_1TF__Scale.html#aa5bc15d6f02f8cd21cf78ebafe7e889a" title="VSE_Transform_Tool\l_mod.TF_Scale.invoke" alt="" coords="233,70,389,111"/>
+<area shape="rect" id="node4" href="$classVSE__Transform__Tool__mod_1_1TF__Crop.html#a99a07bd2d3e09726bd31152b8e4157aa" title="VSE_Transform_Tool\l_mod.TF_Crop.invoke" alt="" coords="235,135,386,177"/>
+</map>
