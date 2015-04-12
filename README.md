@@ -59,7 +59,7 @@ then you can start blender and activate the addon in the user preferences window
 	- [IN and OUT Tools](#in-and-out-tools)
 	- [Extra Sequencer Actions](#extra-sequencer-actions)
 	- [Strip Data](#strip-data)
-	- [VSEQuickFunctions](vsequickfunctions)
+	- [VSEQuickFunctions](#vsequickfunctions)
 	- [View Modifiers](#view-modifiers)
 	- [Extra Data](#extra-data)
 	- [Menus](#menus)
