@@ -21,12 +21,13 @@ bl_info = {
     "author": "Carlos Padial, Turi Scandurra",
     "version": (0, 4),
     "blender": (2, 74, 0),
-    "category": "Sequencer",
     "location": "Sequencer",
     "description": "a compilation of tools to improve video editing with blender's VSE",
     "wiki_url": "https://github.com/kinoraw/kinoraw_tools/blob/master/README.md",
-    "tracker_url": "",
-    "support": "COMMUNITY"}
+    "tracker_url": "https://github.com/kinoraw/kinoraw_tools",
+    "support": "http://blenderartists.org/forum/showthread.php?368242-Addon-Kinoraw-Tools-%28VSE%29"
+    "category": "Sequencer",
+    }
 
 
 if "bpy" in locals():
