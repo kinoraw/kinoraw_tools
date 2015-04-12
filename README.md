@@ -59,6 +59,7 @@ then you can start blender and activate the addon in the user preferences window
 	- [IN and OUT Tools](#in-and-out-tools)
 	- [Extra Sequencer Actions](#extra-sequencer-actions)
 	- [Strip Data](#strip-data)
+	- [VSEQuickFunctions](vsequickfunctions)
 	- [View Modifiers](#view-modifiers)
 	- [Extra Data](#extra-data)
 	- [Menus](#menus)
@@ -288,6 +289,14 @@ bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli blau
 <img align="" src="/imgs/jump_to_cut_info_speed.png">
 
 <img align="" src="/imgs/jump_to_cut_info_blur.png">
+
+## VSEQuickFunctions
+
+If you have [VSE Quick Functions](http://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed) addon enabled, then you can also see some info in the panel
+
+
+<img align="" src="/imgs/VSEquick.png">
+
 
 ## View Modifiers
 

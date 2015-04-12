@@ -439,70 +439,78 @@ def random_edit_from_random_subset(cut_dict, sources_dict):
     return random_edit
 
 
-# codigo antiguo de jump to cut con fin didactico...
-#
-# def searchprev(j, list):
-#     list.sort(reverse=True)
-#     for i in list:
-#         if i < j:
-#             result = i
-#             break
-#     else: result = j
-#     return resultr
+##########################
 
-# def searchnext(j, list):
-#     list.sort()
-#     for i in list:
-#         if i > j:
-#             result = i
-#             break
-#     else: result = j
-#     return result
+#Functions related to QuickParents
+def select_children(parent):
+    clean_relationships()
+    sequences = bpy.context.sequences
+    childrennames = find_children(parent)
+    for sequence in sequences:
+        if (sequence.name in childrennames):
+            sequence.select = True
 
-# def geteditpoints_old(seq):
-#     #this create a list of editpoints including strips from
-#     # inside metastrips. It reads only 1 level into the metastrip
-#     editpoints = []
-#     striplist = []
-#     metalist = []
-#     if seq:
-#         for i in seq.sequences:
-#             if i.type == 'META':
-#                 metalist.append(i)
-#                 start = i.frame_start + i.frame_offset_start
-#                 end = start + i.frame_final_duration
-#                 editpoints.append(start)
-#                 editpoints.append(end)
-#             else:
-#                 striplist.append(i)
-#         for i in metalist:
-#             for j in i.sequences:
-#                 striplist.append(j)
-#         for i in striplist:
-#             start = i.frame_start + i.frame_offset_start
-#             end = start + i.frame_final_duration
-#             editpoints.append(start)
-#             editpoints.append(end)
-#             #print(start," ",end)
-#     return editpoints
+def add_children(parent, children):
+    clean_relationships()
+    for child in children:
+        if (child.name != parent.name):
+            children = parent.name
+            if (child.name not in children):
+                relationship = bpy.context.scene.parenting.add()
+                relationship.parent = parent.name
+                relationship.child = child.name
 
-# def geteditpoints(context):
-#     #this create a list of editpoints from current meta_stack level
-#     scn = context.scene
-#     seq = scn.sequence_editor
+def clear_children(parent):
+    clean_relationships()
+    if (type(parent) == str):
+        parentname = parent
+    else:
+        parentname = parent.name
+    scene = bpy.context.scene
+    index = 0
+    while index < len(scene.parenting):
+        if (scene.parenting[index].parent == parentname):
+            scene.parenting.remove(index)
+        else:
+            index = index + 1
 
-#     editpoints=[]
-#     striplist=[]
+def clear_parent(child):
+    clean_relationships()
+    if (type(child) == str):
+        childname = child
+    else:
+        childname = child.name
+    scene = bpy.context.scene
+    for index, relationship in enumerate(scene.parenting):
+        if (relationship.child == childname):
+            scene.parenting.remove(index)
 
-#     if len(seq.meta_stack) > 0:
-#         striplist = seq.sequences_all[seq.meta_stack[len(seq.meta_stack)-1].name].sequences 
-#     else:
-#         striplist = seq.sequences
+def find_parent(child):
+    if (type(child) == str):
+        childname = child
+    else:
+        childname = child.name
+    scene = bpy.context.scene
+    for relationship in scene.parenting:
+        if (relationship.child == childname):
+            return relationship.parent
+    return "None"
 
-#     for strip in striplist:
-#         i = seq.sequences_all[strip.name]
-#         start = i.frame_start + i.frame_offset_start - i.frame_still_start
-#         end = start + i.frame_final_duration 
-#         editpoints.append(start)
-#         editpoints.append(end)
-#     return editpoints
+def find_children(parent):
+    if (type(parent) == str):
+        parentname = parent
+    else:
+        parentname = parent.name
+    scene = bpy.context.scene
+    childrennames = []
+    for relationship in scene.parenting:
+        if (relationship.parent == parentname):
+            childrennames.append(relationship.child)
+    return childrennames
+
+def clean_relationships():
+    scene = bpy.context.scene
+    sequences = scene.sequence_editor.sequences_all
+    for index, relationship in enumerate(scene.parenting):
+        if ( (sequences.find(relationship.parent) == -1) | (sequences.find(relationship.child) == -1) ):
+            scene.parenting.remove(index)

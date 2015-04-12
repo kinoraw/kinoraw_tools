@@ -287,24 +287,39 @@ class JumptoCut(bpy.types.Panel):
         layout = self.layout        
         # layout = layout.box()
         # panel setup ------------------------------------------------------
-       
-        
-        
         row=layout.row(align=True)
         row = row.split(percentage=0.25)
         row.prop(prefs, "kr_show_tools", text="Tools", icon='SEQ_SEQUENCER')
         if prefs.kr_show_tools:
-            row = row.split(percentage=0.45)
+            row = row.split(percentage=0.25)
             row.prop(prefs, "kr_mini_ui", text="mini")
         else:
-            row = row.split(percentage=0.45) 
+            row = row.split(percentage=0.25) 
             row.label(text = "")
+        row = row.split(percentage=0.25) 
+        row.prop(scn, 'quickcontinuousenable', text="", icon='POSE_DATA')
+
         row = row.split(percentage=0.33)   
         row.prop(prefs, "kr_show_info", text="", icon='VIEWZOOM')
         row = row.split(percentage=0.5) 
         row.prop(prefs, "kr_extra_info", text="", icon='BORDERMOVE')
         row = row.split(percentage=1) 
         row.prop(prefs, "kr_show_modifiers", text="", icon='RESTRICT_VIEW_OFF')
+        
+        
+        ##########
+        row = layout.row()
+                
+        if (scn.quickcontinuousenable):
+            row = layout.row()
+            row.prop(scn, 'quickcontinuouschildren', text = "Children")
+            row.prop(scn, 'quickcontinuousfollow', text = "follow")
+            row.prop(scn, 'quickcontinuoussnap', text = "Snap")
+            if scn.quickcontinuoussnap:
+                row.prop(scn, 'quickcontinuoussnapdistance', text = "distance")
+            
+        
+        ##########
         
         
         if prefs.kr_show_tools:
@@ -446,262 +461,285 @@ class JumptoCut(bpy.types.Panel):
                 'prop', icon='SCRIPT')
                 
         # INFO box
-        if prefs.kr_show_info:
-            layout = self.layout
-            layout = layout.box()
-            row = layout.split(percentage=0.075)
-            row.prop(prefs, "kr_show_info", text="",icon='VIEWZOOM', emboss=True)
-            row = row.split(percentage=0.25)
-            row.label(text="Strip:")
-            row = row.split(percentage=1)
-            row.prop(strip, "name", text="")
-            layout.active = (not strip.mute)
-                
-
-            
-            row = layout.row()
-            row.prop(strip, "channel")
-            row.prop(strip, "frame_final_duration")
-            row.separator()
-            if strip.type not in {"SPEED", "WIPE", "CROSS", "ADJUSTMENT"}:
-                row.prop(prefs, "kr_show_trim", text="show trim")
-                if prefs.kr_show_trim:
-                    if not isinstance(strip, bpy.types.EffectSequence):
-                        row = layout.row(align=True)
-                        row.label(text="hard:")
-                        row.prop(strip, "animation_offset_start", text="Start")
-                        row.prop(strip, "animation_offset_end", text="End")
-                    row = layout.row(align=True)
-                    row.label(text="soft:")
-                    row.prop(strip, "frame_offset_start", text="Start")
-                    row.prop(strip, "frame_offset_end", text="End")
-            
-            row = layout.split(percentage=0.3)
-            row.prop(strip, "type", text="")
-            
-            if strip.type in {'MOVIE', 'SOUND'}:
-                row.prop(strip, "filepath", text="")
-            
-            if strip.type == 'IMAGE':
-                row.prop(strip, "directory", text="")
-                # Current element for the filename
-                elem = strip.strip_elem_from_frame(context.scene.frame_current)
-                if elem:
-                    row = layout.row()
-                    row.prop(elem, "filename", text="File")  # strip.elements[0] could be a fallback
-                    row.operator("sequencer.change_path", text="change files")
-
-            ###########
-            
-            if strip.type == 'SPEED':
-                row.prop(strip, "multiply_speed")
-            elif strip.type in {'CROSS', 'GAMMA_CROSS', 'WIPE', 'ALPHA_OVER', 'ALPHA_UNDER', 'OVER_DROP'}:
-                row.prop(strip, "use_default_fade", "Default Fade")
-                if not strip.use_default_fade:
-                    row.prop(strip, "effect_fader", text="Effect fader")
-            elif strip.type == 'GAUSSIAN_BLUR':
-                row.prop(strip, "size_x")
-                row.prop(strip, "size_y")
-            
-            if strip.type == 'COLOR':
-                row.prop(strip, "color", text = "")
-
-            elif strip.type == 'WIPE':
-                row = layout.row()
-                row.prop(strip, "transition_type", expand=True)
-                row = layout.row()
-                row.prop(strip, "direction", expand=True)
-                row.prop(strip, "blur_width", slider=True)
-                if strip.transition_type in {'SINGLE', 'DOUBLE'}:
-                    row.prop(strip, "angle")
-
-            elif strip.type == 'GLOW':
-                flow = layout.column_flow()
-                flow.prop(strip, "threshold", slider=True)
-                flow.prop(strip, "clamp", slider=True)
-                flow.prop(strip, "boost_factor")
-                flow.prop(strip, "blur_radius")
-
-                row = layout.row()
-                row.prop(strip, "quality", slider=True)
-                row.prop(strip, "use_only_boost")
-
-            elif strip.type == 'SPEED':
-                row = layout.row()
-                row.prop(strip, "use_default_fade", "Stretch to input strip length")
-                if not strip.use_default_fade:
-                    row.prop(strip, "use_as_speed")
-                    if strip.use_as_speed:
-                        layout.prop(strip, "speed_factor")
-                    else:
-                        layout.prop(strip, "speed_factor", text="Frame number")
-                        layout.prop(strip, "scale_to_length")
-
-            elif strip.type == 'TRANSFORM':
-                row = layout.row(align=True)
-                row.prop(strip, "interpolation")
-                row.prop(strip, "translation_unit")
-                row = layout.row(align=True)
-                row.prop(strip, "translate_start_x", text="Pos X")
-                row.prop(strip, "translate_start_y", text="Pos Y")
-
-                row = layout.row(align=True)
-                if strip.use_uniform_scale:
-                    row.prop(strip, "scale_start_x", text="Scale")
-                else:
-                    row.prop(strip, "scale_start_x", text="Scale X")
-                    row.prop(strip, "scale_start_y", text="Scale Y")
-                row = layout.row(align=True)
-                row.prop(strip, "use_uniform_scale")
-                row.prop(strip, "rotation_start", text="Rotation")
-
-            elif strip.type == 'MULTICAM':
-                layout.prop(strip, "multicam_source")
-
-                row = layout.row(align=True)
-                sub = row.row(align=True)
-                sub.scale_x = 2.0
-
-                sub.operator("screen.animation_play", text="", icon='PAUSE' if context.screen.is_animation_playing else 'PLAY')
-
-                row.label("Cut To")
-                for i in range(1, strip.channel):
-                    row.operator("sequencer.cut_multicam", text="%d" % i).camera = i
-
-            
-            try:
-                if strip.input_count > 0:
-                    col = layout.column()
-                    col.prop(strip, "input_1")
-                    if strip.input_count > 1:
-                        col.prop(strip, "input_2")   
-            except AttributeError:
-                pass
-                                
-        # extra info box:
-        if prefs.kr_extra_info:
-            layout = self.layout
-            box = layout.box()
-            if strip.type not in {'SOUND'}:
-                row = box.row(align=True)
-                sub = row.row(align=True)
-                box.active = (not strip.mute)
-                sub.prop(prefs, "kr_extra_info", text = "", icon='BORDERMOVE', emboss = True)
-                sub.separator()
-                sub.prop(strip, "blend_alpha", text="Opacity", slider=True)
-                row.prop(strip, "mute", toggle=True, icon_only=True)
-                row.prop(strip, "lock", toggle=True, icon_only=True)
-
-                row = box.row(align=True)
-                
-                col = row.column()
-                col.prop(strip, "strobe")
-                col.prop(strip, "use_flip_x", text="flip X")
-                col.prop(strip, "use_flip_y", text="flip Y")
-                col.prop(strip, "use_reverse_frames", text="Backwards")
-                col.prop(strip, "use_deinterlace")
-                
-                col = row.column()
-                col.prop(strip, "blend_type", icon='COLOR', text = "")
-
-                col.prop(strip, "color_saturation", text="Saturation")
-                col.prop(strip, "color_multiply", text="Multiply")
-                col.prop(strip, "use_float", text="Convert Float")
-                col.prop(strip, "alpha_mode")
-                
-                row = box.row(align=True)
-                row.prop(strip, "use_translation", text="Image Offset", icon = "AXIS_TOP")
-                row.prop(strip, "use_crop", text="Image Crop", icon = "BORDER_RECT")
-                if strip.use_translation:
-                        row = box.row(align=True)
-                        row.prop(strip.transform, "offset_x", text="X")
-                        row.prop(strip.transform, "offset_y", text="Y")
-                if strip.use_crop:
-                    row = box.row(align=True)
-                    row.prop(strip.crop, "max_y")
-                    row.prop(strip.crop, "min_x")
-                    row.prop(strip.crop, "min_y")
-                    row.prop(strip.crop, "max_x")
-                                    
-                
-            #sound type
-            else:
-                row = box.row(align=True)
-                row.prop(strip, "volume")
-                row.prop(strip, "mute", toggle=True, icon_only=True)
-                row.prop(strip, "lock", toggle=True, icon_only=True)
-                
-                sound = strip.sound
-                if sound is not None:
-                    row = box.row()
-                    if sound.packed_file:
-                        row.operator("sound.unpack", icon='PACKAGE', text="Unpack")
-                    else:
-                        row.operator("sound.pack", icon='UGLYPACKAGE', text="Pack")
-
-                    row.prop(sound, "use_memory_cache")
-
-                row.prop(strip, "show_waveform")
-                
-                row = box.row()
-                row.prop(strip, "pitch")
-                row.prop(strip, "pan")
-
-    
-        ## modifiers
         
-        if strip.type != 'SOUND' and prefs.kr_show_modifiers:
-            sequencer = context.scene.sequence_editor
-            layout = self.layout
-            layout = layout.box()
-            row = layout.split(percentage=0.075)
-            row.prop(prefs, "kr_show_modifiers", text = "", icon='RESTRICT_VIEW_OFF', emboss = True)
-            row = row.split(percentage=0.40)
-            row.prop(strip, "use_linear_modifiers", text="Linear")
-            row = row.split(percentage=1)
-            row.operator_menu_enum("sequencer.strip_modifier_add", "type")
-            for mod in strip.modifiers:
-                box = layout.box()
+        if strip != None:
+            if prefs.kr_show_info:
+                layout = self.layout
+                layout = layout.box()
+                row = layout.split(percentage=0.075)
+                row.prop(prefs, "kr_show_info", text="",icon='VIEWZOOM', emboss=True)
+                row = row.split(percentage=0.25)
+                row.label(text="Strip:")
+                row = row.split(percentage=1)
+                row.prop(strip, "name", text="")
+                layout.active = (not strip.mute)
+               
+                row = layout.row()
+                row.prop(strip, "channel")
+                row.prop(strip, "frame_final_duration")
+                row.separator()
+                if strip.type not in {"SPEED", "WIPE", "CROSS", "ADJUSTMENT"}:
+                    row.prop(prefs, "kr_show_trim", text="Trim")
+                    if prefs.kr_show_trim:
+                        if not isinstance(strip, bpy.types.EffectSequence):
+                            row = layout.row(align=True)
+                            row.label(text="hard:")
+                            row.prop(strip, "animation_offset_start", text="Start")
+                            row.prop(strip, "animation_offset_end", text="End")
+                        row = layout.row(align=True)
+                        row.label(text="soft:")
+                        row.prop(strip, "frame_offset_start", text="Start")
+                        row.prop(strip, "frame_offset_end", text="End")
+                
+                
+                #######
+                # VSE QUICK PARENT INFO
+                
+                if scn.parenting:
+                    row = layout.row()
+                    childrennames = functions.find_children(strip.name)
+                    parentname = functions.find_parent(strip.name)
+                    if (parentname != 'None'):
+                        if len(childrennames) > 0:
+                            row.label("Parent: {} Children: {}".format(parentname, ", ".join(childrennames)))
+                        else:
+                            row.label("Parent: {}".format(parentname))
+                    elif len(childrennames) > 0:
+                        row.label("Children: {}".format(", ".join(childrennames)))
+                         
+                #######
+                
+                row = layout.split(percentage=0.3)
+                row.prop(strip, "type", text="")
+                
+                
+                if strip.type in {'MOVIE', 'SOUND'}:
+                    row.prop(strip, "filepath", text="")
+                
+                if strip.type == 'IMAGE':
+                    row.prop(strip, "directory", text="")
+                    # Current element for the filename
+                    elem = strip.strip_elem_from_frame(context.scene.frame_current)
+                    if elem:
+                        row = layout.row()
+                        row.prop(elem, "filename", text="File")  # strip.elements[0] could be a fallback
+                        row.operator("sequencer.change_path", text="change files")
+                        
+                 
 
-                row = box.row()
-                row.prop(mod, "show_expanded", text="", emboss=False)
-                row.prop(mod, "name", text="")
+                ###########
+                
+                if strip.type == 'SPEED':
+                    row.prop(strip, "multiply_speed")
+                elif strip.type in {'CROSS', 'GAMMA_CROSS', 'WIPE', 'ALPHA_OVER', 'ALPHA_UNDER', 'OVER_DROP'}:
+                    row.prop(strip, "use_default_fade", "Default Fade")
+                    if not strip.use_default_fade:
+                        row.prop(strip, "effect_fader", text="Effect fader")
+                elif strip.type == 'GAUSSIAN_BLUR':
+                    row.prop(strip, "size_x")
+                    row.prop(strip, "size_y")
+                
+                if strip.type == 'COLOR':
+                    row.prop(strip, "color", text = "")
 
-                row.prop(mod, "mute", text="")
+                elif strip.type == 'WIPE':
+                    row = layout.row()
+                    row.prop(strip, "transition_type", expand=True)
+                    row = layout.row()
+                    row.prop(strip, "direction", expand=True)
+                    row.prop(strip, "blur_width", slider=True)
+                    if strip.transition_type in {'SINGLE', 'DOUBLE'}:
+                        row.prop(strip, "angle")
 
-                sub = row.row(align=True)
-                props = sub.operator("sequencer.strip_modifier_move", text="", icon='TRIA_UP')
-                props.name = mod.name
-                props.direction = 'UP'
-                props = sub.operator("sequencer.strip_modifier_move", text="", icon='TRIA_DOWN')
-                props.name = mod.name
-                props.direction = 'DOWN'
+                elif strip.type == 'GLOW':
+                    flow = layout.column_flow()
+                    flow.prop(strip, "threshold", slider=True)
+                    flow.prop(strip, "clamp", slider=True)
+                    flow.prop(strip, "boost_factor")
+                    flow.prop(strip, "blur_radius")
 
-                row.operator("sequencer.strip_modifier_remove", text="", icon='X', emboss=False).name = mod.name
+                    row = layout.row()
+                    row.prop(strip, "quality", slider=True)
+                    row.prop(strip, "use_only_boost")
 
-                if mod.show_expanded:
-                    row = box.row()
-                    row.prop(mod, "input_mask_type", expand=True)
+                elif strip.type == 'SPEED':
+                    row = layout.row()
+                    row.prop(strip, "use_default_fade", "Stretch to input strip length")
+                    if not strip.use_default_fade:
+                        row.prop(strip, "use_as_speed")
+                        if strip.use_as_speed:
+                            layout.prop(strip, "speed_factor")
+                        else:
+                            layout.prop(strip, "speed_factor", text="Frame number")
+                            layout.prop(strip, "scale_to_length")
 
-                    if mod.input_mask_type == 'STRIP':
-                        sequences_object = sequencer
-                        if sequencer.meta_stack:
-                            sequences_object = sequencer.meta_stack[-1]
-                        box.prop_search(mod, "input_mask_strip", sequences_object, "sequences", text="Mask")
+                elif strip.type == 'TRANSFORM':
+                    row = layout.row(align=True)
+                    row.prop(strip, "interpolation")
+                    row.prop(strip, "translation_unit")
+                    row = layout.row(align=True)
+                    row.prop(strip, "translate_start_x", text="Pos X")
+                    row.prop(strip, "translate_start_y", text="Pos Y")
+
+                    row = layout.row(align=True)
+                    if strip.use_uniform_scale:
+                        row.prop(strip, "scale_start_x", text="Scale")
                     else:
-                        box.prop(mod, "input_mask_id")
+                        row.prop(strip, "scale_start_x", text="Scale X")
+                        row.prop(strip, "scale_start_y", text="Scale Y")
+                    row = layout.row(align=True)
+                    row.prop(strip, "use_uniform_scale")
+                    row.prop(strip, "rotation_start", text="Rotation")
 
-                    if mod.type == 'COLOR_BALANCE':
-                        box.prop(mod, "color_multiply")
-                        draw_color_balance(box, mod.color_balance)
-                    elif mod.type == 'CURVES':
-                        box.template_curve_mapping(mod, "curve_mapping", type='COLOR')
-                    elif mod.type == 'HUE_CORRECT':
-                        box.template_curve_mapping(mod, "curve_mapping", type='HUE')
-                    elif mod.type == 'BRIGHT_CONTRAST':
-                        col = box.column()
-                        col.prop(mod, "bright")
-                        col.prop(mod, "contrast")
+                elif strip.type == 'MULTICAM':
+                    layout.prop(strip, "multicam_source")
+
+                    row = layout.row(align=True)
+                    sub = row.row(align=True)
+                    sub.scale_x = 2.0
+
+                    sub.operator("screen.animation_play", text="", icon='PAUSE' if context.screen.is_animation_playing else 'PLAY')
+
+                    row.label("Cut To")
+                    for i in range(1, strip.channel):
+                        row.operator("sequencer.cut_multicam", text="%d" % i).camera = i
+
+                
+                try:
+                    if strip.input_count > 0:
+                        col = layout.column()
+                        col.prop(strip, "input_1")
+                        if strip.input_count > 1:
+                            col.prop(strip, "input_2")   
+                except AttributeError:
+                    pass
+                                    
+            # extra info box:
+            if prefs.kr_extra_info:
+                layout = self.layout
+                box = layout.box()
+                if strip.type not in {'SOUND'}:
+                    row = box.row(align=True)
+                    sub = row.row(align=True)
+                    # MUTE THIS BOX 
+                    box.active = (not strip.mute)
+                    sub.prop(prefs, "kr_extra_info", text = "", icon='BORDERMOVE', emboss = True)
+                    sub.separator()
+                    sub.prop(strip, "blend_alpha", text="Opacity", slider=True)
+                    row.prop(strip, "mute", toggle=True, icon_only=True)
+                    row.prop(strip, "lock", toggle=True, icon_only=True)
+
+                    row = box.row(align=True)
+                    
+                    col = row.column()
+                    col.prop(strip, "strobe")
+                    col.prop(strip, "use_flip_x", text="flip X")
+                    col.prop(strip, "use_flip_y", text="flip Y")
+                    col.prop(strip, "use_reverse_frames", text="Backwards")
+                    col.prop(strip, "use_deinterlace")
+                    
+                    col = row.column()
+                    col.prop(strip, "blend_type", icon='COLOR', text = "")
+
+                    col.prop(strip, "color_saturation", text="Saturation")
+                    col.prop(strip, "color_multiply", text="Multiply")
+                    col.prop(strip, "use_float", text="Convert Float")
+                    col.prop(strip, "alpha_mode")
+                    
+                    row = box.row(align=True)
+                    row.prop(strip, "use_translation", text="Image Offset", icon = "AXIS_TOP")
+                    row.prop(strip, "use_crop", text="Image Crop", icon = "BORDER_RECT")
+                    if strip.use_translation:
+                            row = box.row(align=True)
+                            row.prop(strip.transform, "offset_x", text="X")
+                            row.prop(strip.transform, "offset_y", text="Y")
+                    if strip.use_crop:
+                        row = box.row(align=True)
+                        row.prop(strip.crop, "max_y")
+                        row.prop(strip.crop, "min_x")
+                        row.prop(strip.crop, "min_y")
+                        row.prop(strip.crop, "max_x")
+                                        
+                    
+                #sound type
+                else:
+                    row = box.row(align=True)
+                    row.prop(strip, "volume")
+                    row.prop(strip, "mute", toggle=True, icon_only=True)
+                    row.prop(strip, "lock", toggle=True, icon_only=True)
+                    
+                    sound = strip.sound
+                    if sound is not None:
+                        row = box.row()
+                        if sound.packed_file:
+                            row.operator("sound.unpack", icon='PACKAGE', text="Unpack")
+                        else:
+                            row.operator("sound.pack", icon='UGLYPACKAGE', text="Pack")
+
+                        row.prop(sound, "use_memory_cache")
+
+                    row.prop(strip, "show_waveform")
+                    
+                    row = box.row()
+                    row.prop(strip, "pitch")
+                    row.prop(strip, "pan")
+
+        
+            ## modifiers
+            
+            if strip.type != 'SOUND' and prefs.kr_show_modifiers:
+                sequencer = context.scene.sequence_editor
+                layout = self.layout
+                layout = layout.box()
+                # MUTE THIS BOX
+                layout.active = (not strip.mute)
+                row = layout.split(percentage=0.075)
+                row.prop(prefs, "kr_show_modifiers", text = "", icon='RESTRICT_VIEW_OFF', emboss = True)
+                row = row.split(percentage=0.40)
+                row.prop(strip, "use_linear_modifiers", text="Linear")
+                row = row.split(percentage=1)
+                row.operator_menu_enum("sequencer.strip_modifier_add", "type")
+                for mod in strip.modifiers:
+                    box = layout.box()
+                    row = box.row()
+                    row.prop(mod, "show_expanded", text="", emboss=False)
+                    row.prop(mod, "name", text="")
+
+                    row.prop(mod, "mute", text="")
+
+                    sub = row.row(align=True)
+                    props = sub.operator("sequencer.strip_modifier_move", text="", icon='TRIA_UP')
+                    props.name = mod.name
+                    props.direction = 'UP'
+                    props = sub.operator("sequencer.strip_modifier_move", text="", icon='TRIA_DOWN')
+                    props.name = mod.name
+                    props.direction = 'DOWN'
+
+                    row.operator("sequencer.strip_modifier_remove", text="", icon='X', emboss=False).name = mod.name
+
+                    if mod.show_expanded:
+                        row = box.row()
+                        row.prop(mod, "input_mask_type", expand=True)
+
+                        if mod.input_mask_type == 'STRIP':
+                            sequences_object = sequencer
+                            if sequencer.meta_stack:
+                                sequences_object = sequencer.meta_stack[-1]
+                            box.prop_search(mod, "input_mask_strip", sequences_object, "sequences", text="Mask")
+                        else:
+                            box.prop(mod, "input_mask_id")
+
+                        if mod.type == 'COLOR_BALANCE':
+                            box.prop(mod, "color_multiply")
+                            draw_color_balance(box, mod.color_balance)
+                        elif mod.type == 'CURVES':
+                            box.template_curve_mapping(mod, "curve_mapping", type='COLOR')
+                        elif mod.type == 'HUE_CORRECT':
+                            box.template_curve_mapping(mod, "curve_mapping", type='HUE')
+                        elif mod.type == 'BRIGHT_CONTRAST':
+                            col = box.column()
+                            col.prop(mod, "bright")
+                            col.prop(mod, "contrast")
 
             
         
