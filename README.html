@@ -40,7 +40,7 @@ git clone https://github.com/kinoraw/kinoraw_tools</code></pre>
 <li><a href="#in-and-out-tools">IN and OUT Tools</a><br /></li>
 <li><a href="#extra-sequencer-actions">Extra Sequencer Actions</a><br /></li>
 <li><a href="#strip-data">Strip Data</a><br /></li>
-<li><a href="vsequickfunctions">VSEQuickFunctions</a><br /></li>
+<li><a href="#vsequickfunctions">VSEQuickFunctions</a><br /></li>
 <li><a href="#view-modifiers">View Modifiers</a><br /></li>
 <li><a href="#extra-data">Extra Data</a><br /></li>
 <li><p><a href="#menus">Menus</a></p>
@@ -264,6 +264,14 @@ bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
 <p>This is useful to sync diferent audio strips to a single movie strip. It does not mantain the sync if you move only the movie strip, but anytime you can delete audio strips and reload again synced.</p>
 <p>Select an audio strip and a movie strip and press <strong>set sync</strong> to store sync information in a text file.</p>
 <p>Press <strong>reload audio</strong> with a movie strip selected to reload the audio files</p>
+<h3 id="audio-meters">Audio Meters</h3>
+<p><img align="" src="./imgs/audio_tools_meter.png"></p>
+<p>To use this you need to install Jack and JACK Meterbridge. Select the meter type and press <strong>Launch audio meter</strong></p>
+<p><img align="" src="./imgs/audio_tools_metertype.png"></p>
+<p>The operator launch the meterbridge app and connect it to pulseaudio jack sink. If it doesn work for your system, try to open Qjackctl and connect manually.</p>
+<pre><code>If you install pulseaudio along with jack, **you don&#39;t need to compile Blender with jack enabled** to use this feature. </code></pre>
+<p>For now it only works for linux but windows or osx can be implemented (need some testers for this...)</p>
+<p>More info about available meters: <a href="http://plugin.org.uk/meterbridge/">http://plugin.org.uk/meterbridge/</a></p>
 <h2 id="exif-info-panel">Exif info panel</h2>
 <p><img align="" src="./imgs/exif.png"></p>
 <p>Select a strip and press 'Read EXIF data'. Works only with image and movie strips</p>

@@ -267,7 +267,7 @@ class ExternalAudioReloadOperator(bpy.types.Operator):
         return {'FINISHED'}
 
 
-class CreateAudioToolPanel(bpy.types.Panel):
+class AudioToolPanel(bpy.types.Panel):
     """  """
     bl_label = "Audio Tools"
     bl_idname = "OBJECT_PT_AudioTool"
@@ -283,7 +283,7 @@ class CreateAudioToolPanel(bpy.types.Panel):
             prefs = preferences.addons[__package__].preferences
             if scn and scn.sequence_editor and scn.sequence_editor.active_strip:
                 if prefs.use_audio_tools:
-                    return strip.type in ('MOVIE')
+                    return True
         else:
             return False
 
@@ -296,31 +296,65 @@ class CreateAudioToolPanel(bpy.types.Panel):
         preferences = context.user_preferences
         prefs = preferences.addons[__package__].preferences
 
-        layout = self.layout
-        layout.prop(prefs, "audio_dir", text="path for audio files")
+        strip = functions.act_strip(context)
 
-
-        layout.operator("sequencer.extract_wav_operator", text="Extract Wav")
-
-
-        layout = self.layout
-        layout.prop(prefs, "audio_scripts")
-
-        if prefs.audio_scripts:
+        if strip.type == "MOVIE":
             layout = self.layout
-            layout.prop(prefs, "audio_scripts_path", text="path for scripts")
-
-        layout = self.layout
-        layout.prop(prefs, "audio_use_external_links", text="external audio sync")
+            layout.prop(prefs, "audio_dir", text="path for audio files")
 
 
-        if prefs.audio_use_external_links:
-            layout = self.layout
-            layout.prop(prefs, "audio_external_filename", text="sync data")
+            layout.operator("sequencer.extract_wav_operator", text="Extract Wav")
+
 
             layout = self.layout
-            row = layout.row(align=True)
-            row.operator("sequencer.external_audio_set_sync", text="set sync")
-            row.operator("sequencer.external_audio_reload", text="reload audio")
+            layout.prop(prefs, "audio_scripts")
+
+            if prefs.audio_scripts:
+                layout = self.layout
+                layout.prop(prefs, "audio_scripts_path", text="path for scripts")
+
+            layout = self.layout
+            layout.prop(prefs, "audio_use_external_links", text="external audio sync")
+
+
+            if prefs.audio_use_external_links:
+                layout = self.layout
+                layout.prop(prefs, "audio_external_filename", text="sync data")
+
+                row = layout.row(align=True)
+                row.operator("sequencer.external_audio_set_sync", text="set sync")
+                row.operator("sequencer.external_audio_reload", text="reload audio")
+
+        layout = self.layout
+                
+        row = layout.row()
+        row.prop(prefs, "metertype", text="")
+        row.operator("sequencer.openmeterbridge", text="Launch Audio Meter", icon = "SOUND")
+
+
+class OpenMeterbridgeOperator(bpy.types.Operator):
+    """  """
+    bl_idname = "sequencer.openmeterbridge"
+    bl_label = "open external vu meter to work with jack"
+
+    @staticmethod
+    def has_sequencer(context):
+        return (context.space_data.view_type in {'SEQUENCER', 'SEQUENCER_PREVIEW'})
+
+    @classmethod
+    def poll(cls, context):
+        if cls.has_sequencer(context):
+            if len(context.selected_editable_sequences) == 1:
+                return True
+                
+
+    def execute(self, context):
+        preferences = context.user_preferences
+        prefs = preferences.addons[__package__].preferences
+
+        command = "meterbridge -t {} 'PulseAudio JACK Sink:front-left' 'PulseAudio JACK Sink:front-right' &".format(prefs.metertype.lower())
+        p = subprocess.Popen(command,stdout=subprocess.PIPE, shell = True)
+        
+        return {'FINISHED'}
 
 

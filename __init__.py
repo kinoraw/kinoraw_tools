@@ -25,8 +25,8 @@ bl_info = {
     "description": "a compilation of tools to improve video editing with blender's VSE",
     "wiki_url": "https://github.com/kinoraw/kinoraw_tools/blob/master/README.md",
     "tracker_url": "https://github.com/kinoraw/kinoraw_tools",
-    "support": "http://blenderartists.org/forum/showthread.php?368242-Addon-Kinoraw-Tools-%28VSE%29"
-    "category": "Sequencer",
+    "support": "COMMUNITY",
+    "category": "Sequencer"
     }
 
 
@@ -40,6 +40,7 @@ if "bpy" in locals():
     imp.reload(eco)
     imp.reload(random_editor)
     imp.reload(ui)
+    imp.reload(datamosh)
 else:
     from . import jumptocut
     from . import operators_extra_actions
@@ -170,6 +171,18 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
     audio_external_filename = StringProperty(
         name='file to store info about linked audio',
         default="//external_audio_sync_info.txt")
+
+    # audio tools vu-meter
+
+    meterbridge = [  ( "VU", "classic moving needle VU meter","" ), ( "PPM", "PPM meter", "" ),
+                    ( "DPM", "Digital peak meter", "" ), ("JF", "'Jellyfish' phase meter", "" ),
+                    ( "SCO", "Oscilloscope meter", "" )]
+
+    metertype = EnumProperty(
+        name = "meter type", 
+        items = meterbridge, 
+        default="DPM",
+        description = "meterbridge meter type" ) 
 
     # eco
     use_eco_tools = BoolProperty(

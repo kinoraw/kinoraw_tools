@@ -460,6 +460,22 @@ Select an audio strip and a movie strip and press **set sync** to store sync inf
 
 Press **reload audio** with a movie strip selected to reload the audio files
 
+### Audio Meters
+
+<img align="" src="/imgs/audio_tools_meter.png">
+
+To use this you need to install Jack and JACK Meterbridge. Select the meter type and press **Launch audio meter**
+
+<img align="" src="/imgs/audio_tools_metertype.png">
+
+The operator launch the meterbridge app and connect it to pulseaudio jack sink. If it doesn work for your system, try to open Qjackctl and connect manually.
+
+    If you install pulseaudio along with jack, **you don't need to compile Blender with jack enabled** to use this feature. 
+
+For now it only works for linux but windows or osx can be implemented (need some testers for this...)
+
+More info about available meters: http://plugin.org.uk/meterbridge/
+
 ## Exif info panel
 
 <img align="" src="/imgs/exif.png">
