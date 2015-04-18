@@ -470,7 +470,7 @@ To use this you need to install Jack and JACK Meterbridge. Select the meter type
 
 The operator launch the meterbridge app and connect it to pulseaudio jack sink. If it doesn work for your system, try to open Qjackctl and connect manually.
 
-    If you install pulseaudio along with jack, **you don't need to compile Blender with jack enabled** to use this feature. 
+If you install pulseaudio along with jack, **you don't need to compile Blender with jack enabled** to use this feature. 
 
 For now it only works for linux but windows or osx can be implemented (need some testers for this...)
 

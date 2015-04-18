@@ -296,12 +296,14 @@ class JumptoCut(bpy.types.Panel):
         else:
             row = row.split(percentage=0.25) 
             row.label(text = "")
-        try:
-            row = row.split(percentage=0.25) 
-            row.prop(scn, 'quickcontinuousenable', text="", icon='POSE_DATA')
-        except AttributeError:
-            row = row.split(percentage=0.25) 
-            row.label(text = "")
+        #try:
+        #    row = row.split(percentage=0.25) 
+        #    row.prop(scn, 'quickcontinuousenable', text="", icon='POSE_DATA')
+        #except AttributeError:
+        #    row = row.split(percentage=0.25) 
+        #    row.label(text = "hola")
+        row = row.split(percentage=0.25) 
+        row.label(text = "")
         row = row.split(percentage=0.33)   
         row.prop(prefs, "kr_show_info", text="", icon='VIEWZOOM')
         row = row.split(percentage=0.5) 
@@ -311,17 +313,17 @@ class JumptoCut(bpy.types.Panel):
         
         
         ##########
-        row = layout.row()
-        try:
-            if (scn.quickcontinuousenable):
-                row = layout.row()
-                row.prop(scn, 'quickcontinuouschildren', text = "Children")
-                row.prop(scn, 'quickcontinuousfollow', text = "follow")
-                row.prop(scn, 'quickcontinuoussnap', text = "Snap")
-                if scn.quickcontinuoussnap:
-                    row.prop(scn, 'quickcontinuoussnapdistance', text = "distance")
-        except AttributeError:
-            pass
+        #row = layout.row()
+        #try:
+        #    if (scn.quickcontinuousenable):
+        #        row = layout.row()
+        #        row.prop(scn, 'quickcontinuouschildren', text = "Children")
+        #        row.prop(scn, 'quickcontinuousfollow', text = "follow")
+        #        row.prop(scn, 'quickcontinuoussnap', text = "Snap")
+        #        if scn.quickcontinuoussnap:
+        #            row.prop(scn, 'quickcontinuoussnapdistance', text = "distance")
+        #except AttributeError:
+        #    pass
         ##########
         
         
@@ -503,21 +505,21 @@ class JumptoCut(bpy.types.Panel):
                     row.prop(strip, "color", text = "")
 
                 # VSE QUICK PARENT INFO
-                
-                try:
-                    if scn.parenting:
-                        row = layout.row()
-                        childrennames = functions.find_children(strip.name)
-                        parentname = functions.find_parent(strip.name)
-                        if (parentname != 'None'):
-                            if len(childrennames) > 0:
-                                row.label("Parent: {} Children: {}".format(parentname, ", ".join(childrennames)))
-                            else:
-                                row.label("Parent: {}".format(parentname))
-                        elif len(childrennames) > 0:
-                            row.label("Children: {}".format(", ".join(childrennames)))
-                except AttributeError:
-                    pass             
+#                try:
+#                    if scn.parenting:
+#                        row = layout.row()
+#                        childrennames = functions.find_children(strip.name)
+#                        parentname = functions.find_parent(strip.name)
+#                        if (parentname != 'None'):
+#                            if len(childrennames) > 0:
+#                                row.label("Parent: {} Children: {}".format(parentname, ", ".join(childrennames)))
+#                            else:
+#                                row.label("Parent: {}".format(parentname))
+#                        elif len(childrennames) > 0:
+#                            row.label("Children: {}".format(", ".join(childrennames)))
+#                except AttributeError:
+#                    pass   
+                          
                 # trim info
                 if strip.type not in {"SPEED", "WIPE", "CROSS", "ADJUSTMENT"}:
                     row.prop(prefs, "kr_show_trim", text="Trim")
@@ -537,15 +539,15 @@ class JumptoCut(bpy.types.Panel):
                 # special strips info
                 if strip.type == 'SPEED':
                     row.prop(strip, "multiply_speed")
-                elif strip.type in {'CROSS', 'GAMMA_CROSS', 'WIPE', 'ALPHA_OVER', 'ALPHA_UNDER', 'OVER_DROP'}:
+                if strip.type in {'CROSS', 'GAMMA_CROSS', 'WIPE', 'ALPHA_OVER', 'ALPHA_UNDER', 'OVER_DROP'}:
                     row.prop(strip, "use_default_fade", "Default Fade")
                     if not strip.use_default_fade:
                         row.prop(strip, "effect_fader", text="Effect fader")
-                elif strip.type == 'GAUSSIAN_BLUR':
+                if strip.type == 'GAUSSIAN_BLUR':
                     row.prop(strip, "size_x")
                     row.prop(strip, "size_y")
                 
-                elif strip.type == 'WIPE':
+                if strip.type == 'WIPE':
                     row = layout.row()
                     row.prop(strip, "transition_type", expand=True)
                     row = layout.row()
@@ -554,7 +556,7 @@ class JumptoCut(bpy.types.Panel):
                     if strip.transition_type in {'SINGLE', 'DOUBLE'}:
                         row.prop(strip, "angle")
 
-                elif strip.type == 'GLOW':
+                if strip.type == 'GLOW':
                     flow = layout.column_flow()
                     flow.prop(strip, "threshold", slider=True)
                     flow.prop(strip, "clamp", slider=True)
@@ -565,7 +567,7 @@ class JumptoCut(bpy.types.Panel):
                     row.prop(strip, "quality", slider=True)
                     row.prop(strip, "use_only_boost")
 
-                elif strip.type == 'SPEED':
+                if strip.type == 'SPEED':
                     row = layout.row()
                     row.prop(strip, "use_default_fade", "Stretch to input strip length")
                     if not strip.use_default_fade:
@@ -576,7 +578,7 @@ class JumptoCut(bpy.types.Panel):
                             layout.prop(strip, "speed_factor", text="Frame number")
                             layout.prop(strip, "scale_to_length")
 
-                elif strip.type == 'TRANSFORM':
+                if strip.type == 'TRANSFORM':
                     row = layout.row(align=True)
                     row.prop(strip, "interpolation")
                     row.prop(strip, "translation_unit")
@@ -594,7 +596,7 @@ class JumptoCut(bpy.types.Panel):
                     row.prop(strip, "use_uniform_scale")
                     row.prop(strip, "rotation_start", text="Rotation")
 
-                elif strip.type == 'MULTICAM':
+                if strip.type == 'MULTICAM':
                     layout.prop(strip, "multicam_source")
 
                     row = layout.row(align=True)
