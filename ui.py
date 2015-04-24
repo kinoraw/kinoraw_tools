@@ -508,19 +508,22 @@ class JumptoCut(bpy.types.Panel):
                 if "vseqf" in dir(bpy.ops):
                     if len(scn.parenting) > 0:
                         row = layout.row()
-                        row.label("Parent:")
-#                        childrennames = functions.find_children(strip.name)
-#                        parentname = functions.find_parent(strip.name)
-#                        if (parentname != 'None'):
-#                           if len(childrennames) > 0:
-#                                row.label("Parent: {} Children: {}".format(parentname, ", ".join(childrennames)))
-#                            else:
-#                                row.label("Parent: {}".format(parentname))
-#                        elif len(childrennames) > 0:
-#                            row.label("Children: {}".format(", ".join(childrennames))) 
-#                          
+                        row = row.split(percentage=0.8) 
+                        childrennames = functions.find_children(strip.name)
+                        parentname = functions.find_parent(strip.name)
+                        if parentname != None:
+                            if len(childrennames) > 0:
+                                row.label("Parent: {} Children: {}".format(parentname, ", ".join(childrennames)))
+                            else:
+                                row.label("Parent: {}".format(parentname))
+                            
+                        elif len(childrennames) > 0:
+                            row.label("Children: {}".format(", ".join(childrennames))) 
+                        #row = layout.row()
                 # trim info
+                
                 if strip.type not in {"SPEED", "WIPE", "CROSS", "ADJUSTMENT"}:
+                    row = row.split(percentage=1) 
                     row.prop(prefs, "kr_show_trim", text="Trim")
                     if prefs.kr_show_trim:
                         if not isinstance(strip, bpy.types.EffectSequence):
