@@ -745,6 +745,9 @@ class JumptoCut(bpy.types.Panel):
                             col = box.column()
                             col.prop(mod, "bright")
                             col.prop(mod, "contrast")
+                row = layout.row(align=True)
+                row.operator("sequencer.copier_modifiers", text="Copy Modifiers", icon='COPYDOWN')
+                row.operator("sequencer.coller_modifiers", text="Paste Modifiers", icon='PASTEDOWN')
 
             
         

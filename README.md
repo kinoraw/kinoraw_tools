@@ -306,6 +306,10 @@ bla bli bla bli bli, **same menus, less space** Bli bli bli bla bli bla bli bli 
 
 <img align="" src="/imgs/jump_to_cut_info_modifier2.png">
 
+If you have [copy modifiers](http://blenderclan.tuxfamily.org/html/modules/newbb/viewtopic.php?post_id=458896#forumpost458896) addon enabled, then you can also access to their functions from here
+
+<img align="" src="/imgs/copy_modifiers.png">
+
 ## Extra Data
 
 Bli bli bli bla bli bla bli bli, **secondary properties** Bli bli bli bla bli bla bli bli

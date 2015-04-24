@@ -19,10 +19,10 @@
 bl_info = {
     "name": "Kinoraw Tools",
     "author": "Carlos Padial, Turi Scandurra",
-    "version": (0, 4),
+    "version": (0, 5),
     "blender": (2, 74, 0),
     "location": "Sequencer",
-    "description": "a compilation of tools to improve video editing with blender's VSE",
+    "description": "compilation of tools to improve video editing with blender's VSE",
     "wiki_url": "https://github.com/kinoraw/kinoraw_tools/blob/master/README.md",
     "tracker_url": "https://github.com/kinoraw/kinoraw_tools",
     "support": "COMMUNITY",
@@ -65,8 +65,7 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
     # when defining this in a submodule of a python package.
     bl_idname = __package__
     bl_option = {'REGISTER'}
-
-
+    
     # extra_actions
     kr_show_tools = BoolProperty(
         name = "show tools" ,
@@ -89,7 +88,6 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
     kr_extra_info = BoolProperty(
         name = 'show extra info',
         default = False)
-    
 
     # exif
     use_exif_panel = BoolProperty(
