@@ -296,12 +296,13 @@ class JumptoCut(bpy.types.Panel):
         else:
             row = row.split(percentage=0.25) 
             row.label(text = "")
-        #try:
-        #    row = row.split(percentage=0.25) 
-        #    row.prop(scn, 'quickcontinuousenable', text="", icon='POSE_DATA')
-        #except AttributeError:
-        #    row = row.split(percentage=0.25) 
-        #    row.label(text = "hola")
+            
+        if "vseqf" in dir(bpy.ops):
+            row = row.split(percentage=0.25) 
+            row.prop(scn, 'quickcontinuousenable', text="", icon='POSE_DATA')
+        else:
+            row = row.split(percentage=0.25) 
+            row.label(text = "")
         row = row.split(percentage=0.25) 
         row.label(text = "")
         row = row.split(percentage=0.33)   
@@ -313,18 +314,15 @@ class JumptoCut(bpy.types.Panel):
         
         
         ##########
-        #row = layout.row()
-        #try:
-        #    if (scn.quickcontinuousenable):
-        #        row = layout.row()
-        #        row.prop(scn, 'quickcontinuouschildren', text = "Children")
-        #        row.prop(scn, 'quickcontinuousfollow', text = "follow")
-        #        row.prop(scn, 'quickcontinuoussnap', text = "Snap")
-        #        if scn.quickcontinuoussnap:
-        #            row.prop(scn, 'quickcontinuoussnapdistance', text = "distance")
-        #except AttributeError:
-        #    pass
-        ##########
+        if "vseqf" in dir(bpy.ops):
+            row = layout.row()
+            row.active = (scn.quickcontinuousenable)
+            row.prop(scn, 'quickcontinuouschildren', text = "Children")
+            row.prop(scn, 'quickcontinuousfollow', text = "follow")
+            row.prop(scn, 'quickcontinuoussnap', text = "Snap")
+            row.prop(scn, 'quickcontinuoussnapdistance', text = "distance")
+
+        #########
         
         
         if prefs.kr_show_tools:
@@ -477,6 +475,8 @@ class JumptoCut(bpy.types.Panel):
                 row.prop(strip, "type", text="")
                 row = row.split(percentage=1)
                 row.prop(strip, "name", text="")
+                
+                # MUTE INFORMATION
                 layout.active = (not strip.mute)
 
                 # basic info
@@ -505,21 +505,20 @@ class JumptoCut(bpy.types.Panel):
                     row.prop(strip, "color", text = "")
 
                 # VSE QUICK PARENT INFO
-#                try:
-#                    if scn.parenting:
-#                        row = layout.row()
+                if "vseqf" in dir(bpy.ops):
+                    if len(scn.parenting) > 0:
+                        row = layout.row()
+                        row.label("Parent:")
 #                        childrennames = functions.find_children(strip.name)
 #                        parentname = functions.find_parent(strip.name)
 #                        if (parentname != 'None'):
-#                            if len(childrennames) > 0:
+#                           if len(childrennames) > 0:
 #                                row.label("Parent: {} Children: {}".format(parentname, ", ".join(childrennames)))
 #                            else:
 #                                row.label("Parent: {}".format(parentname))
 #                        elif len(childrennames) > 0:
-#                            row.label("Children: {}".format(", ".join(childrennames)))
-#                except AttributeError:
-#                    pass   
-                          
+#                            row.label("Children: {}".format(", ".join(childrennames))) 
+#                          
                 # trim info
                 if strip.type not in {"SPEED", "WIPE", "CROSS", "ADJUSTMENT"}:
                     row.prop(prefs, "kr_show_trim", text="Trim")
@@ -745,11 +744,13 @@ class JumptoCut(bpy.types.Panel):
                             col = box.column()
                             col.prop(mod, "bright")
                             col.prop(mod, "contrast")
-                row = layout.row(align=True)
-                row.operator("sequencer.copier_modifiers", text="Copy Modifiers", icon='COPYDOWN')
-                row.operator("sequencer.coller_modifiers", text="Paste Modifiers", icon='PASTEDOWN')
+                            
+                if "copy_modifiers" in dir(bpy.ops.sequencer):
+                    row = layout.row(align=True)
+                    row.operator("sequencer.copy_modifiers", text="Copy Modifiers", icon='COPYDOWN')
+                    row.operator("sequencer.paste_modifiers", text="Paste Modifiers", icon='PASTEDOWN')
 
-            
+                
         
         ############################################################
         
