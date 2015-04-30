@@ -97,7 +97,7 @@ class ExtractWavOperator(bpy.types.Operator):
             # check for wav existing file
             if not os.path.isfile(fileoutput):
                 #if not, extract the file
-                extract_audio = "ffmpeg -i {} -acodec pcm_s16le -ac 2 {}".\
+                extract_audio = "ffmpeg -i '{}' -acodec pcm_s16le -ac 2 {}".\
                 format(filename, fileoutput)
                 print(extract_audio)
                 os.system(extract_audio)
