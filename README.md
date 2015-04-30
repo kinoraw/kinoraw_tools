@@ -1,6 +1,6 @@
 # Kinoraw Tools
 
-a compilation of tools to improve video editing with blender's VSE.
+a compilation of tools to improve video editing with blender's VSE
 
 (Tested with blender 2.74)
 
