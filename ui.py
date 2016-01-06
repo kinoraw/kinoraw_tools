@@ -299,11 +299,11 @@ class JumptoCut(bpy.types.Panel):
             
         if "vseqf" in dir(bpy.ops):
             row = row.split(percentage=0.25) 
-            row.prop(scn, 'quickcontinuousenable', text="", icon='POSE_DATA')
+            row.prop(prefs, 'kr_quick_info', text="", icon='POSE_DATA')
         else:
             row = row.split(percentage=0.25) 
             row.label(text = "")
-        row = row.split(percentage=0.25) 
+        row = row.split(percentage=0.25)
         row.label(text = "")
         row = row.split(percentage=0.33)   
         row.prop(prefs, "kr_show_info", text="", icon='VIEWZOOM')
@@ -311,20 +311,9 @@ class JumptoCut(bpy.types.Panel):
         row.prop(prefs, "kr_extra_info", text="", icon='BORDERMOVE')
         row = row.split(percentage=1) 
         row.prop(prefs, "kr_show_modifiers", text="", icon='RESTRICT_VIEW_OFF')
-        
-        
+              
         ##########
-        if "vseqf" in dir(bpy.ops):
-            row = layout.row()
-            row.active = (scn.quickcontinuousenable)
-            row.prop(scn, 'quickcontinuouschildren', text = "Children")
-            row.prop(scn, 'quickcontinuousfollow', text = "follow")
-            row.prop(scn, 'quickcontinuoussnap', text = "Snap")
-            row.prop(scn, 'quickcontinuoussnapdistance', text = "distance")
 
-        #########
-        
-        
         if prefs.kr_show_tools:
             layout = self.layout
             layout = layout.box()
@@ -368,7 +357,7 @@ class JumptoCut(bpy.types.Panel):
                         row.operator("sequencerextra.sourceout", icon='MARKER_HLT', text="OUT")
                     row.separator()
                     row.operator("sequencerextra.setinout", icon="ARROW_LEFTRIGHT", text="")
-                    row.operator("sequencerextra.triminout", icon="FULLSCREEN_EXIT", text="",emboss=True)
+                    row.operator("sequencerextra.triminout", icon="FULLSCREEN_EXIT", text="")
                     
                 # miniUI extra actions
                 row=layout.row(align=True)
@@ -462,12 +451,12 @@ class JumptoCut(bpy.types.Panel):
                 'mode', text='Fade', icon='MOD_ARRAY')
                 row.operator_menu_enum('sequencerextra.copyproperties',
                 'prop', icon='SCRIPT')
-                
-        # INFO box
-        
+
+        # INFO boxes
+        # INFO boxes
+        # INFO boxes
         if strip != None:
             if prefs.kr_show_info:
-                layout = self.layout
                 layout = layout.box()
                 row = layout.split(percentage=0.075)
                 row.prop(prefs, "kr_show_info", text="",icon='VIEWZOOM', emboss=True)
@@ -480,7 +469,6 @@ class JumptoCut(bpy.types.Panel):
                 layout.active = (not strip.mute)
 
                 # basic info
-                    
                 row = layout.row()
                 row.prop(strip, "channel")
                 row.prop(strip, "frame_start")
@@ -504,24 +492,7 @@ class JumptoCut(bpy.types.Panel):
                 if strip.type == 'COLOR':
                     row.prop(strip, "color", text = "")
 
-                # VSE QUICK PARENT INFO
-                if "vseqf" in dir(bpy.ops):
-                    if len(scn.parenting) > 0:
-                        row = layout.row()
-                        row = row.split(percentage=0.8) 
-                        childrennames = functions.find_children(strip.name)
-                        parentname = functions.find_parent(strip.name)
-                        if parentname != None:
-                            if len(childrennames) > 0:
-                                row.label("Parent: {} Children: {}".format(parentname, ", ".join(childrennames)))
-                            else:
-                                row.label("Parent: {}".format(parentname))
-                            
-                        elif len(childrennames) > 0:
-                            row.label("Children: {}".format(", ".join(childrennames))) 
-                        #row = layout.row()
                 # trim info
-                
                 if strip.type not in {"SPEED", "WIPE", "CROSS", "ADJUSTMENT"}:
                     row = row.split(percentage=1) 
                     row.prop(prefs, "kr_show_trim", text="Trim")
@@ -535,6 +506,8 @@ class JumptoCut(bpy.types.Panel):
                         row.label(text="soft:")
                         row.prop(strip, "frame_offset_start", text="Start")
                         row.prop(strip, "frame_offset_end", text="End")
+
+                
                 
                 row = layout.row()
                     
@@ -620,6 +593,41 @@ class JumptoCut(bpy.types.Panel):
                             col.prop(strip, "input_2")   
                 except AttributeError:
                     pass
+
+            #QUICKCHILDREN
+            if prefs.kr_quick_info:
+                layout = self.layout
+                layout = layout.box()
+                # MUTE THIS BOX
+                layout.active = (not strip.mute)
+                row = layout.split(percentage=0.075)
+                row.prop(prefs, "kr_quick_info", text="",icon='POSE_DATA', emboss=True)
+                
+                row.prop(scn, 'quickcontinuousenable')
+                row.operator('vseqf.quickparents', text='Set Parent').action = 'add'
+                
+                if scn.quickcontinuousenable:
+                    row = layout.row()
+                    row.label("Parenting")
+                    row.prop(scn, 'quickcontinuouschildren', text = "Move")
+                    row.prop(scn, 'quickcontinuousselectchildren', text = "Autoselect")
+                row = layout.row()
+                row.operator('vseqf.quickparents', text='Select Children').action = 'selectchildren'
+                row.operator('vseqf.quickparents', text='Clear Children').action = 'clearchildren'
+                row.operator('vseqf.quickparents', text='Select Parent').action = 'selectparent'
+                row.operator('vseqf.quickparents', text='Clear Parent').action = 'clearparent'
+
+                if len(scn.parenting) > 0:
+                    childrennames = functions.find_children(strip.name)
+                    parentname = functions.find_parent(strip.name)
+                    row = layout.row()
+                    row = row.split(percentage=0.8) 
+                    if parentname != "None":
+                        row.label("Parent: {}".format(parentname))
+                    if len(childrennames) > 0:
+                        for child in childrennames:
+                            row = layout.row()
+                            row.label("Children: {}".format(child))
                                     
             # extra info box:
             if prefs.kr_extra_info:
@@ -690,10 +698,9 @@ class JumptoCut(bpy.types.Panel):
                     row = box.row()
                     row.prop(strip, "pitch")
                     row.prop(strip, "pan")
-
-        
-            ## modifiers
+                
             
+            ## modifiers
             if strip.type != 'SOUND' and prefs.kr_show_modifiers:
                 sequencer = context.scene.sequence_editor
                 layout = self.layout
@@ -755,7 +762,7 @@ class JumptoCut(bpy.types.Panel):
 
                 
         
-        ############################################################
+
         
         
 
