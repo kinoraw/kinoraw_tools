@@ -2,7 +2,7 @@
 
 a compilation of tools to improve video editing with blender's VSE
 
-(Tested with blender 2.74)
+(Tested with blender 2.76b)
 
 
 
@@ -292,8 +292,7 @@ bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli blau
 
 ## VSEQuickFunctions
 
-If you have [VSE Quick Functions](http://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed) addon enabled, then you can also see some info in the panel
-
+If you have [VSE Quick Functions_0_89](http://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed) addon enabled, then you can also see some info in the panel for the parenting feature.
 
 <img align="" src="/imgs/VSEquick.png">
 
