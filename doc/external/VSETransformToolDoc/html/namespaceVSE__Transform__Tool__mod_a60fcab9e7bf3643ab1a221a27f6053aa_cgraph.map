@@ -1,6 +1,0 @@
-<map id="VSE_Transform_Tool_mod.make_quad" name="VSE_Transform_Tool_mod.make_quad">
-<area shape="rect" id="node2" href="$namespaceVSE__Transform__Tool__mod.html#ab6dc6d1709d45dc7748535881713c473" title="VSE_Transform_Tool\l_mod.get_fac" alt="" coords="200,5,347,46"/>
-<area shape="rect" id="node3" href="$namespaceVSE__Transform__Tool__mod.html#a7cd8ce939a8451ac8034a5748c7effc4" title="VSE_Transform_Tool\l_mod.get_pos_x" alt="" coords="200,70,347,111"/>
-<area shape="rect" id="node4" href="$namespaceVSE__Transform__Tool__mod.html#a4a764064942b84188c2e075932af29e2" title="VSE_Transform_Tool\l_mod.get_pos_y" alt="" coords="200,135,347,177"/>
-<area shape="rect" id="node5" href="$namespaceVSE__Transform__Tool__mod.html#a128fc7e6b3d0d90d11044843b9a53d4f" title="VSE_Transform_Tool\l_mod.rotate_point" alt="" coords="200,201,347,242"/>
-</map>
