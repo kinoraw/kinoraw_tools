@@ -13,6 +13,10 @@ a compilation of tools to improve video editing with blender's VSE
 
 <img align="center" width="500px" src="/imgs/full_screen.jpg">
 
+## Changelog:
+
+2017/4/2: Remove support for quickfunction script. The new version of this addon is quite complete by itself. Go and install it: https://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed  
+
 
 ## How to Install
 
@@ -59,7 +63,6 @@ then you can start blender and activate the addon in the user preferences window
 	- [IN and OUT Tools](#in-and-out-tools)
 	- [Extra Sequencer Actions](#extra-sequencer-actions)
 	- [Strip Data](#strip-data)
-	- [VSEQuickFunctions](#vsequickfunctions)
 	- [View Modifiers](#view-modifiers)
 	- [Extra Data](#extra-data)
 	- [Menus](#menus)
@@ -289,12 +292,6 @@ bla bli bla bli bli, **all strip types** Bli bli bli bla bli bla bli bli blau
 <img align="" src="/imgs/jump_to_cut_info_speed.png">
 
 <img align="" src="/imgs/jump_to_cut_info_blur.png">
-
-## VSEQuickFunctions
-
-If you have [VSE Quick Functions_0_89](http://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed) addon enabled, then you can also see some info in the panel for the parenting feature.
-
-<img align="" src="/imgs/VSEquick.png">
 
 
 ## View Modifiers

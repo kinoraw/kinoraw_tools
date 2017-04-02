@@ -1,14 +1,16 @@
 <h1 id="kinoraw-tools">Kinoraw Tools</h1>
 <p>a compilation of tools to improve video editing with blender's VSE</p>
 <p>(Tested with blender 2.76b)</p>
-<p><em>Bli bli bli bla bli bla bli bli, Bli bli bli bla</em> <strong><a href="http://kinoraw.net">http://kinoraw.net</a></strong> <em>bli bla bli bli, Bli bli bli</em> <strong>FLOSS video editing</strong> <em>bla bli bla bli bli, Bli bli bli</em> <strong><a href="http://www.blender.org">BLENDER!</a></strong> <em>bla bli bla bli bli, Bli bli bli bla</em> <strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut">Jump to Cut</a></strong> <em>bli bla bli bli, Bli bli bli</em> <strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions">Extra Sequencer Actions</a></strong> <em>bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli</em> FCP XDXDXDXD <em>bla bli bla bli bli, Bli bli</em> <strong>useful tools grouped in the same panel</strong> <em>bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli. Bli bla bla bli</em> <strong>fast video editing</strong> <em>bli, bli bli</em> <strong>with Blender</strong> <em>bli bla</em> <strong>linux, of course.</strong> <em>Bli bla bli bli blau</em></p>
+<p><em>Bli bli bli bla bli bla bli bli, Bli bli bli bla</em> <strong><a href="http://kinoraw.net**" class="uri">http://kinoraw.net**</a> <em>bli bla bli bli, Bli bli bli</em> </strong>FLOSS video editing** <em>bla bli bla bli bli, Bli bli bli</em> <strong><a href="http://www.blender.org">BLENDER!</a></strong> <em>bla bli bla bli bli, Bli bli bli bla</em> <strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut">Jump to Cut</a></strong> <em>bli bla bli bli, Bli bli bli</em> <strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions">Extra Sequencer Actions</a></strong> <em>bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli</em> FCP XDXDXDXD <em>bla bli bla bli bli, Bli bli</em> <strong>useful tools grouped in the same panel</strong> <em>bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli. Bli bla bla bli</em> <strong>fast video editing</strong> <em>bli, bli bli</em> <strong>with Blender</strong> <em>bli bla</em> <strong>linux, of course.</strong> <em>Bli bla bli bli blau</em></p>
 <pre><code>-- Carlos Padial, 2015 ;)</code></pre>
 <p><img align="center" width="500px" src="./imgs/full_screen.jpg"></p>
+<h2 id="changelog">Changelog:</h2>
+<p>2017/4/2: Remove support for quickfunction script. The new version of this addon is quite complete by itself. Go and install it: <a href="https://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed" class="uri">https://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed</a></p>
 <h2 id="how-to-install">How to Install</h2>
 <h3 id="install-the-zip-package-stable-version">install the zip package (STABLE VERSION)</h3>
 <ul>
 <li><p>The source in this repo is a <strong>development</strong> version and <strong>maybe unstable</strong>. To get the most <strong>stable version</strong> follow this instructions:</p></li>
-<li><p>Download the zip file from this page <a href="https://github.com/kinoraw/kinoraw_repo">https://github.com/kinoraw/kinoraw_repo</a> and extract it somewhere.</p></li>
+<li><p>Download the zip file from this page <a href="https://github.com/kinoraw/kinoraw_repo" class="uri">https://github.com/kinoraw/kinoraw_repo</a> and extract it somewhere.</p></li>
 <li><p>Once in Blender, open the user preferences window (ctrl+alt+u) and load the zip file named <em>kinoraw_tools_Vxxx.zip</em> with the button 'install from file' you can find at the bottom of the window.</p></li>
 <li><p>After that, you should activate the addon by presing the checkbox next to the addon</p></li>
 </ul>
@@ -23,41 +25,40 @@ git clone https://github.com/kinoraw/kinoraw_tools</code></pre>
 <p><img align="right" width="280px" src="./imgs/full_panel.png"></p>
 <p><strong>Table of Contents</strong></p>
 <ul>
-<li><p><a href="#">Kinoraw Tools</a></p>
+<li><a href="#">Kinoraw Tools</a>
 <ul>
-<li><a href="#how-to-install">How to Install</a><br /></li>
-<li><p><a href="#jump-to-cut-6">Jump to Cut 6</a></p>
+<li><a href="#how-to-install">How to Install</a></li>
+<li><a href="#jump-to-cut-6">Jump to Cut 6</a>
 <ul>
-<li><a href="#main-controls">Main Controls</a><br /></li>
-<li><a href="#vse-fundamentals">VSE fundamentals</a><br /></li>
-<li><a href="#trim-timeline-tools">Trim Timeline Tools</a><br /></li>
+<li><a href="#main-controls">Main Controls</a></li>
+<li><a href="#vse-fundamentals">VSE fundamentals</a></li>
+<li><a href="#trim-timeline-tools">Trim Timeline Tools</a></li>
 </ul></li>
-<li><p><a href="#extra-tools">Extra Tools</a></p>
+<li><a href="#extra-tools">Extra Tools</a>
 <ul>
-<li><a href="#snap-and-handles">Snap and Handles</a><br /></li>
-<li><a href="#meta-tools">Meta Tools</a><br /></li>
+<li><a href="#snap-and-handles">Snap and Handles</a></li>
+<li><a href="#meta-tools">Meta Tools</a></li>
 </ul></li>
-<li><a href="#in-and-out-tools">IN and OUT Tools</a><br /></li>
-<li><a href="#extra-sequencer-actions">Extra Sequencer Actions</a><br /></li>
-<li><a href="#strip-data">Strip Data</a><br /></li>
-<li><a href="#vsequickfunctions">VSEQuickFunctions</a><br /></li>
-<li><a href="#view-modifiers">View Modifiers</a><br /></li>
-<li><a href="#extra-data">Extra Data</a><br /></li>
-<li><p><a href="#menus">Menus</a></p>
+<li><a href="#in-and-out-tools">IN and OUT Tools</a></li>
+<li><a href="#extra-sequencer-actions">Extra Sequencer Actions</a></li>
+<li><a href="#strip-data">Strip Data</a></li>
+<li><a href="#view-modifiers">View Modifiers</a></li>
+<li><a href="#extra-data">Extra Data</a></li>
+<li><a href="#menus">Menus</a>
 <ul>
-<li><a href="#vse-header-menu--strip">VSE Header Menu &gt; strip</a><br /></li>
-<li><a href="#vse-header-menu--select">VSE Header Menu &gt; select</a><br /></li>
-<li><a href="#vse-header-menu--add">VSE Header Menu &gt; add</a><br /></li>
-<li><a href="#vse-header-menu--input">VSE Header Menu &gt; input</a><br /></li>
-<li><a href="#movieclip-editor-header-menu--clip">MovieClip Editor Header Menu &gt; Clip</a><br /></li>
-<li><a href="#timeline-header-menu--frame">Timeline Header Menu &gt; frame</a><br /></li>
+<li><a href="#vse-header-menu--strip">VSE Header Menu &gt; strip</a></li>
+<li><a href="#vse-header-menu--select">VSE Header Menu &gt; select</a></li>
+<li><a href="#vse-header-menu--add">VSE Header Menu &gt; add</a></li>
+<li><a href="#vse-header-menu--input">VSE Header Menu &gt; input</a></li>
+<li><a href="#movieclip-editor-header-menu--clip">MovieClip Editor Header Menu &gt; Clip</a></li>
+<li><a href="#timeline-header-menu--frame">Timeline Header Menu &gt; frame</a></li>
 </ul></li>
-<li><a href="#proxy-tools">Proxy Tools WIP</a><br /></li>
-<li><a href="#audio-tools">Audio Tools WIP</a><br /></li>
-<li><a href="#exif-info-panel">Exif info panel WIP</a><br /></li>
-<li><a href="#eco-tools----warning-cpu-intensive">Eco Tools (WARNING!: CPU INTENSIVE:)</a><br /></li>
-<li><a href="#random-editor-panel-experimental">Random Editor panel WIP (EXPERIMENTAL)</a><br /></li>
-<li><p><a href="#glitch-panel-experimental">Glitch panel WIP (EXPERIMENTAL)</a></p></li>
+<li><a href="#proxy-tools">Proxy Tools WIP</a></li>
+<li><a href="#audio-tools">Audio Tools WIP</a></li>
+<li><a href="#exif-info-panel">Exif info panel WIP</a></li>
+<li><a href="#eco-tools----warning-cpu-intensive">Eco Tools (WARNING!: CPU INTENSIVE:)</a></li>
+<li><a href="#random-editor-panel-experimental">Random Editor panel WIP (EXPERIMENTAL)</a></li>
+<li><a href="#glitch-panel-experimental">Glitch panel WIP (EXPERIMENTAL)</a></li>
 </ul></li>
 </ul>
 <h2 id="jump-to-cut-6">Jump to Cut 6</h2>
@@ -69,7 +70,7 @@ git clone https://github.com/kinoraw/kinoraw_tools</code></pre>
 <h5 id="seconds">Seconds</h5>
 <p>Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:</p>
 <ul>
-<li>shortcut keys <strong>ctrl + shift + left arrow</strong> to skip back one second,<br /></li>
+<li>shortcut keys <strong>ctrl + shift + left arrow</strong> to skip back one second,</li>
 <li>shortcut keys <strong>ctrl + shift + right arrow</strong> to skip forward one second.</li>
 </ul>
 <h5 id="cuts">Cuts</h5>
@@ -118,7 +119,8 @@ git clone https://github.com/kinoraw/kinoraw_tools</code></pre>
 <p><img align="" src="./imgs/meta_tools2.png"></p>
 <p><img align="" src="./imgs/meta_tools.png"></p>
 <h5 id="meta-copy">Meta + Copy</h5>
-<p>This operator makes a metastrip with all selected items, and trim them to in and out.<br />If there is no IN and OUT markers, the meta is not trimmed.</p>
+<p>This operator makes a metastrip with all selected items, and trim them to in and out.<br />
+If there is no IN and OUT markers, the meta is not trimmed.</p>
 <h5 id="paste-snap">Paste + Snap</h5>
 <p>Paste the clipboard content starting at the timeline cursor.</p>
 <h5 id="un-meta-trim">Un-meta + Trim</h5>
@@ -173,9 +175,6 @@ bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
 <p><img align="" src="./imgs/jump_to_cut_info_wipe.png"></p>
 <p><img align="" src="./imgs/jump_to_cut_info_speed.png"></p>
 <p><img align="" src="./imgs/jump_to_cut_info_blur.png"></p>
-<h2 id="vsequickfunctions">VSEQuickFunctions</h2>
-<p>If you have <a href="http://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed">VSE Quick Functions_0_89</a> addon enabled, then you can also see some info in the panel for the parenting feature.</p>
-<p><img align="" src="./imgs/VSEquick.png"></p>
 <h2 id="view-modifiers">View Modifiers</h2>
 <p><img align="" src="./imgs/jump_to_cut_info_modifier.png"></p>
 <p>bla bli bla bli bli, <strong>same menus, less space</strong> Bli bli bli bla bli bla bli bli blau</p>
@@ -195,12 +194,14 @@ bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
 <h5 id="ripple-cut">Ripple cut</h5>
 <p>Same as above, but copying active strip to memory buffer before deleting it. Copied strip can be pasted in place as usual, for example using the keystroke combination ctrl-V.</p>
 <ul>
-<li><strong>TO FIX:</strong> ripple cut and ripple delete: some strips change their channel position<br />it seems to happend when one involved strips is the one in higher position...</li>
+<li><strong>TO FIX:</strong> ripple cut and ripple delete: some strips change their channel position<br />
+it seems to happend when one involved strips is the one in higher position...</li>
 </ul>
 <h5 id="insert">insert</h5>
 <p>Shift forward all strips after current frame and insert active strip.</p>
 <ul>
-<li><strong>TO FIX:</strong> insert operator works fine but sometimes some strips change their<br />channel position.</li>
+<li><strong>TO FIX:</strong> insert operator works fine but sometimes some strips change their<br />
+channel position.</li>
 </ul>
 <h5 id="insert-single-channel">Insert (Single Channel)</h5>
 <p>Same as above, but shifting occurs only on the same channel as active strip.</p>
@@ -211,8 +212,8 @@ bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
 <h5 id="current-frame-aware-select">Current-Frame-Aware Select</h5>
 <p>Select strips on all channels according to current frame. Available modes are:</p>
 <ul>
-<li>Before (select all strips before current frame),<br /></li>
-<li>After (select all strips after current frame),<br /></li>
+<li>Before (select all strips before current frame),</li>
+<li>After (select all strips after current frame),</li>
 <li>On (select all strips underneath playhead).</li>
 </ul>
 <h5 id="select-same-channel">Select same channel</h5>
@@ -222,7 +223,7 @@ bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
 <h5 id="recursive-loader">Recursive Loader</h5>
 <p>In a File Browser area, select a file and in the VSE panel press &quot;Import from Browser&quot; button. All movie clips will be imported (sorted alphabeticaly by filename) in the VSE</p>
 <ul>
-<li>Check &quot;Recursive&quot; option to search recursively in this folder<br /></li>
+<li>Check &quot;Recursive&quot; option to search recursively in this folder</li>
 <li>Check &quot;Select by extension&quot; to force import only files with the selected extension.</li>
 </ul>
 <h3 id="vse-header-menu-input">VSE Header Menu &gt; input</h3>
@@ -246,7 +247,7 @@ bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
 <h5 id="skip-one-second">Skip One Second</h5>
 <p>Skip through the Timeline by one-second increments. The number of frames to skip is based on render settings for current scene. The script enables two new key bindings:</p>
 <ul>
-<li>shortcut keys <strong>ctrl + shift + left arrow</strong> to skip back one second,<br /></li>
+<li>shortcut keys <strong>ctrl + shift + left arrow</strong> to skip back one second,</li>
 <li>shortcut keys <strong>ctrl + shift + right arrow</strong> to skip forward one second.</li>
 </ul>
 <h5 id="trim-to-selection">Trim to Selection</h5>
@@ -260,7 +261,8 @@ bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
 <h2 id="audio-tools">Audio Tools</h2>
 <p><img align="" src="./imgs/audio_tools.png"></p>
 <h3 id="extract-wav">Extract WAV</h3>
-<p>create a wav file out of a selected movie strip in the indicated path.<br />If the audio file already exists in the path, it is loaded and trimmed according to the selected movie strip.</p>
+<p>create a wav file out of a selected movie strip in the indicated path.<br />
+If the audio file already exists in the path, it is loaded and trimmed according to the selected movie strip.</p>
 <p>You can also generate ffmpeg scripts to launch a batch conversion out of blender.</p>
 <h3 id="sync-tool">Sync Tool</h3>
 <p>This is useful to sync diferent audio strips to a single movie strip. It does not mantain the sync if you move only the movie strip, but anytime you can delete audio strips and reload again synced.</p>
@@ -273,7 +275,7 @@ bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
 <p>The operator launch the meterbridge app and connect it to pulseaudio jack sink. If it doesn work for your system, try to open Qjackctl and connect manually.</p>
 <p>If you install pulseaudio along with jack, <strong>you don't need to compile Blender with jack enabled</strong> to use this feature.</p>
 <p>For now it only works for linux but windows or osx can be implemented (need some testers for this...)</p>
-<p>More info about available meters: <a href="http://plugin.org.uk/meterbridge/">http://plugin.org.uk/meterbridge/</a></p>
+<p>More info about available meters: <a href="http://plugin.org.uk/meterbridge/" class="uri">http://plugin.org.uk/meterbridge/</a></p>
 <h2 id="exif-info-panel">Exif info panel</h2>
 <p><img align="" src="./imgs/exif.png"></p>
 <p>Select a strip and press 'Read EXIF data'. Works only with image and movie strips</p>
@@ -296,6 +298,7 @@ bpy.data.scenes[&#39;Scene&#39;].kr_out_marker</code></pre>
 <p>Not working yet!</p>
 <h2 id="glitch-panel-experimental">Glitch panel (EXPERIMENTAL)</h2>
 <p><img align="" src="./imgs/glitch.png"></p>
-<p>for the moment it has only glitch algorithm, you need to install aviglitch<br />more info here:</p>
-<p><a href="http://ucnv.github.io/aviglitch/">http://ucnv.github.io/aviglitch/</a></p>
+<p>for the moment it has only glitch algorithm, you need to install aviglitch<br />
+more info here:</p>
+<p><a href="http://ucnv.github.io/aviglitch/" class="uri">http://ucnv.github.io/aviglitch/</a></p>
 <p>cc-by: <strong><a href="http://surreal.asturnazari.com">Carlos Padial</a></strong>, 2015</p>

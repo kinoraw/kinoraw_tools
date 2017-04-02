@@ -88,9 +88,6 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
     kr_extra_info = BoolProperty(
         name = 'show extra info',
         default = False)
-    kr_quick_info = BoolProperty(
-        name = 'show info from VSEQuickFunctions',
-        default = False)
 
     # exif
     use_exif_panel = BoolProperty(

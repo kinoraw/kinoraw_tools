@@ -296,13 +296,9 @@ class JumptoCut(bpy.types.Panel):
         else:
             row = row.split(percentage=0.25) 
             row.label(text = "")
-            
-        if "vseqf" in dir(bpy.ops):
-            row = row.split(percentage=0.25) 
-            row.prop(prefs, 'kr_quick_info', text="", icon='POSE_DATA')
-        else:
-            row = row.split(percentage=0.25) 
-            row.label(text = "")
+
+        row = row.split(percentage=0.25) 
+        row.label(text = "")
         row = row.split(percentage=0.25)
         row.label(text = "")
         row = row.split(percentage=0.33)   
@@ -593,41 +589,6 @@ class JumptoCut(bpy.types.Panel):
                             col.prop(strip, "input_2")   
                 except AttributeError:
                     pass
-
-            #QUICKCHILDREN
-            if prefs.kr_quick_info:
-                layout = self.layout
-                layout = layout.box()
-                # MUTE THIS BOX
-                layout.active = (not strip.mute)
-                row = layout.split(percentage=0.075)
-                row.prop(prefs, "kr_quick_info", text="",icon='POSE_DATA', emboss=True)
-                
-                row.prop(scn, 'quickcontinuousenable')
-                row.operator('vseqf.quickparents', text='Set Parent').action = 'add'
-                
-                if scn.quickcontinuousenable:
-                    row = layout.row()
-                    row.label("Parenting")
-                    row.prop(scn, 'quickcontinuouschildren', text = "Move")
-                    row.prop(scn, 'quickcontinuousselectchildren', text = "Autoselect")
-                row = layout.row()
-                row.operator('vseqf.quickparents', text='Select Children').action = 'selectchildren'
-                row.operator('vseqf.quickparents', text='Clear Children').action = 'clearchildren'
-                row.operator('vseqf.quickparents', text='Select Parent').action = 'selectparent'
-                row.operator('vseqf.quickparents', text='Clear Parent').action = 'clearparent'
-
-                if len(scn.parenting) > 0:
-                    childrennames = functions.find_children(strip.name)
-                    parentname = functions.find_parent(strip.name)
-                    row = layout.row()
-                    row = row.split(percentage=0.8) 
-                    if parentname != "None":
-                        row.label("Parent: {}".format(parentname))
-                    if len(childrennames) > 0:
-                        for child in childrennames:
-                            row = layout.row()
-                            row.label("Children: {}".format(child))
                                     
             # extra info box:
             if prefs.kr_extra_info:
