@@ -47,7 +47,7 @@ def createavimjpeg(context, strip):
     fileinput = bpy.path.abspath(strip.filepath)
     fileoutput = fileinput.rpartition(".")[0]+"_mjpeg.avi"
 
-    command = "ffmpeg -i '{}' -vcodec mjpeg -qscale 1 '{}'".format(fileinput, fileoutput)
+    command = "ffmpeg -i '{}' -vcodec mjpeg -q:v 1 '{}'".format(fileinput, fileoutput)
 
     print(command)
     os.system(command)
@@ -120,6 +120,7 @@ class CreateDatamosh(bpy.types.Operator):
     def execute(self, context):
 
         preferences = context.user_preferences
+        prefs = preferences.addons[__package__].preferences
         strips = functions.get_selected_strips(context)
 
         for strip in strips:
@@ -129,7 +130,7 @@ class CreateDatamosh(bpy.types.Operator):
             strip.select = True
             if strip.type == "MOVIE":
                 fileoutput = createdatamosh(context, strip)
-                if prefs.loadglitch:
+                if prefs.load_glitch:
                     strip.filepath = fileoutput
         #select all strips again
         for strip in strips:
