@@ -2,7 +2,7 @@
 
 a compilation of tools to improve video editing with blender's VSE
 
-(Tested with blender 2.76b)
+(Tested with blender 2.78)
 
 
 
@@ -39,7 +39,7 @@ a compilation of tools to improve video editing with blender's VSE
 
 You can clone the addon directly in the blender addons folder, i.e: in my ubuntu computer i had to do:
 
-    cd ~/.config/blender/2.74/scripts/addons
+    cd ~/.config/blender/2.78/scripts/addons
 
     git clone https://github.com/kinoraw/kinoraw_tools
 
@@ -81,7 +81,7 @@ then you can start blender and activate the addon in the user preferences window
 
 ## Jump to Cut 6
 
-**[Jump to Cut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** has been there for a while (in October will fulfill five years!) and it's still running to help you keep important things together when editing video with blender.
+**[Jump to Cut](http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut)** has been there for a while (it started in October 2010) and it's still running to help you keep important things together when editing video with blender.
 
 Since version 2.73 there is an option to jump to edit points, so Jump to Cut's original feature has been integrated into Blender code !!  =)
 
