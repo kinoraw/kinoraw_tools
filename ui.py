@@ -676,6 +676,7 @@ class JumptoCut(bpy.types.Panel):
                 row.operator_menu_enum("sequencer.strip_modifier_add", "type")
                 for mod in strip.modifiers:
                     box = layout.box()
+
                     row = box.row()
                     row.prop(mod, "show_expanded", text="", emboss=False)
                     row.prop(mod, "name", text="")
@@ -703,6 +704,8 @@ class JumptoCut(bpy.types.Panel):
                             box.prop_search(mod, "input_mask_strip", sequences_object, "sequences", text="Mask")
                         else:
                             box.prop(mod, "input_mask_id")
+                            row = box.row()
+                            row.prop(mod, "mask_time", expand=True)
 
                         if mod.type == 'COLOR_BALANCE':
                             box.prop(mod, "color_multiply")
@@ -715,6 +718,21 @@ class JumptoCut(bpy.types.Panel):
                             col = box.column()
                             col.prop(mod, "bright")
                             col.prop(mod, "contrast")
+                        elif mod.type == 'WHITE_BALANCE':
+                            col = box.column()
+                            col.prop(mod, "white_value")
+                        elif mod.type == 'TONEMAP':
+                            col = box.column()
+                            col.prop(mod, "tonemap_type")
+                            if mod.tonemap_type == 'RD_PHOTORECEPTOR':
+                                col.prop(mod, "intensity")
+                                col.prop(mod, "contrast")
+                                col.prop(mod, "adaptation")
+                                col.prop(mod, "correction")
+                            elif mod.tonemap_type == 'RH_SIMPLE':
+                                col.prop(mod, "key")
+                                col.prop(mod, "offset")
+                                col.prop(mod, "gamma")
                             
                 if "copy_modifiers" in dir(bpy.ops.sequencer):
                     row = layout.row(align=True)
