@@ -708,17 +708,18 @@ class Sequencer_Extra_CopyProperties(bpy.types.Operator):
                         i.crop.max_y = strip.crop.max_y
                     elif self.prop == 'proxy':
                         i.use_proxy = strip.use_proxy
-                        i.use_proxy_custom_file = strip.use_proxy_custom_file
-                        p = strip.use_proxy_custom_directory  # pep80
-                        i.use_proxy_custom_directory = p
-                        i.proxy.filepath = strip.proxy.filepath
-                        i.proxy.directory = strip.proxy.directory
+                        p = strip.proxy.use_proxy_custom_directory  # pep80
+                        i.proxy.use_proxy_custom_directory = p
+                        i.proxy.use_proxy_custom_file = strip.proxy.use_proxy_custom_file
+                        i.proxy.build_100 = strip.proxy.build_100
                         i.proxy.build_25 = strip.proxy.build_25
                         i.proxy.build_50 = strip.proxy.build_50
                         i.proxy.build_75 = strip.proxy.build_75
-                        i.proxy.build_100 = strip.proxy.build_100
+                        i.proxy.directory = strip.proxy.directory
+                        i.proxy.filepath = strip.proxy.filepath
                         i.proxy.quality = strip.proxy.quality
                         i.proxy.timecode = strip.proxy.timecode
+                        i.proxy.use_overwrite = strip.proxy.use_overwrite
                     elif self.prop == 'strobe':
                         i.strobe = strip.strobe
                     elif self.prop == 'color_multiply':
