@@ -4,8 +4,8 @@
 <p><em>Bli bli bli bla bli bla bli bli, Bli bli bli bla</em> <strong><a href="http://kinoraw.net**" class="uri">http://kinoraw.net**</a> <em>bli bla bli bli, Bli bli bli</em> </strong>FLOSS video editing** <em>bla bli bla bli bli, Bli bli bli</em> <strong><a href="http://www.blender.org">BLENDER!</a></strong> <em>bla bli bla bli bli, Bli bli bli bla</em> <strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Jump_to_cut">Jump to Cut</a></strong> <em>bli bla bli bli, Bli bli bli</em> <strong><a href="http://wiki.blender.org/index.php/Extensions:2.6/Py/Scripts/Sequencer/Extra_Sequencer_Actions">Extra Sequencer Actions</a></strong> <em>bla bli bla bli bli, Bli bli bli bla bli bla bli bli, Bli bli bli</em> FCP XDXDXDXD <em>bla bli bla bli bli, Bli bli</em> <strong>useful tools grouped in the same panel</strong> <em>bli bla bli bla bli bli, Bli bli bli bla bli bla bli bli. Bli bla bla bli</em> <strong>fast video editing</strong> <em>bli, bli bli</em> <strong>with Blender</strong> <em>bli bla</em> <strong>linux, of course.</strong> <em>Bli bla bli bli blau</em></p>
 <pre><code>-- Carlos Padial, 2015 ;)</code></pre>
 <p><img align="center" width="500px" src="./imgs/full_screen.jpg"></p>
-<h2 id="changelog">Changelog:</h2>
-<p>2017/4/2: Remove support for quickfunction script. The new version of this addon is quite complete by itself. Go and install it: <a href="https://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed" class="uri">https://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed</a></p>
+<h2 id="note">NOTE</h2>
+<p>Don't know wich feature will work in mac or windows, please, contribute if you can...</p>
 <h2 id="how-to-install">How to Install</h2>
 <h3 id="install-the-zip-package-stable-version">install the zip package (STABLE VERSION)</h3>
 <ul>
@@ -257,8 +257,10 @@ channel position.</li>
 <p>Set start and end frames of current scene according to the content of the Sequence Editor.</p>
 <p>It also centers the view into the selection</p>
 <h2 id="proxy-tools">Proxy Tools</h2>
+<p>Many of the features in this panel are 'before-Gooseberry' tools and depends on cli ffmpeg installed. This panel deserves a refactor, as some of the features are built-in blender now.</p>
 <p><img align="" src="./imgs/proxy_tools.png"></p>
 <h2 id="audio-tools">Audio Tools</h2>
+<p>Many of the features in this panel are 'before-Gooseberry' tools and depends on cli ffmpeg installed. This panel deserves a refactor but had no time for this yet.</p>
 <p><img align="" src="./imgs/audio_tools.png"></p>
 <h3 id="extract-wav">Extract WAV</h3>
 <p>create a wav file out of a selected movie strip in the indicated path.<br />
@@ -270,7 +272,7 @@ If the audio file already exists in the path, it is loaded and trimmed according
 <p>Press <strong>reload audio</strong> with a movie strip selected to reload the audio files</p>
 <h3 id="audio-meters">Audio Meters</h3>
 <p><img align="" src="./imgs/audio_tools_meter.png"></p>
-<p>To use this you need to install Jack and JACK Meterbridge. Select the meter type and press <strong>Launch audio meter</strong></p>
+<p>To use this you need to install Jack and JACK Meterbridge. It will probably work by default in Ubuntu Studio and similar distros. Select the meter type and press <strong>Launch audio meter</strong></p>
 <p><img align="" src="./imgs/audio_tools_metertype.png"></p>
 <p>The operator launch the meterbridge app and connect it to pulseaudio jack sink. If it doesn work for your system, try to open Qjackctl and connect manually.</p>
 <p>If you install pulseaudio along with jack, <strong>you don't need to compile Blender with jack enabled</strong> to use this feature.</p>
@@ -279,7 +281,7 @@ If the audio file already exists in the path, it is loaded and trimmed according
 <h2 id="exif-info-panel">Exif info panel</h2>
 <p><img align="" src="./imgs/exif.png"></p>
 <p>Select a strip and press 'Read EXIF data'. Works only with image and movie strips</p>
-<p>to get exif info panel you need to install exiftools:</p>
+<p>to get exif info panel you need to install exiftools.</p>
 <pre><code>sudo apt-get install libimage-exiftool-perl</code></pre>
 <h2 id="eco-tools-warning-cpu-intensive">Eco Tools (WARNING!: CPU INTENSIVE:)</h2>
 <p><img align="" src="./imgs/eco.png"></p>

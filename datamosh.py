@@ -159,7 +159,7 @@ class CreateGlitchToolPanel(bpy.types.Panel):
             preferences = context.user_preferences
             prefs = preferences.addons[__package__].preferences
             if scn and scn.sequence_editor and scn.sequence_editor.active_strip:
-                if prefs.use_proxy_tools:
+                if prefs.use_glitch_panel:
                     return strip.type in ('MOVIE')
         else:
             return False

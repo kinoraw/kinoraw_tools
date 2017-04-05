@@ -183,7 +183,8 @@ class RandomEditorPanel(bpy.types.Panel):
 
     @classmethod
     def poll(self, context):
-        if context.space_data.view_type in {'SEQUENCER', 'SEQUENCER_PREVIEW'}:
+        if context.space_data.view_type in {'SEQUENCER',
+            'SEQUENCER_PREVIEW'}:
             strip = functions.act_strip(context)
             scn = context.scene
             preferences = context.user_preferences
@@ -193,8 +194,6 @@ class RandomEditorPanel(bpy.types.Panel):
                     return strip.type in ('META')
         else:
             return False
-
-    #def invoke(self, context, event):
 
     def draw_header(self, context):
         layout = self.layout

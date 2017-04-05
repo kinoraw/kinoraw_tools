@@ -91,12 +91,12 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
 
     # exif
     use_exif_panel = BoolProperty(
-        name = 'exif info panel',
+        name = 'exif info panel | depends on external programs, see documentation',
         default = False)
 
     # glitch
     use_glitch_panel = BoolProperty(
-        name = 'glitch panel',
+        name = 'glitch panel | depends on external programs, see documentation',
         default = False)
     all_keyframes = BoolProperty(
         name = 'remove all keyframes',
@@ -115,7 +115,7 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
 
     # Proxy Tools
     use_proxy_tools = BoolProperty(
-        name = 'proxy tools panel',
+        name = 'proxy tools panel | depends on external programs, see documentation',
         default = False)
     proxy_dir = StringProperty(
         name = 'Proxy Custom Directory',
@@ -150,7 +150,7 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
 
     # Audio Tools
     use_audio_tools = BoolProperty(
-        name='audio tools panel',
+        name='audio tools panel | depends on external programs, see documentation',
         default=False)
     audio_dir = StringProperty(
         name='path to store extracted audio',
@@ -200,8 +200,8 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
 
     # random editor
     use_random_editor = BoolProperty(
-        name='random editor panel',
-        default=True)
+        name='random editor panel | Experimental',
+        default=False)
     random_frames = IntProperty(
             name='frames',
             default=1,
@@ -231,6 +231,8 @@ class KinorawToolsAddon(bpy.types.AddonPreferences):
         layout.prop(self, "use_eco_tools")
         layout = self.layout
         layout.prop(self, "use_random_editor")
+        layout = self.layout
+        layout.prop(self, "use_glitch_panel")
     
 
 # Registration

@@ -13,10 +13,9 @@ a compilation of tools to improve video editing with blender's VSE
 
 <img align="center" width="500px" src="/imgs/full_screen.jpg">
 
-## Changelog:
+## NOTE
 
-2017/4/2: Remove support for quickfunction script. The new version of this addon is quite complete by itself. Go and install it: https://blenderartists.org/forum/showthread.php?338598-Addon-WIP-VSE-Quick-functions-Snaps-Fades-Zoom-Parenting-Titling-Play-speed  
-
+Don't know wich feature will work in mac or windows, please, contribute if you can...
 
 ## How to Install
 
@@ -438,10 +437,14 @@ It also centers the view into the selection
 
 ## Proxy Tools
 
+Many of the features in this panel are 'before-Gooseberry' tools and depends on cli ffmpeg installed. This panel deserves a refactor, as some of the features are built-in blender now.
+
 <img align="" src="/imgs/proxy_tools.png">
 
 
 ## Audio Tools
+
+Many of the features in this panel are 'before-Gooseberry' tools and depends on cli ffmpeg installed. This panel deserves a refactor but had no time for this yet.
 
 <img align="" src="/imgs/audio_tools.png">
 
@@ -464,7 +467,7 @@ Press **reload audio** with a movie strip selected to reload the audio files
 
 <img align="" src="/imgs/audio_tools_meter.png">
 
-To use this you need to install Jack and JACK Meterbridge. Select the meter type and press **Launch audio meter**
+To use this you need to install Jack and JACK Meterbridge. It will probably work by default in Ubuntu Studio and similar distros. Select the meter type and press **Launch audio meter**
 
 <img align="" src="/imgs/audio_tools_metertype.png">
 
@@ -482,7 +485,7 @@ More info about available meters: http://plugin.org.uk/meterbridge/
 
 Select a strip and press 'Read EXIF data'. Works only with image and movie strips 
 
-to get exif info panel you need to install exiftools:
+to get exif info panel you need to install exiftools.
 
     sudo apt-get install libimage-exiftool-perl
 
